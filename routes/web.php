@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+//thay doi o day
 
 Route::get('/', function () {
     return view('home');
