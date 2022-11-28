@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 //thay doi o day
 
 Route::get('/', function () {
-    return view('home');
+    return view('users/home');
 });
-Route::get('/about', function () {
-    return view('about');
+Route::get('/Admin', function () {
+    return view('admin');
 });
 Route::get('/users',[UserController::class,'index']) -> name('users.index');
 Route::get('/users/detail/{id}',[UserController::class,'detail']) -> name('users.detail');
