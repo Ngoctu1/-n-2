@@ -464,3 +464,23 @@ section{
         left: 0;
     }
 }
+
+
+.login_btn {
+    border-width: 0.1rem;
+    background-color: white;
+    color: #000;
+    border-style: solid ;
+    box-sizing: border-box;
+    padding: 5;
+    margin-right: -10;
+    
+}
+.signup_btn {
+    margin-left: -2;
+    background-color: rgb(0, 0, 0);
+    border-style: solid ;
+    box-sizing: border-box;
+    padding: 5.5;
+    
+}

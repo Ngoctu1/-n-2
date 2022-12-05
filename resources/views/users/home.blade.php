@@ -21,7 +21,10 @@
             <div class="icons">
                 <a href="#"><i class="fa fa-heart"></i></a>
                 <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                <a href="#"><i class="fa fa-user"></i></a>
+                <a href="#"> Nguyen Ngọc Tú <i class="fa fa-user"></i></a>
+                <a href="#" class="login_btn"> Login </a>
+                <a href="#" class="signup_btn" style="color: white"> Sign up </a>
+
             </div>
         </header>
         <!--end header-->
