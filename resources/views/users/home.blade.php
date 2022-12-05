@@ -3,14 +3,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link href="{{url('css/style.css')}}" rel="stylesheet" type="text/css">
     <link href="{{url('font-awesome/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
-    
+    <!-- CSS only -->
     </head>
     <body>
         <header>
             <div id="menu-bar" class="fa fa-bars"></div>
-            <a href="#" class="logo">Logo</a>
+            <a href="#" class="logo">
+            <img src="{{ asset('img/pnglogoSneaker.png') }}" height ="77px" width = "auto">
+        </a>
             <nav class="navbar">
                 <a href="#home">Home</a>
                 <a href="#product">Product</a>

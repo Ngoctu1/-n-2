@@ -22,7 +22,7 @@ header{
     right: 0;
     z-index: 1000;
     background: #fff;
-    padding: 2rem 9%;
+    padding: 0rem 9%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,6 +32,8 @@ header .logo{
     font-size: 2rem;
     color: #000;
     font-weight: 500;
+    margin-top: 0px;
+
 }
 header .navbar a{
     font-size: 1.5rem;
