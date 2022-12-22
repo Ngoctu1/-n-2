@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link href="{{url('css/style.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{url('css/style_home.css')}}" rel="stylesheet" type="text/css">
     <link href="{{url('font-awesome/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
     <!-- CSS only -->
     </head>
@@ -390,6 +390,7 @@
                 <h3>all reserved by codeskill</h3>
             </div>
         </section>
+        
         <div class="section_footer">
     	<div class="container">
     		<div class="mail_section">
