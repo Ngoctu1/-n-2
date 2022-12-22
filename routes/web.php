@@ -24,4 +24,5 @@ Route::get('/Admin', function () {
 });
 Route::get('/users',[UserController::class,'index']) -> name('users.index');
 Route::get('/users/detail/{id}',[UserController::class,'detail']) -> name('users.detail');
+// tr
 // php artisan serve 1
