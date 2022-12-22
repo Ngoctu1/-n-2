@@ -22,6 +22,11 @@ Route::get('/', function () {
 Route::get('/Admin', function () {
     return view('admin');
 });
+Route::get('/login', function () {
+    return view('users/login');
+});
+
+
 Route::get('/users',[UserController::class,'index']) -> name('users.index');
 Route::get('/users/detail/{id}',[UserController::class,'detail']) -> name('users.detail');
 
@@ -29,4 +34,4 @@ Route::get('/users/detail/{id}',[UserController::class,'detail']) -> name('users
 
 //tu
 
-// php artisan serve 1
+// php artisan serve
