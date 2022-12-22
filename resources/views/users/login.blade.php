@@ -4,7 +4,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Purple Admin</title>
+    <title>Admin</title>
+    <link rel='shortcut icon' href="{{ asset('img/pnglogoSneaker.png') }}" />
+
     <!-- plugins:css 
 
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
