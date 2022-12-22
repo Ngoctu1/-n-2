@@ -29,13 +29,13 @@
   <body>
   <header>
             <div id="menu-bar" class="fa fa-bars"></div>
-            <a href="#" class="logo">
+            <a href="{{route('users.home')}}" class="logo">
             <img src="{{ asset('img/pnglogoSneaker.png') }}" height ="77px" width = "auto">
         </a>
             
             <div class="icons">
             
-                <a href="#" class="signup_btn" style="color: black"> Sign up </a>
+                <a href="{{route('users.register')}}" class="signup_btn" style="color: black; size:5px "> Sign up </a>
 
             </div>
         </header>
@@ -49,7 +49,7 @@
                 <img src="{{ asset('img/pnglogoSneaker.png') }}" height ="50" width = "auto">
                 </div> -->
                 
-                <h4>ĐĂNG NHẬP</h4>
+                <h4>LOGIN</h4>
                 <h6 class="font-weight-light">Sign in to continue.</h6>
                 <form class="pt-3">
                   <div class="form-group">
@@ -69,7 +69,7 @@
                     <a href="#" class="auth-link text-black">Forgot password?</a>
                   </div>
                   
-                  <div class="text-center mt-4 font-weight-light"> Don't have an account? <a href="register.html" class="text-primary">Create</a>
+                  <div class="text-center mt-4 font-weight-light"> Don't have an account? <a href="{{route('users.register')}}" class="text-primary">Sign up</a>
                   </div>
                 </form>
               </div>

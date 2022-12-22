@@ -18,13 +18,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('users/home');
-});
+}) -> name('users.home');
 Route::get('/Admin', function () {
     return view('admin');
 });
 Route::get('/login', function () {
     return view('users/login');
-});
+}) -> name('users.login');
+Route::get('/signup', function () {
+    return view('users/register');
+}) -> name('users.register');
 
 
 Route::get('/users',[UserController::class,'index']) -> name('users.index');

@@ -14478,7 +14478,7 @@ header .navbar a:hover{
     color: orangered;
 }
 header .icons a{
-    font-size: 2rem;
+    font-size: 18px;
     color: #000;
     margin-left: 1.5rem;
 }
@@ -14493,6 +14493,18 @@ header .icons a:hover{
     border-radius: .3rem;
     cursor: pointer;
     display: none;
+}
+.signup_btn{
+  font-weight: normal ;
+  font-size: 2rem;
+  font-style: normal;
+  text-decoration: none;
+  border-width: 0.1rem;
+    background-color: white;
+    color: #000;
+    border-style: solid;
+    box-sizing: border-box;
+    padding: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */
