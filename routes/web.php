@@ -19,9 +19,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('users/home');
 });
+<<<<<<< Updated upstream
 Route::get('/Admin', function () {
     return view('admin');
 });
+=======
+Route::get('/login', function () {
+    return view('users/login');
+}) -> name('users.login');
+Route::get('/signup', function () {
+    return view('users/register');
+}) -> name('users.register');
+
+Route::get('/productdetail', function () {
+    return view('users/productdetail');
+}) -> name('users.productdetail');
+
+>>>>>>> Stashed changes
 Route::get('/users',[UserController::class,'index']) -> name('users.index');
 Route::get('/users/detail/{id}',[UserController::class,'detail']) -> name('users.detail');
 
