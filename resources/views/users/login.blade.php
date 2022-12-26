@@ -26,7 +26,7 @@
     <!-- Layout styles -->
     
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.ico" />
+  
   </head>
   <body>
   <header>
