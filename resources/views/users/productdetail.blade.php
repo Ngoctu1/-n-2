@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-   
+    <link href="{{url('css/detailprdcss/detailprd.css')}}" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/041cb6b55e.js" crossorigin="anonymous"></script>
 </head>
 
