@@ -11,7 +11,7 @@ class userController extends Controller
     function index(){
         
         $user = DB::table('users')->get();
-        return view('users.list', ['users'=>$user]);
+        dd($user);
 
     }
     function detail($id){

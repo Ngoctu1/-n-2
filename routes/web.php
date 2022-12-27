@@ -18,18 +18,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('users/home');
-}) -> name('users.home');
-Route::get('/admin', function () {
-    return view('Admin/adminlte');
-});
+})-> name('users.home');
 
 Route::get('/login', function () {
     return view('users/login');
 }) -> name('users.login');
+
 Route::get('/signup', function () {
     return view('users/register');
 }) -> name('users.register');
-
 
 Route::get('/productdetail', function () {
     return view('users/productdetail');
@@ -38,8 +35,20 @@ Route::get('/productdetail', function () {
 Route::get('/users',[UserController::class,'index']) -> name('users.index');
 Route::get('/users/detail/{id}',[UserController::class,'detail']) -> name('users.detail');
 
+//ADMIN
+Route::get('/admin/users', function () {
+    return view('Admin/modun/account');
+})-> name('admin.account');
+
+
+Route::get('/admin', function () {
+    return view('Admin/modun/dashboard');
+}) -> name('admin.dashboard');
+
+
+
 // tr
 
 //tu
 
-// php artisan serve
+// php artisan serve 1

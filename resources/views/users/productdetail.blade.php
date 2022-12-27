@@ -6,15 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
    
     <script src="https://kit.fontawesome.com/041cb6b55e.js" crossorigin="anonymous"></script>
 
   
     
+
+
 </head>
 
 <body>
     
+
     <div class="card-wrapper">
         <div class="card">
           <!-- card left -->
@@ -87,6 +91,7 @@
                 Add to Cart <i class="fas fa-shopping-cart"></i>
               </button>
               <button type="button" class="btn">Compare</button>
+
             </div>
       
             <div class="social-links">
