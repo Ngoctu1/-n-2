@@ -18,10 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('users/home');
-}) -> name('users.home');
+})-> name('users.home');
+
 Route::get('/admin', function () {
     return view('Admin/adminlte');
 });
+
+
 
 Route::get('/login', function () {
     return view('users/login');
@@ -35,6 +38,7 @@ Route::get('/productdetail', function () {
     return view('users/productdetail');
 }) -> name('users.productdetail');
 
+
 Route::get('/users',[UserController::class,'index']) -> name('users.index');
 Route::get('/users/detail/{id}',[UserController::class,'detail']) -> name('users.detail');
 
@@ -42,4 +46,4 @@ Route::get('/users/detail/{id}',[UserController::class,'detail']) -> name('users
 
 //tu
 
-// php artisan serve
+// php artisan serve 1

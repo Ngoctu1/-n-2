@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   
     <link href="{{url('font-awesome/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/041cb6b55e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -61,16 +61,10 @@
                                 <h4>Reviews</h4>
                                 <ul class="stars">
                                     <li>
-                                        <span class="material-icons-outlined">
-                    
-                                            star
-                                        </span>
+                                    <i class="fa-solid fa-star"></i>
                                     </li>
                                     <li>
-                                        <span class="material-icons-outlined">
-                    
-                                            star
-                                        </span>
+                                    <i class="fa-brands fa-apple"></i>
                                     </li>
                                     <li>
                                         <span class="material-icons-outlined">

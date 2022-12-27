@@ -9,7 +9,7 @@
     <link rel='shortcut icon' href="{{ asset('img/pnglogoSneaker.png') }}" />
     <link href="{{url('css/style_home.css')}}" rel="stylesheet" type="text/css">
     <link href="{{url('font-awesome/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
-
+ 
     <!-- CSS only -->
 </head>
 
