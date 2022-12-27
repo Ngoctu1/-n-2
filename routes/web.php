@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\userController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -32,13 +33,14 @@ Route::get('/productdetail', function () {
     return view('users/productdetail');
 }) -> name('users.productdetail');
 
-Route::get('/users',[UserController::class,'index']) -> name('users.index');
 Route::get('/users/detail/{id}',[UserController::class,'detail']) -> name('users.detail');
 
 //ADMIN
-Route::get('/admin/users', function () {
+Route::get('/admi', function () {
     return view('Admin/modun/account');
 })-> name('admin.account');
+
+Route::get('/admin/account',[AdminController::class,'index']) -> name('admin.index');
 
 
 Route::get('/admin', function () {
