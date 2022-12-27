@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/041cb6b55e.js" crossorigin="anonymous"></script>
+     
    
-    <link href="{{url('font-awesome/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
+   
 </head>
 
 <body>
@@ -30,7 +32,8 @@
                         NIke Jordan
                     </span>
                     <span class="titleOverlay"></span>
-                    <h1>
+                </h1>
+        
                         <p class="description">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet saepe impedit est, neque
                             quas laboriosam? Obcaecati ipsum in, magnam provident perferendis vero similique veritatis
@@ -61,31 +64,21 @@
                                 <h4>Reviews</h4>
                                 <ul class="stars">
                                     <li>
-                                        <span class="material-icons-outlined">
-                    
-                                            star
-                                        </span>
+                                        <i class="fa-solid fa-star"></i>
                                     </li>
                                     <li>
-                                        <span class="material-icons-outlined">
-                    
-                                            star
-                                        </span>
+                                        <i class="fa-solid fa-star"></i>
                                     </li>
                                     <li>
-                                        <span class="material-icons-outlined">
-                                            star
-                                        </span>
+                                        <i class="fa-solid fa-star"></i>
                                     </li>
                                     <li>
-                                        <span class="material-icons-outlined">
-                                            star
-                                        </span>
+                                        <i class="fa-solid fa-star"></i>
                                     </li>
                                     <li>
-                                        <span class="material-icons-outlined">
-                                            star_outlined
-                                        </span>
+                                        <span class="fa-regular fa-star"></span>
+                                          
+                                         
                                     </li>
                                 </ul>
                             </div>
@@ -93,11 +86,46 @@
                                 <h4>Price</h4>
                                 <h4 class="price">$150</h4>
                             </div>
-                        </div>
-                    </h1>
-                </h1>
-            </div>
+                            <div class="colors">
+                                <h4>Colors</h4>
+                                <ul>
+                                    <li class="color color-active"></li>
+                                    <li class="color"></li>
+                                </ul>
+                            </div>
+                        </div>  
+            
         </main>
+        <section class="bar-bottom">
+            <div>
+                <a href="#">
+                    <i class="fa-solid fa-play"></i>
+                    <span>Play Video</span>
+                </a>
+            </div>
+            <div class="controls">
+                <div class="arrows">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </div>
+                <div>
+                    <small class="shoe-num">01</small>
+                    <div class="pagination"> 
+                        <span class="pag pag-active"></span>
+                        <span class="pag"></span>
+                        <span class="pag"></span>
+                    
+                    </div>
+                    <small class="shoet-total">03</small>
+                </div>
+            </div>
+            <div class="cart">
+                <button>Add to Cart</button>
+                <i class="fa-regular fa-heart"></i>
+            </div>
+            
+        </section>
     </div>
 </body>
 

@@ -22,7 +22,10 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('Admin/adminlte');
 });
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 Route::get('/login', function () {
     return view('users/login');
 }) -> name('users.login');

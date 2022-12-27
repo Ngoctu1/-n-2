@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< Updated upstream
     "content-hash": "42abb3629c471ced0b5245bf40aaff4e",
+=======
+    "content-hash": "ffa14a90ea967da6f7bb05587b49ad61",
+>>>>>>> Stashed changes
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
