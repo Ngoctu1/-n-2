@@ -8,13 +8,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>User Detail: {{ $user-> user_full}}</h1>
+    <h1>User Detail: {{ $user-> name}}</h1>
     <ul class="list-group">
-        <li class="list-group-item">ID: {{ $user->users_id }} </li>
-        <li class="list-group-item">Full Name: {{ $user->user_full }} </li>
-        <li class="list-group-item">Email: {{ $user->user_mail }} </li>
+        <li class="list-group-item">ID: {{ $user->id }} </li>
+        <li class="list-group-item">Full Name: {{ $user->name }} </li>
+        <li class="list-group-item">Email: {{ $user->email }} </li>
         <li class="list-group-item">
-            @if($user -> user_level == 1)  
+            @if($user -> level == 1)  
             <span> Admin </span>
             @else
             <span > Member </span>

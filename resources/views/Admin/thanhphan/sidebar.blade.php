@@ -49,7 +49,8 @@
                                 <p>
                                     Users
                                     <span class="badge badge-success right">
-                                        4
+                                   <?php  $count = DB::table('users')->count(); echo $count;
+                                     ?>
                                     </span>
                                 </p>
 

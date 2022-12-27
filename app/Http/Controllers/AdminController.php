@@ -13,4 +13,6 @@ class AdminController extends Controller
         return view('Admin.modun.account',['users'=>$users]);
     }
 
+
+    
 }

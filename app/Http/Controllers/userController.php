@@ -15,7 +15,7 @@ class userController extends Controller
 
     }
     function detail($id){
-        $user = DB::table('users')->where('users_id',$id)->first();
+        $user = DB::table('users')->where('id',$id)->first();
         return view ('users.detail', compact('user'));
     }
     function create(){}

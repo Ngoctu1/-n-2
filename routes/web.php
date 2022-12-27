@@ -42,6 +42,7 @@ Route::get('/admi', function () {
 
 Route::get('/admin/account',[AdminController::class,'index']) -> name('admin.index');
 
+Route::get('/', [AdminController::class,'count'] )-> name('admin.count');
 
 Route::get('/admin', function () {
     return view('Admin/modun/dashboard');
