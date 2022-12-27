@@ -495,6 +495,7 @@
     <!-- container-scroller -->
     <!-- plugins:js -->
    
+    
 
     <script src="{{url('adminjs/vendor.bundle.base.js')}}"></script>
     <!-- endinject -->
