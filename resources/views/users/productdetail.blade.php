@@ -9,11 +9,6 @@
 
    
     <script src="https://kit.fontawesome.com/041cb6b55e.js" crossorigin="anonymous"></script>
-
-  
-    
-
-
 </head>
 
 <body>
