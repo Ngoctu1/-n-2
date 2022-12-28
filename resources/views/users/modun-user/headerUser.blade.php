@@ -6,7 +6,7 @@
         </a>
         <nav class="navbar">
             <a href="{{route('users.home')}}">Home</a>
-            <a href="#product">Product</a>
+            <a href="{{ route('users.product') }}">Product</a>
             <a href="#fearured">Fearured</a>
             <a href="#blog">blog</a>
             <a href="#news">news</a>
