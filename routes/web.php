@@ -32,6 +32,9 @@ Route::get('/signup', function () {
 Route::get('/productdetail', function () {
     return view('users/modun-user/productdetail');
 }) -> name('users.productdetail');
+Route::get('/product', function () {
+    return view('users/modun-user/product');
+}) -> name('users.product');
 
 Route::get('/users/detail/{id}',[UserController::class,'detail']) -> name('users.detail');
 

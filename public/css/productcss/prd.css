@@ -1,0 +1,292 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 700;
+}
+
+html, body {
+  background: #EEE5E9;
+}
+
+header {
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: row wrap;
+}
+header ul {
+  padding: 1.2em 0 0.5em;
+}
+header span {
+  padding: 0 0 0 0.5em;
+}
+header span, header i {
+  color: #2B2D42;
+}
+header i:nth-of-type(2) {
+  cursor: pointer;
+}
+
+.row {
+  width: 100%;
+  justify-content: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.product, .product--pink, .product--yellow, .product--green, .product--red, .product--orange, .product--blue {
+  box-shadow: 1px 5px 15px #CCC;
+  width: 15em;
+  height: auto;
+  border-radius: 3px;
+  padding: 2em;
+  margin: 1em;
+  overflow: hidden;
+  position: relative;
+  flex: auto;
+}
+.product--blue {
+  background: linear-gradient(-45deg, #92DCE5 50%, rgba(255, 255, 255, 0.5) 50%);
+}
+.product--orange {
+  background: linear-gradient(-45deg, #EF6F6C 50%, rgba(255, 255, 255, 0.5) 50%);
+}
+.product--red {
+  background: linear-gradient(-45deg, #E84855 50%, rgba(255, 255, 255, 0.5) 50%);
+}
+.product--green {
+  background: linear-gradient(-45deg, #70C1B3 50%, rgba(255, 255, 255, 0.5) 50%);
+}
+.product--yellow {
+  background: linear-gradient(-45deg, #E8DB7D 50%, rgba(255, 255, 255, 0.5) 50%);
+}
+.product--pink {
+  background: linear-gradient(-45deg, #FF386D 50%, rgba(255, 255, 255, 0.5) 50%);
+}
+.product img, .product--blue img, .product--orange img, .product--red img, .product--green img, .product--yellow img, .product--pink img {
+  max-width: 100%;
+  height: auto !important;
+  text-align: center;
+}
+.product_inner {
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+}
+.product_inner p {
+  color: rgba(255, 255, 255, 0.9);
+}
+.product_inner button {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #FFF;
+  border-radius: 3px;
+  padding: 1em 3em;
+  margin: 1em 0 0 0;
+  background: none;
+  cursor: pointer;
+  transition: background ease-in 0.25s;
+}
+.product_inner button:hover {
+  background: white;
+  color: #2B2D42;
+}
+.product_inner button:before {
+  font-family: FontAwesome;
+  content: "";
+  color: #FFF;
+  position: absolute;
+  font-size: 1.5em;
+  margin: 0 -1.5em;
+}
+.product_inner button:hover:before {
+  color: #2B2D42;
+}
+.product_overlay {
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-500px);
+  opacity: 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+.product_overlay h2 {
+  color: rgba(43, 45, 66, 0.7);
+  font-size: 1.2em;
+  margin: 1em 0;
+}
+.product_overlay i {
+  color: rgba(43, 45, 66, 0.7);
+  font-size: 1.5em;
+}
+/*--------------------
+Mixins
+---------------------*/
+/*--------------------
+Body
+---------------------*/
+
+
+/*--------------------
+Shop Card
+---------------------*/
+.shop-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  background: #f5f5f5;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 25px;
+  text-align: center;
+  z-index: 2;
+}
+.shop-card figure {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  outline: none !important;
+}
+.shop-card figure img {
+  margin: -95px 0 -60px;
+  width: 100%;
+}
+.shop-card .title {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 30px;
+  color: #23211f;
+  margin-bottom: 5px;
+}
+.shop-card .desc {
+  font-size: 17px;
+  opacity: 0.8;
+  margin-bottom: 3px;
+}
+.shop-card .cta {
+  padding: 20px 20px 5px;
+}
+.shop-card .cta::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.shop-card .price {
+  float: left;
+  color: #ff3100;
+  font-size: 22px;
+  font-weight: 900;
+  padding-top: 2px;
+  transition: color 0.3s ease-in-out;
+  margin-top: 4px;
+}
+.shop-card .btn {
+  position: relative;
+  z-index: 1;
+  float: right;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ff3100;
+  padding: 12px 18px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  line-height: 0.95;
+  border: none;
+  background: none;
+  outline: none;
+  border: 1px solid #ff3100;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.shop-card .btn .bg {
+  width: 101%;
+  height: 101%;
+  display: block !important;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(135deg, #a61322, #d33f34);
+}
+.shop-card .btn:hover {
+  color: #fff !important;
+  border: 1px solid transparent !important;
+}
+.shop-card .btn:hover .bg {
+  opacity: 1;
+}
+
+/*--------------------
+Slick Dots
+---------------------*/
+.slick-dots {
+  bottom: -30px;
+}
+.slick-dots a {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.slick-dots span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.slick-dots circle {
+  fill: none;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-dasharray: 39 39;
+  stroke-dashoffset: 39;
+  transition: all 0.9s ease-in-out;
+  transition: stroke-dashoffset 0.5s;
+}
+.slick-dots .slick-active circle {
+  stroke-dashoffset: 0;
+}
+
+/*--------------------
+Background
+--------------------*/
+.bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(15deg, #d33f34 50%, #a61322 50.1%);
+  z-index: 1;
+  display: none;
+}
+
+.the-most {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 50vw;
+  max-width: 200px;
+  padding: 10px;
+}
+.the-most img {
+  max-width: 100%;
+}
