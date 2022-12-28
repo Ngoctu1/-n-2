@@ -156,7 +156,7 @@
               <i class='fa fa-check'></i>
             </div>
           </div>
-          
+
 	  </div>
       <div class="shop-card">
         <div class="title">
