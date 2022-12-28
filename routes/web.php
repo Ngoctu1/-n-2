@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 //thay doi o day
 
 Route::get('/', function () {
-    return view('users/home');
+    return view('users/modun-user/home');
 })-> name('users.home');
 
 Route::get('/login', function () {
@@ -30,20 +30,13 @@ Route::get('/signup', function () {
 }) -> name('users.register');
 
 Route::get('/productdetail', function () {
-    return view('users/productdetail');
+    return view('users/modun-user/productdetail');
 }) -> name('users.productdetail');
 
 Route::get('/users/detail/{id}',[UserController::class,'detail']) -> name('users.detail');
 
 //ADMIN
-Route::get('/admi', function () {
-    return view('Admin/modun/account');
-})-> name('admin.account');
-
-Route::get('/admin/account',[AdminController::class,'index']) -> name('admin.index');
-
-Route::get('/', [AdminController::class,'count'] )-> name('admin.count');
-
+Route::get('/admin/account',[AdminController::class,'account']) -> name('admin.account');
 Route::get('/admin', function () {
     return view('Admin/modun/dashboard');
 }) -> name('admin.dashboard');

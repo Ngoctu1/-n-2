@@ -8,10 +8,11 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    function index(){
+    function account(){
         $users = DB::table('users')->get();
         return view('Admin.modun.account',['users'=>$users]);
     }
+    
 
 
     

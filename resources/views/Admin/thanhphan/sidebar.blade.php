@@ -42,15 +42,14 @@
 
                 <li class="nav-item">
 
-                    <a class="nav-link  " href="{{route('admin.index')}}">
+                    <a class="nav-link  " href="{{route('admin.account')}}">
 
                     <i class="fas fa-fw fa-user "></i>
 
                                 <p>
                                     Users
                                     <span class="badge badge-success right">
-                                   <?php  $count = DB::table('users')->count(); echo $count;
-                                     ?>
+                                   <?php  $count = DB::table('users')->count(); echo $count; ?>
                                     </span>
                                 </p>
 
