@@ -4,45 +4,45 @@
 @section('css')
 @stop
 <link href="{{url('css/detailprdcss/detailprd.css')}}" rel="stylesheet" type="text/css">
-
+<section> 
 <div class="card-wrapper">
     <div class="card">
         <!-- card left -->
         <div class="product-imgs">
             <div class="img-display">
                 <div class="img-showcase">
-                    <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg"
+                    <img class="img" src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg"
                         alt="shoe image">
-                    <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_2.jpg"
+                    <img class="img" src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_2.jpg"
                         alt="shoe image">
-                    <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_3.jpg"
+                    <img class="img" src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_3.jpg"
                         alt="shoe image">
-                    <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_4.jpg"
+                    <img class="img" src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_4.jpg"
                         alt="shoe image">
                 </div>
             </div>
             <div class="img-select">
                 <div class="img-item">
                     <a href="#" data-id="1">
-                        <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg"
+                        <img class="img" src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg"
                             alt="shoe image">
                     </a>
                 </div>
                 <div class="img-item">
                     <a href="#" data-id="2">
-                        <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_2.jpg"
+                        <img class="img" src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_2.jpg"
                             alt="shoe image">
                     </a>
                 </div>
                 <div class="img-item">
                     <a href="#" data-id="3">
-                        <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_3.jpg"
+                        <img class="img" src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_3.jpg"
                             alt="shoe image">
                     </a>
                 </div>
                 <div class="img-item">
                     <a href="#" data-id="4">
-                        <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_4.jpg"
+                        <img class="img" src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_4.jpg"
                             alt="shoe image">
                     </a>
                 </div>
@@ -73,7 +73,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perferendis eius. Dignissimos,
                     labore suscipit. Unde.</p>
                 <ul>
-                    <li>Color: <span>Black</span></li>
+                    <li> Color:<span>Black</span></li>
                     <li>Available: <span>in stock</span></li>
                     <li>Category: <span>Shoes</span></li>
                     <li>Shipping Area: <span>All over the world</span></li>
@@ -90,27 +90,11 @@
 
             </div>
 
-            <div class="social-links">
-                <p>Share At: </p>
-                <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-whatsapp"></i>
-
-                    <a href="#">
-                        <i class="fab fa-pinterest"></i>
-                    </a>
-            </div>
+            
         </div>
     </div>
 </div>
+</section> 
 
 
 <script>

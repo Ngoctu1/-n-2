@@ -1,3 +1,4 @@
+<section style="padding: 0" >
 <div class="section_footer" style="margin-top: 50px">
     <div class="container">
         <div class="mail_section">
@@ -66,3 +67,4 @@
         </div>
     </div>
 </div>
+</section>

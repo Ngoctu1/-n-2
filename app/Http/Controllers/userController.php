@@ -18,6 +18,7 @@ class userController extends Controller
         $user = DB::table('users')->where('id',$id)->first();
         return view ('users.detail', compact('user'));
     }
+      
     function create(){}
 
     function deleta($id){

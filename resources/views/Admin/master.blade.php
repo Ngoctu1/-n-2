@@ -23,7 +23,7 @@
 <body class="sidebar-mini">
     <div class="wrapper">
 
-        
+        include_once('Admin.thanhphan.animation')
        
         @include('Admin.thanhphan.header')
         @yield('content')
