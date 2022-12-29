@@ -29,7 +29,7 @@
   <body>
   <header>
             <div id="menu-bar" class="fa fa-bars"></div>
-            <a href="#" class="logo">
+            <a href="{{route('users.login')}}" class="logo">
             <img src="{{ asset('img/pnglogoSneaker.png') }}" height ="77px" width = "auto">
         </a>
             

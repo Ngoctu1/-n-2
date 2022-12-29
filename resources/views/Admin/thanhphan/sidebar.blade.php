@@ -49,7 +49,7 @@
                                 <p>
                                     Users
                                     <span class="badge badge-success right">
-                                   <?php  $count = DB::table('users')->count(); echo $count; ?>
+                                   <?php  $count = DB::table('users')->where('status',0)->count(); echo $count; ?>
                                     </span>
                                 </p>
 
