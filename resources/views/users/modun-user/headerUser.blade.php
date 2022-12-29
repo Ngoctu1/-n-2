@@ -1,4 +1,4 @@
-
+<section>
 <header>
         <div id="menu-bar" class="fa fa-bars"></div>
         <a href="{{route('users.home')}}" class="logo">
@@ -20,3 +20,4 @@
 
         </div>
     </header>
+</section>
