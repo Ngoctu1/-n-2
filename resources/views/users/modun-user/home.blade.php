@@ -1,7 +1,7 @@
 @extends('users.masterUser')
 @include('users.modun-user.banner')
 @section('home')
-    <section class="product" id="product">
+    <section class="producth" id="producth">
         <h1 class="heading">latest <span>Products</span></h1>
         <div class="box-container">
             <div class="box">
