@@ -20,22 +20,25 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($users as $users)
+                
+                @foreach($user as $user)
+                @if($user->status == 0)
                 <tr>
-                    <td>{{$users->id}}</td>
-                    <td>{{ $users->name}}</td>
-                    <td>{{ $users->email}}</td>
-                    <td>{{$users->address}}</td>
-                    <td>{{ $users->phone}}</td>
-                    <td>@if($users -> level == 1)
+                    <td>{{$user->id}}</td>
+                    <td>{{ $user->name}}</td>
+                    <td>{{ $user->email}}</td>
+                    <td>{{$user->address}}</td>
+                    <td>{{ $user->phone}}</td>
+                    <td>@if($user -> level == 1)
                         <p class="badge badge-danger"> Admin</p>
                         @else
                         <p class="badge badge-success">Member</p>
                         @endif
                     </td>                
-                    <td style="padding-left: 48px"><a href="{{route('users.detail',['id'=> $users->id])}}"><i class="fa fa-pencil-square-o" aria-hidden="true" width = "50px"></i></td>
+                    <td style="padding-left: 48px"><a href="{{route('account.detail',['id'=> $user->id])}}"><i class="fa fa-pencil-square-o" aria-hidden="true" width = "50px"></i></td>
 
                 </tr>
+                @endif
                 @endforeach
             </tbody>
         </table>

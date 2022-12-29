@@ -1,91 +1,17 @@
 @extends('users.masterUser')
+@include('users.modun-user.banner')
 @section('home')
-    <section class="home" id="home">
-        <div class="slide-container active">
-            <div class="slide">
-                <div class="content">
-                    <span>Nike Sport Shoes</span>
-                    <h3>Nike Metcon Shoes</h3>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit
-                        Sunt nam adipisci ipsa officiis Amet pariatur eaque soluta
-                        sit iure neque voluptate.
-                    </p>
-                    <a href="#" class="btn">add to card</a>
-                </div>
-                <div class="image">
-                    <img src="img/slide/1.png" class="shoe">
-                </div>
-            </div>
-        </div>
-        <div class="slide-container">
-            <div class="slide">
-                <div class="content">
-                    <span>Nike Sport Shoes</span>
-                    <h3>Nike Metcon Shoes</h3>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit
-                        Sunt nam adipisci ipsa officiis Amet pariatur eaque soluta
-                        sit iure neque voluptate.
-                    </p>
-                    <a href="#" class="btn">add to card</a>
-                </div>
-                <div class="image">
-                    <img src="img/slide/2.png" class="shoe">
-                </div>
-            </div>
-        </div>
-        <div class="slide-container">
-            <div class="slide">
-                <div class="content">
-                    <span>Nike Sport Shoes</span>
-                    <h3>Nike Metcon Shoes</h3>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit
-                        Sunt nam adipisci ipsa officiis Amet pariatur eaque soluta
-                        sit iure neque voluptate.
-                    </p>
-                    <a href="#" class="btn">add to card</a>
-                </div>
-                <div class="image">
-                    <img src="img/slide/3.png" class="shoe">
-                </div>
-            </div>
-        </div>
-        <div class="slide-container">
-            <div class="slide">
-                <div class="content">
-                    <span>Nike Sport Shoes</span>
-                    <h3>Nike Metcon Shoes</h3>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit
-                        Sunt nam adipisci ipsa officiis Amet pariatur eaque soluta
-                        sit iure neque voluptate.
-                    </p>
-                    <a href="#" class="btn">add to card</a>
-                </div>
-                <div class="image">
-                    <img src="img/slide/4.png" class="shoe">
-                </div>
-            </div>
-        </div>
-
-        <div id="prev" class="fa fa-angle-left" onclick="prev();"></div>
-
-        <div id="next" class="fa fa-angle-right" onclick="next();"></div>
-    </section>
-    <!--end home-->
     <section class="product" id="product">
         <h1 class="heading">latest <span>Products</span></h1>
         <div class="box-container">
             <div class="box">
                 <div class="icons">
-                    <a href="#" class="fa fa-heart"></a>
+                    <a href="" class="fa fa-heart"></a>
 
                     <a href="#" class="fa fa-eye"></a>
                 </div>
                 <div class="content">
-                    <img src="img/product4/1.jpg" alt="">
+                    <a href="{{route('users.productdetail')}}"><img src="img/product4/1.jpg" alt=""></a>
                     <h3>Nike Shoes</h3>
                     <div class="price">$200 <span>$150</span></div>
                     <div class="stars">

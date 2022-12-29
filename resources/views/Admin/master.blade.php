@@ -28,6 +28,7 @@
         @include('Admin.thanhphan.header')
         @yield('content')
         @yield('content-account')
+        @yield('detail')
         @include('Admin.thanhphan.sidebar')
         
 

@@ -15,14 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//thay doi o day
+//--------------login-------------------
+Route::group(['namespace'=>'login'], function(){
+    Route::group(['prefix'=>'loginctrl'], function(){
+        Route::get('/login',[loginController::class,'getlogin']);
+    });
+});
 
+//---------------User----------------
 Route::get('/', function () {
     return view('users/modun-user/home');
 })-> name('users.home');
 
-Route::get('/login', function () {
-    return view('users/login');
+ Route::get('/login', function () {
+     return view('users/login');
 }) -> name('users.login');
 
 Route::get('/signup', function () {
@@ -36,10 +42,13 @@ Route::get('/product', function () {
     return view('users/modun-user/product');
 }) -> name('users.product');
 
-Route::get('/users/detail/{id}',[UserController::class,'detail']) -> name('users.detail');
+//-------------------ADMIN------------------------
+Route::get('/admin/account/modify/{id}',[AdminController::class,'modify']) -> name('account.detail');
+Route::get('/admin/account/delete/{id}',[AdminController::class,'delete']) -> name('account.delete');
+Route::get('/admin/account/edit/{id}',[AdminController::class,'edit']) -> name('account.edit');
 
-//ADMIN
-Route::get('/admin/account',[AdminController::class,'account']) -> name('admin.account');
+Route::get('/admin/account',[AdminController::class,'account']) 
+-> name('admin.account');
 Route::get('/admin', function () {
     return view('Admin/modun/dashboard');
 }) -> name('admin.dashboard');
