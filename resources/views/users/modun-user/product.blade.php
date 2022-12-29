@@ -1,6 +1,10 @@
 @extends('users.masterUser')
 @section('product')
+@include('users.modun-user.banner')
+
+
 <section style="margin-top: 5%; font-size: 1.5rem">
+<h1 style="    text-align: center"> Sneakers</h1>
     <div class='rowsb'>
         <ul class="mcd-menu">
             <li class="float">
@@ -407,7 +411,4 @@
         </div>
 
 </section>
-
-
-
 @stop

@@ -45,7 +45,7 @@ Route::get('/product', function () {
 //-------------------ADMIN------------------------
 Route::get('/admin/account/modify/{id}',[AdminController::class,'modify']) -> name('account.detail');
 Route::get('/admin/account/delete/{id}',[AdminController::class,'delete']) -> name('account.delete');
-Route::get('/admin/account/edit/{id}',[AdminController::class,'edit']) -> name('account.edit');
+Route::post('/admin/account/edit/{id}',[AdminController::class,'edit']) -> name('account.edit');
 
 Route::get('/admin/account',[AdminController::class,'account']) 
 -> name('admin.account');
