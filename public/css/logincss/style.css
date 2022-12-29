@@ -13694,6 +13694,7 @@ dl {
 /* === Landing screens === */
 /* Auth */
 .auth .auth-form-light {
+  margin-top: 47px;
   background: #ffffff; }
   .auth .auth-form-light select {
     color: #c9c8c8; }

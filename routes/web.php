@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\login\loginController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,9 @@ Route::group(['namespace'=>'login'], function(){
         Route::get('/login',[loginController::class,'getlogin']);
     });
 });
+
+Route::post('/sinupf',[loginController::class,'signup']) -> name('users.signup');
+
 
 //---------------User----------------
 Route::get('/', function () {
