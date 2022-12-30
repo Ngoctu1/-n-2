@@ -9,12 +9,14 @@
         <form method="post" action="{{route('account.edit',['id'=> $user->id])}}"class="forms-sample">
          @csrf
         <label for="exampleInputEmail1">Id: {{ $user-> id}} </label>
+        
             <div class="form-group">
                 <label for="exampleInputUsername1">Username</label>
                 <input type="text" name="name" class="form-control" id="exampleInputUsername1" value="{{ $user-> name}}"
                     placeholder="name">
+                    <img scr="{{url('anh/Jordan_1_Retro_High_OG.jpg')}}">
+                    <img src="{{route('account.image',['id'=> $user->id])}}" height="77px" width="auto">
             </div>
-
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" name="email" class="form-control" id="exampleInputEmail1" value="{{ $user->email }} "

@@ -5,13 +5,24 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Function_;
 
 class AdminController extends Controller
 {
+    //---cac trang---
     function account(){
         $users = DB::table('users')->get();
-        return view('Admin.modun.account',['user'=>$users]);
+        return view('Admin.modun.account',['user1'=>$users]);
     }
+    function product(){
+        $product = DB::table('product')
+        ->join('prd_detail', 'product.prd_id', '=', 'prd_detail.prd_id')
+        ->join('category', 'product.cat_id', '=', 'category.cat_id')->get();
+        return view('Admin.modun.product',['product'=>$product]);
+    }
+
+
+    //---sua account---
     function modify($id){
         $user = DB::table('users')->where('id',$id)->first();
         return view ('Admin.modun.detail', compact('user'));
@@ -42,7 +53,8 @@ class AdminController extends Controller
         return redirect()-> route('admin.account');
     }
     
-
-
-    
+    Function image($id){
+        $user = DB::table('users')->where('id',$id)->first();
+        return "<img src=\"{{ asset('anh/" + $user->email + "') }}\" height=\"50\"/>" ;
+    }
 }

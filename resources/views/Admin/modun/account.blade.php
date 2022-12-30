@@ -21,21 +21,21 @@
             </thead>
             <tbody>
                 
-                @foreach($user as $user)
-                @if($user->status == 0)
+                @foreach($user1 as $user1)
+                @if($user1->status == 0)
                 <tr>
-                    <td>{{$user->id}}</td>
-                    <td>{{ $user->name}}</td>
-                    <td>{{ $user->email}}</td>
-                    <td>{{$user->address}}</td>
-                    <td>{{ $user->phone}}</td>
-                    <td>@if($user -> level == 1)
+                    <td>{{$user1->id}}</td>
+                    <td>{{ $user1->name}}</td>
+                    <td>{{ $user1->email}}</td>
+                    <td>{{$user1->address}}</td>
+                    <td>{{ $user1->phone}}</td>
+                    <td>@if($user1 -> level == 1)
                         <p class="badge badge-danger"> Admin</p>
                         @else
                         <p class="badge badge-success">Member</p>
                         @endif
                     </td>                
-                    <td style="padding-left: 48px"><a href="{{route('account.detail',['id'=> $user->id])}}"><i class="fa fa-pencil-square-o" aria-hidden="true" width = "50px"></i></td>
+                    <td style="padding-left: 48px"><a href="{{route('account.detail',['id'=> $user1->id])}}"><i class="fa fa-pencil-square-o" aria-hidden="true" width = "50px"></i></td>
 
                 </tr>
                 @endif

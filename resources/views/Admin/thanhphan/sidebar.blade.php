@@ -65,12 +65,12 @@
 
                         <li class="nav-item">
 
-                            <a class="nav-link  " href="http://127.0.0.1:8000/admin/settings">
+                            <a class="nav-link  " href="{{route('admin.product')}}">
 
                                 <i class="fas fa-fw fa-user "></i>
 
                                 <p>
-                                    Profile
+                                    Product
 
                                 </p>
 

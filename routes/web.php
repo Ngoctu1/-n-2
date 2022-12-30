@@ -50,12 +50,15 @@ Route::get('/product', function () {
 Route::get('/admin/account/modify/{id}',[AdminController::class,'modify']) -> name('account.detail');
 Route::get('/admin/account/delete/{id}',[AdminController::class,'delete']) -> name('account.delete');
 Route::post('/admin/account/edit/{id}',[AdminController::class,'edit']) -> name('account.edit');
+Route::post('/admin/account/img/{id}',[AdminController::class,'image']) -> name('account.image');
 
 Route::get('/admin/account',[AdminController::class,'account']) 
 -> name('admin.account');
 Route::get('/admin', function () {
     return view('Admin/modun/dashboard');
 }) -> name('admin.dashboard');
+Route::get('/admin/product', [AdminController::class,'product']
+) -> name('admin.product');
 
 
 
