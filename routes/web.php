@@ -47,10 +47,17 @@ Route::get('/product', function () {
 }) -> name('users.product');
 
 //-------------------ADMIN------------------------
+
+//---edit acc---
 Route::get('/admin/account/modify/{id}',[AdminController::class,'modify']) -> name('account.detail');
 Route::get('/admin/account/delete/{id}',[AdminController::class,'delete']) -> name('account.delete');
 Route::post('/admin/account/edit/{id}',[AdminController::class,'edit']) -> name('account.edit');
 Route::post('/admin/account/img/{id}',[AdminController::class,'image']) -> name('account.image');
+//edit prd---
+Route::get('/admin/product/modify/{id}',[AdminController::class,'prd_modify']) -> name('admin.prd_detail');
+Route::post('/admin/product/edit/{id}',[AdminController::class,'prd_edit']) -> name('admin.prd_edit');
+
+
 
 Route::get('/admin/account',[AdminController::class,'account']) 
 -> name('admin.account');
@@ -59,6 +66,7 @@ Route::get('/admin', function () {
 }) -> name('admin.dashboard');
 Route::get('/admin/product', [AdminController::class,'product']
 ) -> name('admin.product');
+
 
 
 

@@ -43,7 +43,6 @@
                 <select class="form-control" id="example FormControlSelect2" name="level">
                     <option value="1" @if($user->level == 1 ) selected @endif>Admin</option>
                     <option value="2" @if($user->level != 1 ) selected @endif>Member</option>
-
                 </select>
             </div>
             <button type="submit" href="{{route('account.edit',['id'=> $user->id])}}" class="btn btn-light"
