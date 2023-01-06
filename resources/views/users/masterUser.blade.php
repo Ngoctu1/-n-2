@@ -24,6 +24,8 @@
 @yield('home')
 @yield('productdetail')
 @yield('product')
+@yield('product1')
+
 @include('users.modun-user.footerUser')
 
 

@@ -85,25 +85,22 @@
         </ul>
     </div>
     <div class='rowprd'>
-
-
-
-
-
+@foreach($prd as $prd)
         <div class='product'>
             <div class='product_inner'>
-                <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png'
+                <img src='/anh/{{$prd->prd_image}}'
                     width='300'>
-                <p>Nike Air (Women)</p>
-                <p>Size 7</p>
-                <p>Price £199.99</p>
-                <button>BUY</button>
+                <p>{{$prd->prd_name}}</p>
+                
+                <p>Price {{$prd->prd_price}}</p>
+                <a class="btn"type="button" href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">BUY</a>
             </div>
             <div class='product_overlay'>
                 <h2>Added to basket</h2>
                 <i class='fa fa-check'></i>
             </div>
         </div>
+@endforeach
         <div class='product'>
             <div class='product_inner'>
                 <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png'

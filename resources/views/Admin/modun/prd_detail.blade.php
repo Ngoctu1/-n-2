@@ -18,8 +18,6 @@
                         <label for="exampleInputUsername1">Product name</label>
                         <input type="text" name="prd_name" class="form-control" id="exampleInputUsername1"
                             value="{{ $product-> prd_name}}" placeholder="name">
-                        <input type="text" name="prd_id" class="form-control" id="exampleInputUsername1"
-                            value="{{ $product-> prd_id}}" placeholder="name">
 
 
                     </div>

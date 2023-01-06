@@ -39,21 +39,30 @@ Route::get('/signup', function () {
     return view('users/register');
 }) -> name('users.register');
 
-Route::get('/productdetail', function () {
-    return view('users/modun-user/productdetail');
-}) -> name('users.productdetail');
-Route::get('/product', function () {
-    return view('users/modun-user/product');
-}) -> name('users.product');
+Route::get('/productdetail/{id}', [userController::class,'prd_detail']
+) -> name('users.productdetail');
+Route::get('/product', [userController::class,'product']) -> name('users.product');
+
+Route::get('/cart', function () {
+    return view('users/modun-user/cart');
+}) -> name('users.cart');
+
+Route::get('/cart1', function () {
+    return view('users/modun-user/cart1');
+}) -> name('users.cart1');
+
+Route::get('/cart12',[userController::class,'create']) -> name('users.add');
+
+
 
 //-------------------ADMIN------------------------
 
-//---edit acc---
+//---------------edit acc---
 Route::get('/admin/account/modify/{id}',[AdminController::class,'modify']) -> name('account.detail');
 Route::get('/admin/account/delete/{id}',[AdminController::class,'delete']) -> name('account.delete');
 Route::post('/admin/account/edit/{id}',[AdminController::class,'edit']) -> name('account.edit');
 Route::post('/admin/account/img/{id}',[AdminController::class,'image']) -> name('account.image');
-//edit prd---
+//----------------edit prd---
 Route::get('/admin/product/modify/{id}',[AdminController::class,'prd_modify']) -> name('admin.prd_detail');
 Route::post('/admin/product/edit/{id}',[AdminController::class,'prd_edit']) -> name('admin.prd_edit');
 
