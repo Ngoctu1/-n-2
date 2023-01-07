@@ -12,8 +12,8 @@
             <a href="#news">news</a>
         </nav>
         <div class="icons">
-            <a href="#"><i class="fa fa-heart"></i></a>
-            <a href="{{ route('users.cartshop') }}"><i class="fa fa-shopping-cart"></i></a>
+            
+            <a href="{{ route('users.cartshop') }}">{{Cart::count()}}<i class="fa fa-shopping-cart"></i></a>
             <a href="#"> Nguyen Ngọc Tú <i class="fa fa-user"></i></a>
             <a href="{{route('users.login')}}" class="login_btn"> Login </a>
             <a href="{{route('users.register')}}" class="signup_btn" style="color: white"> Sign up </a>

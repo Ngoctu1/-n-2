@@ -29,7 +29,7 @@
                         </div>
                     </div>
                 </td>
-                <td><input type="number" value="{{ $item->qty }}"></td>
+                <td><input type="number" value="{{ $item->qty }}" min="1"></td>
                 <td>{{ $item->options->color }}</td>
                 <td>{{ $item->options->size }}</td>
                 <td>{{ $item->total }}</td>
