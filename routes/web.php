@@ -45,6 +45,9 @@ Route::get('/productdetail', function () {
 Route::get('/product', function () {
     return view('users/modun-user/product');
 }) -> name('users.product');
+Route::get('/cartshop', function () {
+    return view('users/modun-user/cartshop');
+}) -> name('users.cartshop');
 
 //-------------------ADMIN------------------------
 
