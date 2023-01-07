@@ -7,75 +7,51 @@
 
    <section>
     <div class="small-container cart-page" >
+    @if (count(Cart::content()))
         <table>
             <tr>
                 <th>Product</th>
                 <th>Quantity</th>
+                <th>color</th>
+                <th>size</th>
                 <th>Subtotal</th>
+
             </tr>
+            @foreach (Cart::content() as $item)
             <tr>
                 <td>
                     <div class="cart-info">
                         <img src="{{ asset('img/product1/1.jpg') }}">
                         <div>
-                            <p>Shoe</p>
-                            <small>Price: 100,000VND</small>
+                            <p>{{ $item->name }}</p>
+                            <small>{{ $item->price }}</small>
                             <a href="">Remove</a>
                         </div>
                     </div>
                 </td>
-                <td><input type="number" value="1"></td>
-                <td>100.000VND</td>
+                <td><input type="number" value="{{ $item->qty }}"></td>
+                <td>{{ $item->options->color }}</td>
+                <td>{{ $item->options->size }}</td>
+                <td>{{ $item->total }}</td>
             </tr>
-
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="{{ asset('img/product1/2.jpg') }}">
-                        <div>
-                            <p>Shoe</p>
-                            <small>Price: 100,000VND</small>
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1"></td>
-                <td>100.000VND</td>
-            </tr>
+            @endforeach
             
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="{{ asset('img/product1/3.jpg') }}">
-                        <div>
-                            <p>Shoe</p>
-                            <small>Price: 100,000VND</small>
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1"></td>
-                <td>100.000VND</td>
-            </tr>
-
            
         </table>
         <div class="total-price">
             <table>
-                <tr>
-                    <td>Subtotal</td>
-                    <td>100,000</td>
-                </tr>
-                <tr>
-                    <td>Tax</td>
-                    <td>100,000</td>
-                </tr>
+                
                 <tr>
                     <td>Total</td>
-                    <td>100,000</td>
+                    <td>{{ Cart::total() }}</td>
                 </tr>
             </table>
         </div>
+        @else
+                    <div class="alert alert-info text-center m-0" role="alert">
+                        Your Cart is <b>empty</b>.
+                    </div>
+                    @endif
     </div>
    </section>
 @stop
