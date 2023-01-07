@@ -7,6 +7,8 @@
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Total</th>
                                 <th scope="col">Total</th>
                             </tr>
                         </thead>
@@ -15,6 +17,10 @@
                             <tr>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->price }}</td>
+                                <td>{{ $item->qty }}</td>
+                                <td>{{ $item->options->color }}</td>
+
+
                                 <td>{{ $item->total }}</td>
                                 
                             </tr>
