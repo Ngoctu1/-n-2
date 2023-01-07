@@ -39,6 +39,10 @@ Route::get('/signup', function () {
     return view('users/register');
 }) -> name('users.register');
 
+Route::get('/cartshop', function () {
+    return view('users/modun-user/cartshop');
+}) -> name('users.cartshop');
+
 Route::get('/productdetail/{id}', [userController::class,'prd_detail']
 ) -> name('users.productdetail');
 Route::get('/product', [userController::class,'product']) -> name('users.product');
@@ -52,6 +56,7 @@ Route::get('/add_cart/{id}',[userController::class,'addcart']) -> name('users.ca
 Route::get('/cart12',[userController::class,'create']) -> name('users.add');
 
 Route::post('/admin/product/edit/{id}',[AdminController::class,'prd_edit']) -> name('admin.prd_edit');
+
 
 
 //-------------------ADMIN------------------------
