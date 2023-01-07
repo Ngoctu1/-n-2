@@ -18,8 +18,6 @@
                         <label for="exampleInputUsername1">Product name</label>
                         <input type="text" name="prd_name" class="form-control" id="exampleInputUsername1"
                             value="{{ $product-> prd_name}}" placeholder="name">
-                        <input type="text" name="prd_id" class="form-control" id="exampleInputUsername1"
-                            value="{{ $product-> prd_id}}" placeholder="name">
 
 
                     </div>
@@ -28,8 +26,8 @@
                         <select class="form-control" id="example FormControlSelect2" name="cat_id">
                             <option value="1" @if($product-> cat_id == 1) selected @endif>Adidas</option>
                             <option value="2" @if($product-> cat_id == 2) selected @endif>Nike</option>
-                            <option value="2" @if($product-> cat_id == 3) selected @endif>Puma</option>
-                            <option value="2" @if($product-> cat_id == 4) selected @endif>Yeezy</option>
+                            <option value="3" @if($product-> cat_id == 3) selected @endif>Puma</option>
+                            <option value="4" @if($product-> cat_id == 4) selected @endif>Yeezy</option>
 
                         </select>
                     </div>
@@ -65,7 +63,9 @@
                     <div class="form-group">
                         <label>Ảnh sản phẩm</label>
                         <input type="file" name="prd_image" onchange="preview();">
-                        {{ $product-> prd_image }}
+                        <img id="prd_image" width="auto" height="170px"
+                                    src="/anh/{{ $product-> prd_image }}">
+                        
 
                     </div>
                     <div class="form-group">
@@ -82,4 +82,9 @@
         </form>
     </div>
 </div>
+<script>
+function preview() {
+    prd_image.src = URL.createObjectURL(event.target.files[0]);
+}
+</script>
 @stop

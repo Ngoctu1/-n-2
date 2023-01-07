@@ -70,7 +70,7 @@ class AdminController extends Controller
             'prd_amount' => $request->prd_amount,
             'prd_size' => $request->prd_size,
             'prd_details' => $request->prd_details,
-            //'prd_image' => $request->prd_image,
+            'prd_image' => $request->prd_image,
             'prd_sale' => $request->prd_sale
         ];
 
@@ -84,9 +84,25 @@ class AdminController extends Controller
     }
 
 
-    //---
-    Function image($id){
-        $user = DB::table('users')->where('id',$id)->first();
-        return "<img src=\"{{ asset('anh/" + $user->email + "') }}\" height=\"50\"/>" ;
+    //---------------add prd---------------
+    function prd_add(Request $request){
+
+        $data = [
+            
+            'prd_name' => $request->prd_name,
+            'cat_id' => $request->cat_id,
+            'prd_color' => $request->prd_color,
+            'prd_price' => $request->prd_price,
+            'prd_amount' => $request->prd_amount,
+            'prd_size' => $request->prd_size,
+            'prd_details' => $request->prd_details,
+            'prd_image' => $request->prd_image,
+            'prd_sale' => $request->prd_sale
+        ];
+
+        DB::table('product')
+        ->join('prd_detail', 'product.prd_id', '=', 'prd_detail.prd_id')
+        ->insert($data);
+        return redirect()-> route('admin.product');
     }
 }

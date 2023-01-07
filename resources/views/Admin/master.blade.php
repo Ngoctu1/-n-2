@@ -29,6 +29,8 @@
         @yield('content')
         @yield('content-account')
         @yield('detail')
+        @yield('addprd')
+
         @yield('product')
         @yield('prd_detail')
         @include('Admin.thanhphan.sidebar')

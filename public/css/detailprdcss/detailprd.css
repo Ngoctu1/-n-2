@@ -1218,9 +1218,10 @@ header{
   background-size: cover;
   border: 1px solid #e2e2e3;
   display: block;
-  height: 0;
+  height: 500px;
+  width: auto;
   opacity: 1;
-  padding-bottom: 133%;
+  padding-bottom: 60%;
 }
 .product-detail .left-col .big .img.animate {
   -moz-transition: all 0ms ease-out 0s;
@@ -1447,19 +1448,6 @@ header{
   background-color: #fff;
   border-color: #edeff2;
   color: #16161a;
-}
-.tabs .tab-slides {
-  font-size: 100%;
-  line-height: 184.61538%;
-  border-top: 1px solid #edeff2;
-  padding-top: 10px;
-  position: relative;
-}
-.tabs .tab-slides > div {
-  display: none;
-}
-.tabs .tab-slides > div.active {
-  display: block;
 }
 .social-sharing-btn-wrapper {
   display: none;
@@ -3602,4 +3590,26 @@ section {
   padding: 4rem 9%;
   
   padding-bottom: 1px;
+}
+#slideshow {
+  overflow: hidden;
+  height: 510px;
+  width: 480px;
+  margin: 0 auto;
+}
+.slide-wrapper {
+  width: 2912px;
+  -webkit-animation: slide 14s ease infinite;
+}
+.slide {
+  float: left;
+  height: 510px;
+  width: 728px;
+}
+@keyframes slide {
+  20% {margin-left: 0px;}
+  30% {margin-left: -728px;}
+  50% {margin-left: -728px;}
+  60% {margin-left: -1456px;}
+  80% {margin-left: -1456px;}
 }

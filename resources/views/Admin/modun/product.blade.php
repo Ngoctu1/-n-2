@@ -5,8 +5,9 @@
     <div class="card" style="float: right; width: 80%">
         <div class="card-body">
             <h4 class="card-title">Product table</h4>
-            <p class="card-description"> Add class <code>.table-bordered</code>
+            <p class="card-description"> Add class 
             </p>
+            <a class="badge badge-success" style="    font-size: 20px" href="#">Them</a>
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -27,7 +28,7 @@
                         <td>{{$product->prd_detail_id}}</td>
                         <td>{{$product->prd_name}}</td>
                         
-                        <td> {{$product->prd_image}} </td>
+                        <td> <img src="/anh/{{$product->prd_image}}" style="height:100px"  > </td>
                         <td> {{$product->prd_price}} </td>
                         <td style="display: -webkit-box;
                             max-height: 5.9rem;

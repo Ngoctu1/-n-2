@@ -11,7 +11,7 @@
                     <a href="#" class="fa fa-eye"></a>
                 </div>
                 <div class="content">
-                    <a href="{{route('users.productdetail')}}"><img src="img/product4/1.jpg" alt=""></a>
+                    <a href="{{route('users.productdetail',1)}}"><img src="img/product4/1.jpg" alt=""></a>
                     <h3>Nike Shoes</h3>
                     <div class="price">$200 <span>$150</span></div>
                     <div class="stars">
