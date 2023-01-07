@@ -25,7 +25,7 @@
                         <div>
                             <p>{{ $item->name }}</p>
                             <small>{{ $item->price }}</small>
-                            <a href="">Remove</a>
+                            <a href="#">Remove</a>
                         </div>
                     </div>
                 </td>
