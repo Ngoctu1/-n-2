@@ -20,7 +20,7 @@ class userController extends Controller
         $user = DB::table('users')->where('id',$id)->first();
         return view ('users.detail', compact('user'));
     }
-      
+      //--------------------Cart-----------------------
     function addcart($id){
 
         $product = DB::table('product')
@@ -28,13 +28,31 @@ class userController extends Controller
         ->where('prd_detail_id',$id)
         ->first() ;
 
-        Cart::add($product->prd_detail_id,$product->prd_name,'1',$product->prd_price,'0',['size'=>$product->prd_size,'color'=>$product->prd_color]);
+        Cart::add($product->prd_detail_id,$product->prd_name,'1',$product->prd_price,'0',['size'=>$product->prd_size,'color'=>$product->prd_color,'img'=>$product->prd_image]);
         $data = Cart::content();
         
 
        return view('users.modun-user.cart1');
     }
-    
+
+    function deletecart($id)
+    {
+        if($id == 'all'){
+            Cart::destroy();
+        }else{
+        Cart::remove($id);
+        }
+        return back();
+    }
+
+    function deleteallcart()
+    {
+        
+        return back();
+    }
+
+
+
 
     function prd_detail($id){
         $product = DB::table('prd_detail')

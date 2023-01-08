@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\login\loginController;
+use App\Http\Controllers\Auth\loginController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
@@ -17,11 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 //--------------login-------------------
-Route::group(['namespace'=>'login'], function(){
-    Route::group(['prefix'=>'loginctrl'], function(){
-        Route::get('/login',[loginController::class,'getlogin']);
-    });
-});
+Route::post('/login', [loginController::class,'getlogin']) -> name('users.login')->middleware('CheckLogout');
+Route::post('/login', [loginController::class,'login']) -> name('users.login');
+
 
 Route::post('/sinupf',[loginController::class,'signup']) -> name('users.signup');
 
@@ -31,25 +29,29 @@ Route::get('/', function () {
     return view('users/modun-user/home');
 })-> name('users.home');
 
- Route::get('/login', function () {
-     return view('users/login');
-}) -> name('users.login');
+
+
+
 
 Route::get('/signup', function () {
     return view('users/register');
 }) -> name('users.register');
 
-Route::get('/cartshop', function () {
-    return view('users/modun-user/cartshop');
-}) -> name('users.cartshop');
+
 
 Route::get('/productdetail/{id}', [userController::class,'prd_detail']
 ) -> name('users.productdetail');
 Route::get('/product', [userController::class,'product']) -> name('users.product');
-
+//------------------------Cart---------------
 Route::get('/cart', function () {
     return view('users/modun-user/cart');
 }) -> name('users.cart');
+
+Route::get('/cartshop', function () {
+    return view('users/modun-user/cartshop');
+}) -> name('users.cartshop');
+
+Route::get('/cart/delete/{id}',[userController::class,'deletecart']);
 
 Route::get('/add_cart/{id}',[userController::class,'addcart']) -> name('users.cart1');
 
