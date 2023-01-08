@@ -52,6 +52,8 @@ Route::get('/cartshop', function () {
 }) -> name('users.cartshop');
 
 Route::get('/cart/delete/{id}',[userController::class,'deletecart']);
+Route::get('/cart/plus/{id}',[userController::class,'pluscart']) -> name('cart.plus');
+Route::get('/cart/minus/{id}',[userController::class,'minuscart'])-> name('cart.minus');
 
 Route::get('/add_cart/{id}',[userController::class,'addcart']) -> name('users.cart1');
 

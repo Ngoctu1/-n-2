@@ -38,16 +38,27 @@ class userController extends Controller
     function deletecart($id)
     {
         if($id == 'all'){
-            Cart::destroy();
+        Cart::destroy();
         }else{
         Cart::remove($id);
         }
         return back();
     }
 
-    function deleteallcart()
+    function pluscart($id)
     {
-        
+
+        $data = Cart::get($id);
+        $product = DB::table('prd_detail')->where('prd_detail_id', $data->id)->first();
+        if($product->prd_amount > $data->qty){
+        Cart::update($id,['qty' => $data->qty + 1]);
+        }
+        return back();
+    }
+    function minuscart($id)
+    {
+        $data = Cart::get($id);
+        Cart::update($id,['qty' => $data->qty - 1]);
         return back();
     }
 

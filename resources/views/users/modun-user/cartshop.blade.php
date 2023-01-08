@@ -30,10 +30,12 @@
                         </div>
                     </div>
                 </td>
-                <td><input type="number" value="{{ $item->qty }}" min="1"></td>
+                <td> <a href="{{route('cart.minus',['id'=> $item->rowId])}}" class="btnplusminus"> – </a> 
+                {{ $item->qty }} 
+                <a href="{{route('cart.plus',['id'=> $item->rowId])}}" class="btnplusminus" style="padding-left: 6px;padding-right: 5px;"> + </a></td>
                 <td>{{ $item->options->color }}</td>
                 <td>{{ $item->options->size }}</td>
-                <td>{{ $item->total }}</td>
+                <td>{{ $item->total }} đ</td>
             </tr>
             @endforeach
             
@@ -46,6 +48,8 @@
                     <td style="text-align: left;">
                         <a class="btn" href="{{asset('cart/delete/all')}}"> Xóa Giỏ Hàng </a>
                     </td>
+                    
+                    
                 </tr>
             </table>
         </div>
@@ -54,7 +58,7 @@
                 
                 <tr>
                     <td>Total</td>
-                    <td>{{ Cart::total() }}</td>
+                    <td>{{ Cart::total() }} đ</td>
                 </tr>
                 <tr>
                 <td></td>
