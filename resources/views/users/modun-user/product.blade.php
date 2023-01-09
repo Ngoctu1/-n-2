@@ -47,25 +47,7 @@
                     <strong>PUMA</strong>
 
                 </a>
-                <ul>
-                    <li><a href="#"><i class="fa fa-globe"></i>Mission</a></li>
-                    <li>
-                        <a href="#"><i class="fa fa-group"></i>Our Team</a>
-                        <ul>
-                            <li><a href="#"><i class="fa fa-female"></i>Leyla Sparks</a></li>
-                            <li>
-                                <a href="#"><i class="fa fa-male"></i>Gleb Ismailov</a>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-leaf"></i>About</a></li>
-                                    <li><a href="#"><i class="fa fa-tasks"></i>Skills</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><i class="fa fa-female"></i>Viktoria Gibbers</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#"><i class="fa fa-trophy"></i>Rewards</a></li>
-                    <li><a href="#"><i class="fa fa-certificate"></i>Certificates</a></li>
-                </ul>
+                
             </li>
             <li>
                 <a href="">

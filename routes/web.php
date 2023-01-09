@@ -51,6 +51,10 @@ Route::get('/cart', function () {
     return view('users/modun-user/cart');
 }) -> name('users.cart');
 
+Route::get('/payment', function () {
+    return view('users/modun-user/payment');
+}) -> name('users.payment');
+
 Route::get('/add_cart/{id}',[userController::class,'addcart']) -> name('users.cart1');
 
 Route::get('/cart12',[userController::class,'create']) -> name('users.add');

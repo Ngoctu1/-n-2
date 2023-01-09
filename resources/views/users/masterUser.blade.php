@@ -25,7 +25,7 @@
 @yield('productdetail')
 @yield('product')
 @yield('product1')
-
+@yield('payment')
 @include('users.modun-user.footerUser')
 
 

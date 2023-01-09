@@ -43,8 +43,17 @@
                 
                 <tr>
                     <td>Total</td>
-                    <td>{{ Cart::total() }}</td>
+
+                    <td>{{ Cart::total() }}d</td>
+
+                    
                 </tr>
+                <tr>
+                <td></td>
+                <td >                        
+                    <a class="btn" style="background-color: #56e856" href="{{ route('users.payment') }}"> Thanh toán </a>
+</td>
+             </tr>
             </table>
         </div>
         @else

@@ -5,16 +5,7 @@
 @stop
 <link href="{{url('css/detailprdcss/detailprd.css')}}" rel="stylesheet" type="text/css">
 <section>
-    {{-- <script>src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-{{ 'quickbeam.min.js' }}
-    <script>
-    var cart = Quickbeam.init({
-        'animationLib': 'gsap',
-        'variantSelector': function() {
 
-        }
-    });
-    </script> --}}
 
     <section aria-label="Main content" role="main" class="product-detail">
         <div itemscope itemtype="http://schema.org/Product">
