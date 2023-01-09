@@ -12,14 +12,13 @@
             <a href="#news">news</a>
         </nav>
         <div class="icons">
-            
-            
-            
+           
             @guest
             <a href="{{route('login')}}" class="login_btn"> Login </a>
     
             <a href="{{route('register')}}" class="signup_btn" style="color: white"> Sign up </a>
             @endguest
+
 
             @auth
             

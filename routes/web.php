@@ -45,6 +45,13 @@ Route::get('/cart', function () {
     return view('users/modun-user/cart');
 }) -> name('users.cart');
 
+
+Route::get('/payment', function () {
+    return view('users/modun-user/payment');
+}) -> name('users.payment');
+
+Route::get('/add_cart/{id}',[userController::class,'addcart']) -> name('users.cart1');
+
 Route::get('/cartshop', function () {
     return view('users/modun-user/cartshop');
 }) -> name('users.cartshop');
@@ -53,6 +60,7 @@ Route::get('/cartshop', function () {
 Route::get('/cart/delete/{id}',[CartController::class,'deletecart']);
 Route::get('/cart/plus/{id}',[CartController::class,'pluscart']) -> name('cart.plus');
 Route::get('/cart/minus/{id}',[CartController::class,'minuscart'])-> name('cart.minus');
+
 
 Route::post('/add_cart',[CartController::class,'addcart']) -> name('cart.add');
 

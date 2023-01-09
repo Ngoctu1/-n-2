@@ -25,6 +25,9 @@
 @yield('productdetail')
 @yield('product')
 @yield('product1')
+
+@yield('payment')
+
 @yield('pay')
 
 
