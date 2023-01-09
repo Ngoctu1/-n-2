@@ -17,17 +17,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 //--------------login-------------------
-Route::post('/login', [loginController::class,'getlogin']) -> name('users.login')->middleware('CheckLogout');
-Route::post('/login', [loginController::class,'login']) -> name('users.login');
+//Route::get('/login', [loginController::class,'getlogin']) -> name('users.login');
+//Route::post('/login', [loginController::class,'login']) -> name('users.login');
 
 
+Auth::routes();
 Route::post('/sinupf',[loginController::class,'signup']) -> name('users.signup');
 
 
 //---------------User----------------
 Route::get('/', function () {
     return view('users/modun-user/home');
-})-> name('users.home');
+})-> name('home');
 
 
 
@@ -97,3 +98,6 @@ Route::get('/admin/product', [AdminController::class,'product']
 //tu
 
 // php artisan serve 1
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

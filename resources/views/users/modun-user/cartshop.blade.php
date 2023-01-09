@@ -18,14 +18,14 @@
                 <th>Subtotal</th>
 
             </tr>
-            @foreach (Cart::content() as $item)
+            @foreach (\Gloudemans\Shoppingcart\Facades\Cart::content() as $item)
             <tr>
                 <td>
                     <div class="cart-info">
                         <img src="/anh/{{$item->options->img  }}">
                         <div>
                             <p>{{ $item->name }}</p>
-                            <small>{{ $item->price }}</small>
+                            <small>{{ number_format($item->price) }} đ</small>
                             <a href="{{asset('cart/delete/'.$item->rowId)}}">Remove</a>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                 <a href="{{route('cart.plus',['id'=> $item->rowId])}}" class="btnplusminus" style="padding-left: 6px;padding-right: 5px;"> + </a></td>
                 <td>{{ $item->options->color }}</td>
                 <td>{{ $item->options->size }}</td>
-                <td>{{ $item->total }} đ</td>
+                <td>{{ number_format( $item->total) }} đ</td>
             </tr>
             @endforeach
             
@@ -58,7 +58,7 @@
                 
                 <tr>
                     <td>Total</td>
-                    <td>{{ Cart::total() }} đ</td>
+                    <td>{{  Cart::total() }} đ</td>
                 </tr>
                 <tr>
                 <td></td>

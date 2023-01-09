@@ -52,6 +52,7 @@ class userController extends Controller
         $product = DB::table('prd_detail')->where('prd_detail_id', $data->id)->first();
         if($product->prd_amount > $data->qty){
         Cart::update($id,['qty' => $data->qty + 1]);
+        
         }
         return back();
     }
@@ -96,8 +97,11 @@ class userController extends Controller
             ->select('product.*','prd_detail.*')
             ->groupByRaw('product.prd_id')
             ->get();
+            
         return view('users.modun-user.product',['prd'=>$product]);
     }
+
+    
     function testc(){
 
         $product = DB::table('product')

@@ -31,10 +31,14 @@
                 <!-- <div class="brand-logo">
                 <img src="{{ asset('img/pnglogoSneaker.png') }}" height ="50" width = "auto">
                 </div> -->
-                
+
+                 
+
                 <h4>LOGIN</h4>
                 <h6 class="font-weight-light">Sign in to continue.</h6>
-                <form method="post" action="{{route('users.loginrq')}}"class="pt-3">
+                <form method="post" action="{{route('users.login')}}"class="pt-3">
+                  @csrf
+      
                   <div class="form-group">
                     <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
                   </div>
