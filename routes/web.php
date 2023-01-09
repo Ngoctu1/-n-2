@@ -2,7 +2,9 @@
 use App\Http\Controllers\Auth\loginController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
+use PhpParser\Node\Stmt\Function_;
 
 
 /*
@@ -30,19 +32,14 @@ Route::get('/', function () {
     return view('users/modun-user/home');
 })-> name('home');
 
-
-
-
-
 Route::get('/signup', function () {
     return view('users/register');
 }) -> name('users.register');
 
-
-
 Route::get('/productdetail/{id}', [userController::class,'prd_detail']
 ) -> name('users.productdetail');
 Route::get('/product', [userController::class,'product']) -> name('users.product');
+
 //------------------------Cart---------------
 Route::get('/cart', function () {
     return view('users/modun-user/cart');
@@ -52,13 +49,17 @@ Route::get('/cartshop', function () {
     return view('users/modun-user/cartshop');
 }) -> name('users.cartshop');
 
-Route::get('/cart/delete/{id}',[userController::class,'deletecart']);
-Route::get('/cart/plus/{id}',[userController::class,'pluscart']) -> name('cart.plus');
-Route::get('/cart/minus/{id}',[userController::class,'minuscart'])-> name('cart.minus');
 
-Route::get('/add_cart/{id}',[userController::class,'addcart']) -> name('users.cart1');
+Route::get('/cart/delete/{id}',[CartController::class,'deletecart']);
+Route::get('/cart/plus/{id}',[CartController::class,'pluscart']) -> name('cart.plus');
+Route::get('/cart/minus/{id}',[CartController::class,'minuscart'])-> name('cart.minus');
 
-Route::get('/cart12',[userController::class,'create']) -> name('users.add');
+Route::post('/add_cart',[CartController::class,'addcart']) -> name('cart.add');
+
+
+Route::get('/pay', function () {
+    return view('users.modun-user.payment.payment');
+})-> name('cart.minus');
 
 Route::post('/admin/product/edit/{id}',[AdminController::class,'prd_edit']) -> name('admin.prd_edit');
 

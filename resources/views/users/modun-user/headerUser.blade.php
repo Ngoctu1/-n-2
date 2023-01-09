@@ -13,7 +13,7 @@
         </nav>
         <div class="icons">
             
-            <a href="{{ route('users.cartshop') }}">{{Cart::count()}}<i class="fa fa-shopping-cart"></i></a>
+            
             
             @guest
             <a href="{{route('login')}}" class="login_btn"> Login </a>
@@ -22,11 +22,15 @@
             @endguest
 
             @auth
-            <a href="#"> {{Auth::user()->name}} <i class="fa fa-user"></i></a>
+            
+            <div>
             <form method="post" action="{{route('logout')}}">
+                <a href="{{ route('users.cartshop') }}">{{Cart::count()}}<i class="fa fa-shopping-cart"></i></a>
+              <a href="#"> {{Auth::user()->name}} <i class="fa fa-user"></i></a>  
                 @csrf
-            <button type="submit" class="signup_btn" style="color: white"> Logout </button>
+            <button type="submit" class="signup_btn" style="margin-left: 15px;font-size: 2rem;border-radius: 10px;color: white;"> Logout </button>
             </form>
+</div>
             @endauth
         </div>
     </header>

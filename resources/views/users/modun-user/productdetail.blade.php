@@ -43,6 +43,7 @@
                                         @endforeach
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                         <div class="right-col">
@@ -52,100 +53,59 @@
                                 <meta itemprop="priceCurrency" content="USD">
                                 <link itemprop="availability" href="http://schema.org/InStock">
                                 <div class="price-shipping">
-                                    <div class="price" id="price-preview"  quickbeam="price"
-                                        quickbeam-price="800">
+                                    <div class="price" id="price-preview" quickbeam="price" quickbeam-price="800">
                                         <p style="font-size: 2.9rem;"> Giá {{number_format($product->prd_price)}} đ</p>
                                     </div>
 
                                 </div>
-                                <form method="post" action="">
+                                <form method="post" action="{{route('cart.add')}}">
+                                    @csrf
+                                    <input type="hidden" name="prd_id" value="{{$product->prd_id}}">
+
+
                                     <div class="swatches">
                                         <div class="swatch clearfix">
 
                                             <div class="header">Size</div>
-                                            <select class="form-control" id="example FormControlSelect2"
+                                            <select class="form-control" name="prd_size" id="example FormControlSelect2"
                                                 style="margin-top: 10px;width: 4rem;height: 3rem;font-size: 1.7rem; border: 0.2rem solid;"
                                                 name="size">
                                                 @foreach($prdsize as $prdsize)
 
-                                                <option value="{{$prdsize->prd_size}}">{{$prdsize->prd_size}}</option>
+                                                <option  value="{{$prdsize->prd_size}}">
+                                                    {{$prdsize->prd_size}}</option>
 
                                                 @endforeach
                                             </select>
-
-
-
-
-
                                         </div>
                                         <div class="swatch clearfix" style="font-size: 1.8rem" data-option-index="1">
-                                            <div class="header">Color</div>
+                                            <div class="header" style="margin-left: 10px">Color</div>
 
                                             @foreach($prdcolor as $prdcolor)
 
                                             <input type="radio" class="boxcolor" name="prd_color"
                                                 value="{{$prdcolor->prd_color}}"> {{$prdcolor->prd_color}}
                                             @endforeach
-
-
                                         </div>
                                     </div>
                                     <div class="btn-and-quantity-wrap">
                                         <div class="btn-and-quantity">
 
-                                            <div id="AddToCart" quickbeam="add-to-cart">
-                                                <span id="AddToCartText">Add to Cart</span>
+                                            <div quickbeam="add-to-cart">
+
+                                                <button id="AddToCart" type="submit" href="">Add to Cart</button>
+
+                                                <span></span>
                                             </div>
                                         </div>
                                     </div>
                                 </form>
-                                <!-- <form method="post" enctype="multipart/form-data" id="AddToCartForm"> -->
-                                <form id="AddToCartForm">
-                                    <select name="id" id="productSelect" quickbeam="product"
-                                        class="product-single__variants">
-                                        <option selected="selected" data-sku="" value="7924994501">
-                                            M / Blue - $800.00 USD
-                                        </option>
-                                        <option data-sku="" value="7924995077">
-                                            M / Red - $850.00 USD
-                                        </option>
-                                        <option data-sku="" value="7924994437">
-                                            L / Blue - $850.00 USD
-                                        </option>
-                                        <option data-sku="" value="7924994693">
-                                            L / Yellow - $850.00 USD
-                                        </option>
-                                        <option data-sku="" value="7924995013">
-                                            L / Red - $850.00 USD
-                                        </option>
-                                        <option data-sku="" value="7924994373">
-                                            XL / Blue - $900.00 USD
-                                        </option>
-                                        <option data-sku="" value="7924994629">
-                                            XL / Yellow - $850.00 USD
-                                        </option>
-                                        <option data-sku="" value="7924830021">
-                                            XXL / Blue - $950.00 USD
-                                        </option>
-                                        <option data-sku="" value="7924994885">
-                                            XXL / Red - $850.00 USD
-                                        </option>
-                                    </select>
-                                    <div class="btn-and-quantity-wrap">
-                                        <div class="btn-and-quantity">
-
-                                            <div id="AddToCart" quickbeam="add-to-cart">
-                                                <span id="AddToCartText">Add to Cart</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
 
     </section>
