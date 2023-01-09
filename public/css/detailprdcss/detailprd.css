@@ -3613,3 +3613,12 @@ section {
   60% {margin-left: -1456px;}
   80% {margin-left: -1456px;}
 }
+
+input.boxcolor{
+  margin-left: 10px;
+  margin-top: 15px;
+  width: 20px;
+  height: 20px;
+  border: 0.2rem solid;
+  display: unset;
+}

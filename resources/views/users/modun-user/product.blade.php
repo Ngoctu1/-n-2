@@ -70,17 +70,16 @@
 @foreach($prd as $prd)
         <div class='product'>
             <div class='product_inner'>
-                <img src='/anh/{{$prd->prd_image}}'
+                <a style="border:none" href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">
+                <img  src='/anh/{{$prd->prd_image}}'
                     width='300'>
-                <p>{{$prd->prd_name}}</p>
+</a>
+                <p style="margin-top:15px">{{$prd->prd_name}}</p>
                 
-                <p>Price {{$prd->prd_price}}</p>
-                <a class="btn"type="button" href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">BUY</a>
+                <p style="margin-top:5px">Price </p>{{ number_format($prd->prd_price) }} đ
+                <a class="btn"type="button" style="margin-top:20px" href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">Detail</a>
             </div>
-            <div class='product_overlay'>
-                <h2>Added to basket</h2>
-                <i class='fa fa-check'></i>
-            </div>
+            
         </div>
 @endforeach
         <div class='product'>
