@@ -52,6 +52,10 @@ class CartController extends Controller
         Cart::update($id,['qty' => $data->qty - 1]);
         return back();
     }
+    
+    function pay(Request $request){
+        
+    }
 }
 
 

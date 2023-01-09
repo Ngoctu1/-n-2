@@ -7,7 +7,7 @@
 <section>
     <div class="containerpm">
 
-        <form action="">
+        <form method="post" action="">
     
             <div class="row">
     
@@ -17,25 +17,22 @@
     
                     <div class="inputBox">
                         <span>full name :</span>
-                        <input type="text" value="" placeholder="">
+                        <input type="text" value="{{Auth::user()->name}}" placeholder="">
                     </div>
                     <div class="inputBox">
                         <span>email :</span>
-                        <input type="email" placeholder="">
+                        <input type="email" value="{{Auth::user()->email}}" placeholder="">
                     </div>
-<div class="inputBox">
+                    <div class="inputBox">
                         <span>city :</span>
                         <input type="text" placeholder="">
                     </div>
                     
-    
-                    
-    
                 </div>
     
                 <div class="col">
     
-                    <h3 class="title">payment</h3>
+                    <h3 class="title"> |</h3>
     
                     <!-- <div class="inputBox">
                         <span>cards accepted :</span>
@@ -43,15 +40,13 @@
                     </div> -->
                     <div class="inputBox">
                         <span>address :</span>
-                        <input type="text" placeholder="">
+                        <input type="text" value="{{Auth::user()->address}}" placeholder="">
                     </div>
                     <div class="inputBox">
                         <span>Phone number :</span>
-                        <input type="text" placeholder="">
+                        <input type="text" value="{{Auth::user()->phone}}" placeholder="">
                     </div>
-                    
 
-                    
                     <div class="inputBox">
                         <span>Note :</span>
                         <input type="text" placeholder="">

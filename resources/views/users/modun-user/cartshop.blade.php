@@ -60,14 +60,7 @@
                     <td>Total</td>
                     <td>{{  Cart::total() }} đ</td>
                 </tr>
-                <tr>
-                <td></td>
-                <td >                        
-                    <a class="btn" style="background-color: #56e856" href="#"> Thanh toán </a>
-</td>
-
-
-                </tr>
+                
                 <tr>
                 <td></td>
                 <td >                        

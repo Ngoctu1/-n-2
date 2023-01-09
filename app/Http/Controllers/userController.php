@@ -29,16 +29,21 @@ class userController extends Controller
         ->get();
 
         $prdsize = DB::table('prd_detail')
-        ->groupBy('prd_size')
+        ->join('product', 'prd_detail.prd_id', '=', 'product.prd_id')
+        ->where('prd_detail.prd_id',$id)
+        ->groupBy('prd_detail.prd_size')
         ->get();
         
         $prdcolor = DB::table('prd_detail')
-        ->groupBy('prd_color')
+        ->join('product', 'prd_detail.prd_id', '=', 'product.prd_id')
+        ->where('prd_detail.prd_id',$id)
+        ->groupBy('prd_detail.prd_color')
         ->get();
 
         $prdimg = DB::table('prd_detail')
-        ->groupBy('prd_image')
-        ->orderBy('prd_detail_id')
+        ->join('product', 'prd_detail.prd_id', '=', 'product.prd_id')
+        ->where('prd_detail.prd_id',$id)
+        ->groupBy('prd_detail.prd_image')
         ->get();
 
         return view ('users.modun-user.productdetail',compact('product','prdsize','prdcolor','prdimg'));
@@ -49,11 +54,11 @@ class userController extends Controller
 
         $product = DB::table('product')
             ->join('prd_detail', 'product.prd_id', '=', 'prd_detail.prd_id')
-            ->select('product.*','prd_detail.*')
-            ->groupByRaw('product.prd_id')
-            ->get();
             
-        return view('users.modun-user.product',['prd'=>$product]);
+            ->groupByRaw('product.prd_id')
+            ->paginate(9);
+            
+        return view('users.modun-user.product',['prds'=>$product]);
     }
 
 }

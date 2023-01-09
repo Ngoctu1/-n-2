@@ -56,6 +56,9 @@ Route::get('/cartshop', function () {
     return view('users/modun-user/cartshop');
 }) -> name('users.cartshop');
 
+Route::get('/pay',[CartController::class,'pay']) -> name('cart.pay');
+
+
 
 Route::get('/cart/delete/{id}',[CartController::class,'deletecart']);
 Route::get('/cart/plus/{id}',[CartController::class,'pluscart']) -> name('cart.plus');

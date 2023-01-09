@@ -3,8 +3,8 @@
 @include('users.modun-user.banner')
 
 
-<section style="margin-top: 5%; font-size: 1.5rem">
-<h1 style="    text-align: center"> Sneakers</h1>
+<section style="margin-top: -5%; font-size: 1.5rem">
+    <h1 style="    text-align: center"> Sneakers</h1>
     <div class='rowsb'>
         <ul class="mcd-menu">
             <li class="float">
@@ -28,7 +28,7 @@
                     <strong>ADIDAS</strong>
                 </a>
             </li>
-            
+
             <li>
                 <a href="">
                     <i class="fa fa-globe"></i>
@@ -41,7 +41,7 @@
                     <strong>PUMA</strong>
 
                 </a>
-                
+
             </li>
             <li>
                 <a href="">
@@ -61,25 +61,34 @@
         </ul>
     </div>
     <div class='rowprd'>
-@foreach($prd as $prd)
-        <div class='product'>
-            <div class='product_inner'>
+        <table>
+            <tbody>
+                @foreach($prds as $prd)
+                <div class='product'>
+                    <div class='product_inner'>
 
-                <a style="border:none" href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">
-                <img  src='/anh/{{$prd->prd_image}}'
-                    width='300'>
-</a>
-                <p style="margin-top:15px">{{$prd->prd_name}}</p>
+                        <a style="border:none" href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">
+                            <img src='/anh/{{$prd->prd_image}}' width='300'>
+                        </a>
+                        <p style="margin-top:15px">{{$prd->prd_name}}</p>
 
-                
-                <p style="margin-top:5px">Price </p>{{ number_format($prd->prd_price) }} đ
-                <a class="btn"type="button" style="margin-top:20px" href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">Detail</a>
-            </div>
-            
-        </div>
-@endforeach
-        
-        
 
+                        <p style="margin-top:5px">Price </p>{{ number_format($prd->prd_price) }} đ
+                        <a class="btn" type="button" style="margin-top:20px"
+                            href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">Detail</a>
+                    </div>
+
+                </div>
+                @endforeach
+            </tbody>
+        </table>
+
+    </div>
+    <section>
+        <div class='rowprd'>
+        {{ $prds->links() }}
+
+</div>
+    </section>
 </section>
 @stop
