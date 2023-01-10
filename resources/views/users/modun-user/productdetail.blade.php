@@ -49,7 +49,11 @@
                                     </div>
 
                                 </div>
+                                @auth
                                 <form method="post" action="{{route('cart.add')}}">
+                                @endauth
+
+                                <form action="{{url('/login')}}">
                                     @csrf
                                     <input type="hidden" name="prd_id" value="{{$product->prd_id}}">
 
@@ -63,7 +67,7 @@
                                                 name="size">
                                                 @foreach($prdsize as $prdsize)
 
-                                                <option  value="{{$prdsize->prd_size}}">
+                                                <option value="{{$prdsize->prd_size}}">
                                                     {{$prdsize->prd_size}}</option>
 
                                                 @endforeach

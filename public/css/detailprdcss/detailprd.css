@@ -3607,11 +3607,10 @@ section {
   width: 728px;
 }
 @keyframes slide {
-  20% {margin-left: 0px;}
-  30% {margin-left: -728px;}
+  30% {margin-left: 0px;}
   50% {margin-left: -728px;}
-  60% {margin-left: -1456px;}
-  80% {margin-left: -1456px;}
+  80% {margin-left: -728px;}
+  
 }
 
 input.boxcolor{

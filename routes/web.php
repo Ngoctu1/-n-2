@@ -75,6 +75,9 @@ Route::get('/pay', function () {
 Route::post('/admin/product/edit/{id}',[AdminController::class,'prd_edit']) -> name('admin.prd_edit');
 
 
+Route::get('/checkout', [CheckoutController::class,'getCheckout'])->name('checkout.index');
+Route::post('/checkout/order', [CheckoutController::class,'placeOrder'])->name('checkout.place.order');
+
 
 //-------------------ADMIN------------------------
 
