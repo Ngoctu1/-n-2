@@ -9,10 +9,10 @@
                         Sunt nam adipisci ipsa officiis Amet pariatur eaque soluta
                         sit iure neque voluptate.
                     </p>
-                    <a href="#" class="btn">add to card</a>
+                    <!-- <a href="#" class="btn">add to card</a> -->{{asset('')}}
                 </div>
                 <div class="image">
-                    <img src="img/slide/1.png" class="shoe">
+                    <img src="{{asset('img/slide/1.png')}}" class="shoe">
                 </div>
             </div>
         </div>
@@ -26,10 +26,10 @@
                         Sunt nam adipisci ipsa officiis Amet pariatur eaque soluta
                         sit iure neque voluptate.
                     </p>
-                    <a href="#" class="btn">add to card</a>
+                    <!-- <a href="#" class="btn">add to card</a> -->
                 </div>
                 <div class="image">
-                    <img src="img/slide/2.png" class="shoe">
+                    <img src="{{asset('img/slide/2.png')}}" class="shoe">
                 </div>
             </div>
         </div>
@@ -43,10 +43,10 @@
                         Sunt nam adipisci ipsa officiis Amet pariatur eaque soluta
                         sit iure neque voluptate.
                     </p>
-                    <a href="#" class="btn">add to card</a>
+                    <!-- <a href="#" class="btn">add to card</a> -->
                 </div>
                 <div class="image">
-                    <img src="img/slide/3.png" class="shoe">
+                    <img src="{{asset('img/slide/3.png')}}" class="shoe">
                 </div>
             </div>
         </div>
@@ -60,10 +60,10 @@
                         Sunt nam adipisci ipsa officiis Amet pariatur eaque soluta
                         sit iure neque voluptate.
                     </p>
-                    <a href="#" class="btn">add to card</a>
+                    <!-- <a href="#" class="btn">add to card</a> -->
                 </div>
                 <div class="image">
-                    <img src="img/slide/4.png" class="shoe">
+                    <img src="{{asset('img/slide/4.png')}}" class="shoe">
                 </div>
             </div>
         </div>

@@ -69,7 +69,7 @@ body {
     width: 250px;
     /* == */
   }
-  .mcd-menu li {
+  .mcd-menu:hover li {
     position: relative;
     /*float:left;*/
   }
@@ -109,6 +109,7 @@ body {
   .mcd-menu li a strong {
     display: block;
     text-transform: uppercase;
+    font-size: 1.9rem ;
   }
   .mcd-menu li a small {
     display: block;

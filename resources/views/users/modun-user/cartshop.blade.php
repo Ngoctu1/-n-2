@@ -18,7 +18,7 @@
                 <th>Subtotal</th>
 
             </tr>
-            @foreach (\Gloudemans\Shoppingcart\Facades\Cart::content() as $item)
+            @foreach (Cart::content() as $item)
             <tr>
                 <td>
                     <div class="cart-info">
@@ -30,9 +30,9 @@
                         </div>
                     </div>
                 </td>
-                <td> <a href="{{route('cart.minus',['id'=> $item->rowId])}}" class="btnplusminus"> – </a> 
+                <td> <a href="{{route('cart.minus',['id'=> $item->rowId])}}" class="btnplusminus"> <i class="fa-solid fa-circle-minus"></i> </a> 
                 {{ $item->qty }} 
-                <a href="{{route('cart.plus',['id'=> $item->rowId])}}" class="btnplusminus" style="padding-left: 6px;padding-right: 5px;"> + </a></td>
+                <a href="{{route('cart.plus',['id'=> $item->rowId])}}" class="btnplusminus" style="padding-left: 6px;padding-right: 5px;"><i class="fa-solid fa-circle-plus"></i></a></td>
                 <td>{{ $item->options->color }}</td>
                 <td>{{ $item->options->size }}</td>
                 <td>{{ number_format( $item->total) }} đ</td>

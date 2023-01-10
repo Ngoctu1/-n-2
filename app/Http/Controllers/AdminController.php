@@ -125,4 +125,23 @@ class AdminController extends Controller
         ->insert($data);
         return redirect()-> route('admin.product');
     }
+    
+    function order(){
+        $orders = DB::table('orders')
+            ->join('order_items', 'orders.id', '=', 'order_items.order_id')
+            ->groupBy('orders.id')
+            ->paginate(5);
+        return view ('Admin.modun.order', compact('orders'));
+    }
+
+    function orderdetail($id){
+        $orders = DB::table('orders')
+            ->join('order_items', 'orders.id', '=', 'order_items.order_id')
+            ->join('product_details','order_items.product_id','=','product_details.prd_detail_id')
+            ->join('products','products.prd_id','=','product_details.prd_id')
+            ->where('orders.id',$id)
+            ->paginate(5);
+        return view ('Admin.modun.orderdetail', compact('orders'));
+    }
+
 }

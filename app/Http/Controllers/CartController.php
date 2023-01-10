@@ -11,14 +11,14 @@ class CartController extends Controller
 {
     function addcart(Request $request){
         
-        $product = DB::table('product')
-        ->join('prd_detail', 'product.prd_id', '=', 'prd_detail.prd_id')
-        ->where('prd_detail.prd_id',$request->prd_id)
-        ->where('prd_detail.prd_size',$request->prd_size)
-        ->where('prd_detail.prd_color',$request->prd_color)
+        $product = DB::table('products')
+        ->join('product_details', 'products.prd_id', '=', 'product_details.prd_id')
+        ->where('product_details.prd_id',$request->prd_id)
+        ->where('product_details.prd_size',$request->prd_size)
+        ->where('product_details.prd_color',$request->prd_color)
         ->first() ;
         
-        Cart::add($product->prd_detail_id,$product->prd_name,'1',$product->prd_price,'0',['size'=>$product->prd_size,'color'=>$product->prd_color,'img'=>$product->prd_image]);
+        Cart::add($product->prd_detail_id,$product->prd_name,'1',$product->price,'0',['size'=>$product->prd_size,'color'=>$product->prd_color,'img'=>$product->prd_image]);
         $data = Cart::content();
         
 
@@ -39,7 +39,7 @@ class CartController extends Controller
     {
 
         $data = Cart::get($id);
-        $product = DB::table('prd_detail')->where('prd_detail_id', $data->id)->first();
+        $product = DB::table('product_details')->where('prd_id', $data->id)->first();
         if($product->prd_amount > $data->qty){
         Cart::update($id,['qty' => $data->qty + 1]);
         

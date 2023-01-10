@@ -7,8 +7,8 @@
 <section>
     <div class="containerpm">
 
-        <form method="post" action="">
-    
+        <form method="post" action="{{route('checkout.place.order')}}">
+            @csrf
             <div class="row">
     
                 <div class="col">
@@ -17,15 +17,15 @@
     
                     <div class="inputBox">
                         <span>full name :</span>
-                        <input type="text" value="{{Auth::user()->name}}" placeholder="">
+                        <input name="name" type="text" value="{{Auth::user()->name}}" placeholder="">
                     </div>
                     <div class="inputBox">
                         <span>email :</span>
-                        <input type="email" value="{{Auth::user()->email}}" placeholder="">
+                        <input name="email" type="email" value="{{Auth::user()->email}}" placeholder="">
                     </div>
                     <div class="inputBox">
                         <span>city :</span>
-                        <input type="text" placeholder="">
+                        <input name="city" type="text" placeholder="">
                     </div>
                     
                 </div>
@@ -40,16 +40,16 @@
                     </div> -->
                     <div class="inputBox">
                         <span>address :</span>
-                        <input type="text" value="{{Auth::user()->address}}" placeholder="">
+                        <input name="address" type="text" value="{{Auth::user()->address}}" placeholder="">
                     </div>
                     <div class="inputBox">
                         <span>Phone number :</span>
-                        <input type="text" value="{{Auth::user()->phone}}" placeholder="">
+                        <input name="phone" type="text" value="{{Auth::user()->phone}}" placeholder="">
                     </div>
 
                     <div class="inputBox">
                         <span>Note :</span>
-                        <input type="text" placeholder="">
+                        <input name="note" type="text" placeholder="">
                     </div>
     
                     <!-- <div class="flex">
@@ -77,7 +77,7 @@
                                     </article>
                                 </div>
                             </div>
-            <input type="submit" value="proceed to checkout" class="submit-btn">
+            <button type="submit"  class="submit-btn"> thanh toan</button>
     
         </form>
     

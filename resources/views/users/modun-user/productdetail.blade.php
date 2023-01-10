@@ -18,7 +18,7 @@
                     <div class="cols">
                         <div class="left-col">
                             <div class="thumbs">
-                                @foreach($product as $product)
+                                @foreach($products as $product)
                                 <a class="thumb-image active" href="/anh/{{$product->prd_image}}" data-index="0">
                                     <span><img src="/anh/{{$product->prd_image}}" alt=""></span>
                                 </a>
@@ -45,7 +45,7 @@
                                 <link itemprop="availability" href="http://schema.org/InStock">
                                 <div class="price-shipping">
                                     <div class="price" id="price-preview" quickbeam="price" quickbeam-price="800">
-                                        <p style="font-size: 2.9rem;"> Giá {{number_format($product->prd_price)}} đ</p>
+                                        <p style="font-size: 2.9rem;"> Giá {{number_format($product->price)}} đ</p>
                                     </div>
 
                                 </div>
@@ -76,10 +76,10 @@
                                         <div class="swatch clearfix" style="font-size: 1.8rem" data-option-index="1">
                                             <div class="header" style="margin-left: 10px">Color</div>
 
-                                            @foreach($prdcolor as $prdcolor)
+                                            @foreach($products as $product)
 
                                             <input type="radio" class="boxcolor" name="prd_color"
-                                                value="{{$prdcolor->prd_color}}"> {{$prdcolor->prd_color}}
+                                                value="{{$product->prd_color}}" checked> {{$product->prd_color}}
                                             @endforeach
                                         </div>
                                     </div>

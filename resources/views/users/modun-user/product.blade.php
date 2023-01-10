@@ -1,7 +1,7 @@
 @extends('users.masterUser')
-@section('product')
-@include('users.modun-user.banner')
 
+@include('users.modun-user.banner')
+@section('product')
 
 <section style="margin-top: -5%; font-size: 1.5rem">
     <h1 style="    text-align: center"> Sneakers</h1>
@@ -17,46 +17,36 @@
                 </a>
             </li>
             <li>
-                <a href="">
-                    <i class="fa fa-home"></i>
-                    <strong>SNEAKER</strong>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <i class="fa fa-edit"></i>
-                    <strong>ADIDAS</strong>
+                <a href="{{route('users.product')}}">
+                    
+                    <strong>SNEAKERS</strong>
                 </a>
             </li>
 
             <li>
-                <a href="">
-                    <i class="fa fa-globe"></i>
+                <a href="{{url('/product/1')}}">
+                    
                     <strong>NIKE</strong>
                 </a>
             </li>
+
+            <li>
+                <a href="{{url('/product/2')}}">
+                    
+                    <strong>ADIDAS</strong>
+                </a>
+            </li>
+
+            
             <li>
                 <a href="">
-                    <i class="fa fa-comments-o"></i>
+                    
                     <strong>PUMA</strong>
 
                 </a>
 
             </li>
-            <li>
-                <a href="">
-                    <i class="fa fa-picture-o"></i>
-                    <strong>Portfolio</strong>
-                    <small>sweet home</small>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <i class="fa fa-envelope-o"></i>
-                    <strong>Contacts</strong>
-                    <small>drop a line</small>
-                </a>
-            </li>
+            
 
         </ul>
     </div>
@@ -65,15 +55,16 @@
             <tbody>
                 @foreach($prds as $prd)
                 <div class='product'>
+                    
                     <div class='product_inner'>
 
                         <a style="border:none" href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">
-                            <img src='/anh/{{$prd->prd_image}}' width='300'>
+                            <img src='/anh/{{$prd->prd_image}}'>
                         </a>
                         <p style="margin-top:15px">{{$prd->prd_name}}</p>
 
 
-                        <p style="margin-top:5px">Price </p>{{ number_format($prd->prd_price) }} đ
+                        <p style="margin-top:5px">Price </p>{{ number_format($prd->price) }} đ
                         <a class="btn" type="button" style="margin-top:20px"
                             href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">Detail</a>
                     </div>

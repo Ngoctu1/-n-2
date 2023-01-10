@@ -1,8 +1,10 @@
 <?php
 use App\Http\Controllers\Auth\loginController;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Stmt\Function_;
 
@@ -30,15 +32,24 @@ Route::post('/sinupf',[loginController::class,'signup']) -> name('users.signup')
 //---------------User----------------
 Route::get('/', function () {
     return view('users/modun-user/home');
-})-> name('home');
+})-> name('home1');
 
 Route::get('/signup', function () {
     return view('users/register');
 }) -> name('users.register');
 
-Route::get('/productdetail/{id}', [userController::class,'prd_detail']
+
+//
+//------------------------------product----------------------------
+Route::get('/productdetail/{id}', [ProductController::class,'prd_detail']
 ) -> name('users.productdetail');
-Route::get('/product', [userController::class,'product']) -> name('users.product');
+Route::get('/product', [ProductController::class,'product']) -> name('users.product');
+
+Route::get('/product/{id}', [ProductController::class,'prdbybrand']) -> name('product.brand');
+
+
+
+
 
 //------------------------Cart---------------
 Route::get('/cart', function () {
@@ -102,6 +113,16 @@ Route::get('/admin', function () {
 }) -> name('admin.dashboard');
 Route::get('/admin/product', [AdminController::class,'product']
 ) -> name('admin.product');
+
+
+Route::get('/admin/checkorder', [AdminController::class,'order']
+) -> name('admin.order');
+
+Route::get('/admin/checkorder/orderdetail/{id}', [AdminController::class,'orderdetail']
+) -> name('admin.orderdetail');
+
+
+
 
 
 

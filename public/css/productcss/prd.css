@@ -30,7 +30,7 @@
 
 .product, .product--pink, .product--yellow, .product--green, .product--red, .product--orange, .product--blue {
   box-shadow: 1px 5px 15px #CCC;
-  width: 15em;
+  width: 19em;
   height: auto;
   border-radius: 3px;
   padding: 2em;
@@ -38,6 +38,7 @@
   overflow: hidden;
   position: relative;
   flex: auto;
+  max-width: 19em;
 }
 
 .product img, .product--blue img, .product--orange img, .product--red img, .product--green img, .product--yellow img, .product--pink img {

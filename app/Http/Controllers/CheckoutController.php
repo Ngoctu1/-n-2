@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Contracts\OrderContract;
+use Cart;
 
 class CheckoutController extends Controller
 {
@@ -26,6 +27,7 @@ class CheckoutController extends Controller
         // request validation which I leave it to you
         $order = $this->orderRepository->storeOrderDetails($request->all());
 
-        dd($order);
+        Cart::destroy();
+        return redirect()->route('home1');
     }
 }

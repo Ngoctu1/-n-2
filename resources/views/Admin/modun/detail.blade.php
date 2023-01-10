@@ -14,8 +14,7 @@
                 <label for="exampleInputUsername1">Username</label>
                 <input type="text" name="name" class="form-control" id="exampleInputUsername1" value="{{ $user-> name}}"
                     placeholder="name">
-                    <img scr="{{url('anh/Jordan_1_Retro_High_OG.jpg')}}">
-                    <img src="{{route('account.image',['id'=> $user->id])}}" height="77px" width="auto">
+                    
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
@@ -23,11 +22,7 @@
                     placeholder="email">
             </div>
 
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" name="password" class="form-control" id="exampleInputPassword1" value="{{ $user-> password }} "
-                    placeholder="password">
-            </div>
+            
 
             <div class="form-group">
                 <label for="">Phone Number</label>

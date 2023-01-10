@@ -30,6 +30,8 @@
         @yield('content-account')
         @yield('detail')
         @yield('addprd')
+        @yield('order')
+        @yield('orderdetail')
 
         @yield('product')
         @yield('prd_detail')
