@@ -27,7 +27,7 @@ class CheckoutController extends Controller
         // request validation which I leave it to you
         $order = $this->orderRepository->storeOrderDetails($request->all());
 
-        Cart::destroy();
-        return redirect()->route('home1');
+        
+        return redirect()->route('cart.success');
     }
 }

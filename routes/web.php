@@ -52,14 +52,13 @@ Route::get('/product/{id}', [ProductController::class,'prdbybrand']) -> name('pr
 
 
 //------------------------Cart---------------
+Route::prefix('account')->group(function () {
 Route::get('/cart', function () {
     return view('users/modun-user/cart');
 }) -> name('users.cart');
 
 
-Route::get('/payment', function () {
-    return view('users/modun-user/payment');
-}) -> name('users.payment');
+Route::get('/payment', [CartController::class,'pay']) -> name('users.payment');
 
 Route::get('/add_cart/{id}',[userController::class,'addcart']) -> name('users.cart1');
 
@@ -67,8 +66,9 @@ Route::get('/cartshop', function () {
     return view('users/modun-user/cartshop');
 }) -> name('users.cartshop');
 
-Route::get('/pay',[CartController::class,'pay']) -> name('cart.pay');
-
+Route::get('/cartshop', function () {
+    return view('users/modun-user/cartshop');
+}) -> name('users.cartshop');
 
 
 Route::get('/cart/delete/{id}',[CartController::class,'deletecart']);
@@ -81,8 +81,15 @@ Route::post('/add_cart',[CartController::class,'addcart']) -> name('cart.add');
 
 Route::get('/pay', function () {
     return view('users.modun-user.payment.payment');
-})-> name('cart.minus');
+});
 
+Route::get('/success',[CartController::class,'cartsuccess'])-> name('cart.success');
+
+
+
+
+});
+//---------------end Cart----------------------
 Route::post('/admin/product/edit/{id}',[AdminController::class,'prd_edit']) -> name('admin.prd_edit');
 
 
@@ -92,34 +99,53 @@ Route::post('/checkout/order', [CheckoutController::class,'placeOrder'])->name('
 
 //-------------------ADMIN------------------------
 
-//---------------edit acc---
-Route::get('/admin/account/modify/{id}',[AdminController::class,'modify']) -> name('account.detail');
-Route::get('/admin/account/delete/{id}',[AdminController::class,'delete']) -> name('account.delete');
-Route::post('/admin/account/edit/{id}',[AdminController::class,'edit']) -> name('account.edit');
-Route::post('/admin/account/img/{id}',[AdminController::class,'image']) -> name('account.image');
-//----------------edit prd------------
-Route::get('/admin/product/modify/{id}',[AdminController::class,'prd_modify']) -> name('admin.prd_detail');
-Route::post('/admin/product/edit/{id}',[AdminController::class,'prd_edit']) -> name('admin.prd_edit');
-//---------------add prd-----------
-Route::get('/admin/product/add',function () {
-    return view('Admin/modun/addprd');
-}) -> name('admin.addprd');
-Route::post('/admin/product/add',[AdminController::class,'prd_add']) -> name('admin.prd_add');
 
-Route::get('/admin/account',[AdminController::class,'account']) 
--> name('admin.account');
-Route::get('/admin', function () {
+
+Route::prefix('admin')->group(function () {
+Route::get('/', function () {
     return view('Admin/modun/dashboard');
 }) -> name('admin.dashboard');
-Route::get('/admin/product', [AdminController::class,'product']
-) -> name('admin.product');
+    //----------------Acount----------------
+Route::prefix('account')->group(function () {
+
+Route::get('/',[AdminController::class,'account']) -> name('admin.account');
+Route::get('/modify/{id}',[AdminController::class,'modify']) -> name('account.detail');
+Route::get('/delete/{id}',[AdminController::class,'delete']) -> name('account.delete');
+Route::post('/edit/{id}',[AdminController::class,'edit']) -> name('account.edit');
+Route::post('/img/{id}',[AdminController::class,'image']) -> name('account.image');
+});
 
 
-Route::get('/admin/checkorder', [AdminController::class,'order']
+    //-----------------Product----------------
+Route::prefix('product')->group(function () {
+Route::get('/', [AdminController::class,'product']) -> name('admin.product'); 
+
+//----------------edit prd------------
+
+Route::get('/modify/{id}',[AdminController::class,'prd_modify']) -> name('admin.prd_detail');
+Route::post('/edit/{id}',[AdminController::class,'prd_edit']) -> name('admin.prd_edit');
+
+
+//---------------add prd-----------
+
+Route::get('/add',function () {return view('Admin/modun/addprd');}) -> name('admin.addprd');
+
+Route::post('/add',[AdminController::class,'prd_add']) -> name('admin.prd_add');
+
+
+
+});
+
+Route::get('/checkorder', [AdminController::class,'order']
 ) -> name('admin.order');
 
-Route::get('/admin/checkorder/orderdetail/{id}', [AdminController::class,'orderdetail']
+Route::get('/checkorder/orderdetail/{id}', [AdminController::class,'orderdetail']
 ) -> name('admin.orderdetail');
+
+
+
+});
+
 
 
 

@@ -18,35 +18,35 @@
             </li>
             <li>
                 <a href="{{route('users.product')}}">
-                    
+
                     <strong>SNEAKERS</strong>
                 </a>
             </li>
 
             <li>
                 <a href="{{url('/product/1')}}">
-                    
+
                     <strong>NIKE</strong>
                 </a>
             </li>
 
             <li>
                 <a href="{{url('/product/2')}}">
-                    
+
                     <strong>ADIDAS</strong>
                 </a>
             </li>
 
-            
+
             <li>
                 <a href="">
-                    
+
                     <strong>PUMA</strong>
 
                 </a>
 
             </li>
-            
+
 
         </ul>
     </div>
@@ -54,20 +54,27 @@
         <table>
             <tbody>
                 @foreach($prds as $prd)
-                <div class='product'>
-                    
+                <div class='product' style="    height: 360px; position: relative;">
+
                     <div class='product_inner'>
 
                         <a style="border:none" href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">
                             <img src='/anh/{{$prd->prd_image}}'>
                         </a>
-                        <p style="margin-top:15px">{{$prd->prd_name}}</p>
 
-
-                        <p style="margin-top:5px">Price </p>{{ number_format($prd->price) }} đ
-                        <a class="btn" type="button" style="margin-top:20px"
-                            href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">Detail</a>
+                        <p style="">{{$prd->prd_name}}</p>
                     </div>
+                    <div
+                        style="text-align: center; position: absolute;bottom: 20px;top:75%; left: 50%;transform: translate(-50%, -50%);">
+                        <p style=";margin-bottom: 0;">Price </p>
+                        <p style="color:red;margin-bottom: 0;">{{ number_format($prd->price) }} đ
+                        <p>
+                            <br>
+
+                            <a class="btn" type="button" style="margin-top:-14px;"
+                                href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">Detail</a>
+                    </div>
+
 
                 </div>
                 @endforeach
@@ -77,9 +84,9 @@
     </div>
     <section>
         <div class='rowprd'>
-        {{ $prds->links() }}
+            {{ $prds->links() }}
 
-</div>
+        </div>
     </section>
 </section>
 @stop

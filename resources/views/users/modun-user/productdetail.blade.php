@@ -49,11 +49,9 @@
                                     </div>
 
                                 </div>
-                                @auth
+                                
                                 <form method="post" action="{{route('cart.add')}}">
-                                @endauth
-
-                                <form action="{{url('/login')}}">
+                                    
                                     @csrf
                                     <input type="hidden" name="prd_id" value="{{$product->prd_id}}">
 

@@ -42,7 +42,7 @@ class CartItem implements Arrayable, Jsonable
     /**
      * The quantity for this cart item.
      *
-     * @var int|float
+     * @var int
      */
     public $qty;
 
@@ -293,7 +293,7 @@ class CartItem implements Arrayable, Jsonable
     /**
      * Set the quantity for this cart item.
      *
-     * @param int|float $qty
+     * @param int $qty
      */
     public function setQuantity($qty)
     {

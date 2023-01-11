@@ -13,38 +13,69 @@
         </nav>
         <div class="icons">
 
-            @guest
-            <a href="{{route('login')}}" class="login_btn"> Login </a>
-
-            <a href="{{route('register')}}" class="signup_btn" style="color: white"> Sign up </a>
-            @endguest
 
 
-            @auth
+
+
 
             <div>
-                <form method="post" action="{{route('logout')}}">
 
-                    <a href="{{ route('users.cartshop') }}">{{Cart::count()}}<i class="fa fa-shopping-cart"></i></a>
 
-                    
-                        <a class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            {{Auth::user()->name}} <i class="fa fa-user">
-</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    
-                    <a href="#"> </i></a>
-                    @csrf
-                    <button type="submit" class="signup_btn"
-                        style="margin-left: 15px;font-size: 2rem;border-radius: 10px;color: white;"> Logout </button>
-                </form>
+                <div class="container">
+                    <div class="row" >
+                        <div class="col-sm" >
+                            <a style="font-size: 2rem; margin-right:14px; background:none"
+                                href="{{ route('users.cartshop') }}">{{Cart::count()}}<i
+                                    class="fa fa-shopping-cart"></i></a>
+                        </div>
+                        @auth
+                        <div class="col-sm" style="">
+                            <li class="nav-item dropdown">
+
+
+                                <button class="dropdown-toggle"
+                                    style="font-size: 2rem;  background:none;    text-transform: uppercase;"
+                                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{Auth::user()->name}} <i class="fa fa-user"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-white">
+
+
+                                    <form method="post" action="{{route('logout')}}">
+                                        @csrf
+                                        <button type="submit"> <a class="dropdown-item" style="margin-left:0">Logout</a>
+                                        </button>
+
+                                    </form>
+
+                                    <li><a class="dropdown-item" style="margin-left:0" href="#">Order</a></li>
+                                </ul>
+                            </li>
+                        </div>
+                        @endauth
+                        @guest
+                        <div class="col-sm" >
+                            <a href="{{route('login')}}" class="login_btn"> Login </a>
+                        </div>
+                        <div class="col-sm" >
+                            <a href="{{route('register')}}" class="signup_btn" style="color: white; "> Signup </a>
+                        </div>
+                        @endguest
+
+
+
+                    </div>
+                </div>
+
+
+
             </div>
-            @endauth
+
+
+
+
+        </div>
+
         </div>
     </header>
 </section>

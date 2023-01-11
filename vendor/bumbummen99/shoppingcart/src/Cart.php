@@ -121,7 +121,7 @@ class Cart
      *
      * @param mixed     $id
      * @param mixed     $name
-     * @param int|float $qty
+     * @param int       $qty
      * @param float     $price
      * @param float     $weight
      * @param array     $options
@@ -806,7 +806,7 @@ class Cart
      *
      * @param mixed     $id
      * @param mixed     $name
-     * @param int|float $qty
+     * @param int       $qty
      * @param float     $price
      * @param float     $weight
      * @param array     $options
