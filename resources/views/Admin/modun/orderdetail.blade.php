@@ -44,8 +44,19 @@
                 
                     
                 </tbody>
+
                 
-            </table>{{ $orders->links() }}
+            </table>
+            @if($order-> status == 'decline')
+            
+            @elseif($order-> status == 'pending')
+            <a class="btn btn-info btn-fw" href="{{ route('admin.updatestatus', [ 'id'=> $order->order_id,'processing']) }}"> Processing </a>
+            
+            @elseif($order-> status == 'processing')
+            <a class="btn btn-success btn-fw" href="{{ route('admin.updatestatus', [ 'id'=> $order->order_id,'completed']) }}" > Completed </a>
+            @elseif($order-> status == 'completed')
+            
+            @endif
         </div>
     </div>
 </div>

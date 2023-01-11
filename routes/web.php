@@ -25,8 +25,6 @@ use PhpParser\Node\Stmt\Function_;
 //Route::post('/login', [loginController::class,'login']) -> name('users.login');
 
 
-Auth::routes();
-Route::post('/sinupf',[loginController::class,'signup']) -> name('users.signup');
 
 
 //---------------User----------------
@@ -34,10 +32,8 @@ Route::get('/', function () {
     return view('users/modun-user/home');
 })-> name('home1');
 
-Route::get('/signup', function () {
-    return view('users/register');
-}) -> name('users.register');
-
+Route::get('/order', [userController::class,'order']) -> name('users.order');
+Route::get('/order/detail/{id}', [userController::class,'orderdetail']) -> name('users.orderdetail');
 
 //
 //------------------------------product----------------------------
@@ -71,7 +67,7 @@ Route::get('/cartshop', function () {
 }) -> name('users.cartshop');
 
 
-Route::get('/cart/delete/{id}',[CartController::class,'deletecart']);
+Route::get('/delete/{id}',[CartController::class,'deletecart'])-> name('cart.delete');
 Route::get('/cart/plus/{id}',[CartController::class,'pluscart']) -> name('cart.plus');
 Route::get('/cart/minus/{id}',[CartController::class,'minuscart'])-> name('cart.minus');
 
@@ -141,6 +137,10 @@ Route::get('/checkorder', [AdminController::class,'order']
 
 Route::get('/checkorder/orderdetail/{id}', [AdminController::class,'orderdetail']
 ) -> name('admin.orderdetail');
+
+Route::get('update-status/{id}/{value}', [AdminController::class, 'updateStatus'])->name('admin.updatestatus');
+
+
 
 
 

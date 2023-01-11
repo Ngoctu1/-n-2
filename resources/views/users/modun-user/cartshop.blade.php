@@ -11,7 +11,9 @@
     @if (count(Cart::content()))
         <table>
             <tr>
-                <th>Product</th>
+                <th style="width:40%">Product</th>
+                <th>price</th>
+
                 <th>Quantity</th>
                 <th>color</th>
                 <th>size</th>
@@ -25,13 +27,16 @@
                         <img src="/anh/{{$item->options->img  }}">
                         <div>
                             <p>{{ $item->name }}</p>
-                            <small>{{ number_format($item->price) }} đ</small>
-                            <a href="{{asset('cart/delete/'.$item->rowId)}}">Remove</a>
+                            
+                            <a href="{{route('cart.delete',['id'=> $item->rowId])}}">Remove</a>
                         </div>
                     </div>
                 </td>
+                <td>{{ number_format($item->price) }} đ</td>
                 <td> <a href="{{route('cart.minus',['id'=> $item->rowId])}}" class="btnplusminus"> <i class="fa-solid fa-circle-minus"></i> </a> 
+               
                 {{ $item->qty }} 
+
                 <a href="{{route('cart.plus',['id'=> $item->rowId])}}" class="btnplusminus" style="padding-left: 6px;padding-right: 5px;"><i class="fa-solid fa-circle-plus"></i></a></td>
                 <td>{{ $item->options->color }}</td>
                 <td>{{ $item->options->size }}</td>
@@ -46,7 +51,7 @@
                 
                 <tr>
                     <td style="text-align: left;">
-                        <a class="btn" href="{{asset('cart/delete/all')}}"> Xóa Giỏ Hàng </a>
+                        <a class="btn" href="{{route('cart.delete',['id'=> 'all'])}}"> Xóa Giỏ Hàng </a>
                     </td>
                     
                     

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="Gq6XlRkyOGNGID1KYINLGR7v3pLl92TbKgBw3C3J">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>
         AdminLTE 3 </title>
     <link rel="stylesheet" href="http://127.0.0.1:8000/vendor/fontawesome-free/css/all.min.css">
@@ -45,7 +46,7 @@
     <script src="http://127.0.0.1:8000/vendor/jquery/jquery.min.js"></script>
     <script src="http://127.0.0.1:8000/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="http://127.0.0.1:8000/vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-
+    
 
 
     <script src="http://127.0.0.1:8000/vendor/adminlte/dist/js/adminlte.min.js"></script>

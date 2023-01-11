@@ -48,7 +48,7 @@
 
                                     </form>
 
-                                    <li><a class="dropdown-item" style="margin-left:0" href="#">Order</a></li>
+                                    <li><a class="dropdown-item" style="margin-left:0" href="{{route('users.order')}}">Order</a></li>
                                 </ul>
                             </li>
                         </div>

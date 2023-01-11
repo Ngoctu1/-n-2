@@ -25,23 +25,16 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
+                            <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="name">
 
                                
                             </div>
                         </div>
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('level') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="number" class="form-control @error('name') is-invalid @enderror" name="level" value="{{ old('level') }}" required autocomplete="name" autofocus>
-
-                                
-                            </div>
-                        </div>
+                        
+                        
 
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>

@@ -1,8 +1,7 @@
 @extends('users.masterUser')
 
 @section('productdetail')
-@section('css')
-@stop
+
 <link href="{{url('css/detailprdcss/detailprd.css')}}" rel="stylesheet" type="text/css">
 <section>
 
@@ -16,27 +15,29 @@
             <div class="shadow">
                 <div class="_cont detail-top">
                     <div class="cols">
+                        <!-- ------------------------------------ -->
+
                         <div class="left-col">
                             <div class="thumbs">
-                                @foreach($products as $product)
-                                <a class="thumb-image active" href="/anh/{{$product->prd_image}}" data-index="0">
-                                    <span><img src="/anh/{{$product->prd_image}}" alt=""></span>
-                                </a>
-                                @endforeach
+
+                                <div class="small-image">
+                                    @foreach($products as $product)
+                                    <img src="/anh/{{$product->prd_image}}" alt="" class="featured-image-1">
+
+                                    @endforeach
+                                </div>
 
                             </div>
                             <div class="big">
-                                <div id="slideshow">
-                                    <div class="slide-wrapper">
-                                        @foreach($prdimg as $prdimg)
-                                        <div class="slide"><img src="/anh/{{$prdimg->prd_image}}" height:200px>
-                                        </div>
-                                        @endforeach
-                                    </div>
+                                <div class="big-image">
+
+                                    <img src="/anh/{{$product->prd_image}}" alt="" class="big-image-1">
+
                                 </div>
-                                
+
                             </div>
                         </div>
+                        <!-- ------------------------------------ -->
                         <div class="right-col">
                             <h1 itemprop="name">{{$product->prd_name}}</h1>
                             <h4 style="width: 440px;    text-align: justify;">{{$product->prd_details}}</h4>
@@ -49,9 +50,9 @@
                                     </div>
 
                                 </div>
-                                
+
                                 <form method="post" action="{{route('cart.add')}}">
-                                    
+
                                     @csrf
                                     <input type="hidden" name="prd_id" value="{{$product->prd_id}}">
 

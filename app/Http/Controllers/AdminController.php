@@ -140,8 +140,34 @@ class AdminController extends Controller
             ->join('product_details','order_items.product_id','=','product_details.prd_detail_id')
             ->join('products','products.prd_id','=','product_details.prd_id')
             ->where('orders.id',$id)
-            ->paginate(5);
+            ->get();
+       
         return view ('Admin.modun.orderdetail', compact('orders'));
+    }
+
+    public function updateStatus($id,$value)
+    {
+        $order = DB::table('orders')
+        ->where('id',$id)
+        ->first();
+        
+        
+        if($order->status == 'decline'){
+            
+        }else if($value == "processing"){
+            $order=DB::table('orders')
+            ->where('id',$id)
+            ->update(['status' => 'processing']);
+            
+        }
+        else if($value == "completed"){
+            $order=DB::table('orders')
+            ->where('id',$id)
+            ->update(['status' => 'completed']);
+            
+        }
+    
+        return redirect()-> route('admin.order');
     }
 
 }
