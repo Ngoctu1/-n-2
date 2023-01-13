@@ -17,7 +17,19 @@
     <script type="text/javascript"
         src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=EwAWSSWG_Mf00rU0IisELu-egk13OlOkEG_N9ykHzzv9QL4qOQ_Sl5QJx2f-QCuw"
         charset="UTF-8"></script>
-    <script src="https://kit.fontawesome.com/041cb6b55e.js" crossorigin="anonymous"></script>
+    <style>
+.statusbox{
+    
+    
+    width: 85px;
+    text-align: center;
+    border-radius: 5px;
+    
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+        </style>
+    
     <link href="{{url('css/admincss/account.css')}}" rel="stylesheet" type="text/css">
 </head>
 
@@ -47,7 +59,7 @@
     <script src="http://127.0.0.1:8000/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="http://127.0.0.1:8000/vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     
-
+<script src="https://kit.fontawesome.com/041cb6b55e.js" crossorigin="anonymous"></script>
 
     <script src="http://127.0.0.1:8000/vendor/adminlte/dist/js/adminlte.min.js"></script>
 </body>

@@ -34,6 +34,8 @@ Route::get('/', function () {
 
 Route::get('/order', [userController::class,'order']) -> name('users.order');
 Route::get('/order/detail/{id}', [userController::class,'orderdetail']) -> name('users.orderdetail');
+Route::get('/order/cancel/{id}', [userController::class,'ordercancel']) -> name('users.ordercancel');
+
 
 //
 //------------------------------product----------------------------
@@ -88,7 +90,6 @@ Route::get('/success',[CartController::class,'cartsuccess'])-> name('cart.succes
 //---------------end Cart----------------------
 Route::post('/admin/product/edit/{id}',[AdminController::class,'prd_edit']) -> name('admin.prd_edit');
 
-
 Route::get('/checkout', [CheckoutController::class,'getCheckout'])->name('checkout.index');
 Route::post('/checkout/order', [CheckoutController::class,'placeOrder'])->name('checkout.place.order');
 
@@ -115,6 +116,7 @@ Route::post('/img/{id}',[AdminController::class,'image']) -> name('account.image
     //-----------------Product----------------
 Route::prefix('product')->group(function () {
 Route::get('/', [AdminController::class,'product']) -> name('admin.product'); 
+Route::get('/{id}', [AdminController::class,'productorderby']) -> name('admin.productorderby'); 
 
 //----------------edit prd------------
 
@@ -134,6 +136,7 @@ Route::post('/add',[AdminController::class,'prd_add']) -> name('admin.prd_add');
 
 Route::get('/checkorder', [AdminController::class,'order']
 ) -> name('admin.order');
+Route::get('/checkorder/{id}', [AdminController::class, 'orderorderby'])->name('admin.orderorderby');
 
 Route::get('/checkorder/orderdetail/{id}', [AdminController::class,'orderdetail']
 ) -> name('admin.orderdetail');
@@ -144,14 +147,9 @@ Route::get('update-status/{id}/{value}', [AdminController::class, 'updateStatus'
 
 
 
+
+
 });
-
-
-
-
-
-
-
 
 
 

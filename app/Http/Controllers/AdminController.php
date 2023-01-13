@@ -16,12 +16,34 @@ class AdminController extends Controller
         return view('Admin.modun.account',['user1'=>$users]);
     }
     function product(){
-        $products = DB::table('product')
+        $products = DB::table('products')
         
-        ->join('prd_detail', 'product.prd_id', '=', 'prd_detail.prd_id')
-        ->join('category', 'product.cat_id', '=', 'category.id')
-        ->paginate(8)
-        ;
+        ->join('product_details', 'products.prd_id', '=', 'product_details.prd_id')
+        ->join('category', 'products.cat_id', '=', 'category.id')
+        ->orderBy('product_details.prd_id')
+        ->paginate(8);
+        return view('Admin.modun.product',['products'=>$products]);
+    }
+    function productorderby($id){
+        if($id == 'amount'){
+        $products = DB::table('products')
+        ->join('product_details', 'products.prd_id', '=', 'product_details.prd_id')
+        ->join('category', 'products.cat_id', '=', 'category.id')
+        ->orderBy('product_details.prd_amount','desc')
+        ->paginate(8);
+        } elseif ($id == 'id') {
+            $products = DB::table('products')
+                ->join('product_details', 'products.prd_id', '=', 'product_details.prd_id')
+                ->join('category', 'products.cat_id', '=', 'category.id')
+                ->orderBy('product_details.prd_detail_id', 'asc')
+                ->paginate(8);
+        }else{
+        $products = DB::table('products')
+        ->join('product_details', 'products.prd_id', '=', 'product_details.prd_id')
+        ->join('category', 'products.cat_id', '=', 'category.id')
+        ->orderBy('product_details.sold','desc')
+        ->paginate(8);
+        }
         return view('Admin.modun.product',['products'=>$products]);
     }
 
@@ -57,9 +79,9 @@ class AdminController extends Controller
     //---
     //---Sua product---
     function prd_modify($id){
-        $product = DB::table('product')
-        ->join('prd_detail', 'product.prd_id', '=', 'prd_detail.prd_id')
-        ->join('category', 'product.cat_id', '=', 'category.id')
+        $product = DB::table('products')
+        ->join('product_details', 'products.prd_id', '=', 'product_details.prd_id')
+        ->join('category', 'products.cat_id', '=', 'category.id')
         ->where('prd_detail_id', $id)->first();
         return view ('Admin.modun.prd_detail', compact('product'));
     }
@@ -72,7 +94,7 @@ class AdminController extends Controller
             'prd_name' => $request->prd_name,
             'cat_id' => $request->cat_id,
             'prd_color' => $request->prd_color,
-            'prd_price' => $request->prd_price,
+            'price' => $request->prd_price,
             'prd_amount' => $request->prd_amount,
             'prd_size' => $request->prd_size,
             'prd_details' => $request->prd_details,
@@ -85,7 +107,7 @@ class AdminController extends Controller
             'prd_name' => $request->prd_name,
             'cat_id' => $request->cat_id,
             'prd_color' => $request->prd_color,
-            'prd_price' => $request->prd_price,
+            'price' => $request->prd_price,
             'prd_amount' => $request->prd_amount,
             'prd_size' => $request->prd_size,
             'prd_details' => $request->prd_details,
@@ -93,8 +115,8 @@ class AdminController extends Controller
             'prd_sale' => $request->prd_sale
         ];
 }
-        DB::table('product')
-        ->join('prd_detail', 'product.prd_id', '=', 'prd_detail.prd_id')
+        DB::table('products')
+        ->join('product_details', 'products.prd_id', '=', 'product_details.prd_id')
         ->where('prd_detail_id', $request->id)
         ->update($data);
         
@@ -120,8 +142,8 @@ class AdminController extends Controller
             'prd_sale' => $request->prd_sale
         ];
 
-        DB::table('product')
-        ->join('prd_detail', 'product.prd_id', '=', 'prd_detail.prd_id')
+        DB::table('products')
+        ->join('product_details', 'products.prd_id', '=', 'product_details.prd_id')
         ->insert($data);
         return redirect()-> route('admin.product');
     }
@@ -130,7 +152,8 @@ class AdminController extends Controller
         $orders = DB::table('orders')
             ->join('order_items', 'orders.id', '=', 'order_items.order_id')
             ->groupBy('orders.id')
-            ->paginate(5);
+            ->orderByDesc('orders.id')
+            ->paginate(6);
         return view ('Admin.modun.order', compact('orders'));
     }
 
@@ -145,14 +168,14 @@ class AdminController extends Controller
         return view ('Admin.modun.orderdetail', compact('orders'));
     }
 
-    public function updateStatus($id,$value)
+    function updateStatus($id,$value)
     {
         $order = DB::table('orders')
         ->where('id',$id)
         ->first();
         
         
-        if($order->status == 'decline'){
+        if($order->status == 'cancel'){
             
         }else if($value == "processing"){
             $order=DB::table('orders')
@@ -169,5 +192,51 @@ class AdminController extends Controller
     
         return redirect()-> route('admin.order');
     }
+
+    function orderorderby($id){
+        if($id == 'pending'){
+            $orders = DB::table('orders')
+            ->join('order_items', 'orders.id', '=', 'order_items.order_id')
+            ->groupBy('orders.id')
+            ->where('orders.status',$id)
+            ->orderByDesc('orders.id')
+            ->paginate(5);
+
+        }
+        else if( $id == 'completed'){
+            $orders = DB::table('orders')
+            ->join('order_items', 'orders.id', '=', 'order_items.order_id')
+            ->groupBy('orders.id')
+            ->where('orders.status',$id)
+            ->orderByDesc('orders.id')
+            ->paginate(6);
+
+        }else if( $id  == 'processing'){
+            $orders = DB::table('orders')
+            ->join('order_items', 'orders.id', '=', 'order_items.order_id')
+            ->groupBy('orders.id')
+            ->where('orders.status',$id)
+            ->orderByDesc('orders.id')
+            ->paginate(6);
+
+        }else if( $id == 'cancel' ){
+            $orders = DB::table('orders')
+            ->join('order_items', 'orders.id', '=', 'order_items.order_id')
+            ->groupBy('orders.id')
+            ->where('orders.status',$id)
+            ->orderByDesc('orders.id')
+            ->paginate(6);
+
+        }else{
+            $orders = DB::table('orders')
+            ->join('order_items', 'orders.id', '=', 'order_items.order_id')
+            ->groupBy('orders.id')
+            ->orderByDesc('orders.id')
+            ->paginate(6);
+        }
+        return view ('Admin.modun.order', compact('orders'));   
+    }
+
+
 
 }

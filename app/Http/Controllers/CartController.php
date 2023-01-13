@@ -77,13 +77,25 @@ class CartController extends Controller
     }
     function cartsuccess()
     {
+
         foreach(Cart::Content() as $item) {
         $product = DB::table('product_details')
         ->where('prd_detail_id',$item->id)
         ->sum('prd_amount');
+        
+        $sold = DB::table('product_details')
+        ->where('prd_detail_id',$item->id)
+        ->sum('sold');
+
         DB::table('product_details')
         ->where('prd_detail_id',$item->id)
-        ->update(['prd_amount' =>  $product - $item->qty]);
+        ->update(['prd_amount' =>  $product - $item->qty])
+        
+        ;
+        DB::table('product_details')
+        ->where('prd_detail_id', $item->id)
+        ->update(['sold' => $sold + $item->qty]);
+        
         }
         
         Cart::destroy();

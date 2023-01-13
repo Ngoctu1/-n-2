@@ -19,7 +19,7 @@
         <nav class="pt-2">
             <ul class="nav nav-pills nav-sidebar flex-column " data-widget="treeview" role="menu">
 
-                <li>
+                <!-- <li>
 
                     <div class="form-inline my-2">
                         <div class="input-group" data-widget="sidebar-search" data-arrow-sign="&raquo;">
@@ -38,11 +38,27 @@
                         </div>
                     </div>
 
-                </li>
+                </li> -->
+                <li class="nav-item">
 
+                            <a class="nav-link  " href="{{route('admin.dashboard')}}">
+
+                            <i class="fa-solid fa-ballot-check"></i>
+
+                                
+
+                                <p>
+                                    DASHBOARD
+
+                                </p>
+
+                            </a>
+
+                        </li>
                 <li class="nav-item">
 
                     <a class="nav-link  " href="{{route('admin.account')}}">
+                    
 
                     <i class="fas fa-fw fa-user "></i>
 
@@ -59,7 +75,7 @@
 
                         <li class="nav-header ">
 
-                            ACCOUNT SETTINGS
+                            Manager
 
                         </li>
 
@@ -67,10 +83,15 @@
 
                             <a class="nav-link  " href="{{route('admin.product')}}">
 
-                                <i class="fas fa-fw fa-user "></i>
+                            <i class="fas fa-fw fa-lock "></i>
+
+                                
 
                                 <p>
                                     Product
+                                    <span class="badge badge-success right">
+                                   <?php  $count = DB::table('product')->count(); echo $count; ?>
+                                    </span>
 
                                 </p>
 
@@ -82,7 +103,9 @@
 
                             <a class="nav-link  " href="{{route('admin.order')}}">
 
-                                <i class="fas fa-fw fa-lock "></i>
+                            <i class="fa-solid fa-ballot-check"></i>
+
+                                
 
                                 <p>
                                     Check Order

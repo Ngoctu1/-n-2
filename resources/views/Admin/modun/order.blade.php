@@ -6,7 +6,15 @@
         <div class="card-body">
             <h4 style="margin-bottom: 18px" class="card-title">Order table</h4>
 
-
+            <select id="chon" onchange="myFunction()" class="form-select" aria-label="Default select example">
+                <option  >Order By</option>
+                <option  value="" >Show All</option>
+                <option  value="pending" >pending</option>
+                <option  value="processing">processing</option>
+                <option  value="completed">completed</option>
+                <option  value="cancel">canceled</option>
+                
+            </select>
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -22,21 +30,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($orders as $order)
+                    @foreach($orders as $key => $order)
                     <tr>
-                        <td>{{$order->id}}</td>
+                        <td scope="row">{{ ++$key }}</td>
                         <td> {{$order->name}}</td>
-                        <input type="hidden" id="mySelecty" value="{{$order->id}} ">
+                        <input type="hidden" value="{{$order->id}} ">
                         <td>
 
                             @if($order->status == 'pending')
-                            <p class="btn btn-warning btn-fw" > {{$order->status}} </p>
+                            <p class="statusbox" style="background-color: #f7c821;" > {{$order->status}} </p>
                             @elseif($order->status == 'processing')
-                            <p class="btn btn-info btn-fw"> {{$order->status}} </p>
+                            <p class="statusbox" style="background-color: #2eaef8;"> {{$order->status}} </p>
                             @elseif($order->status == 'completed')
-                            <p class="btn btn-success btn-fw"> {{$order->status}} </p>
+                            <p class="statusbox" style="background-color: #11e309;"> {{$order->status}} </p>
                             @else
-                            <p class="btn btn-danger btn-fw"> {{$order->status}} </p>
+                            <p class="statusbox" style="background-color: #f05454;"> cancelled </p>
                             @endif
 
                         </td>
@@ -46,7 +54,7 @@
                         <td> {{$order->grand_total}} </td>
 
                         <td>
-                            <p id="demo"></p>
+                            {{$order->address}}
                         </td>
                         <td> {{$order->phone_number}} </td>
                         <td> {{$order->item_count}} </td>
@@ -65,17 +73,13 @@
     </div>
 </div>
 
-<!-- <script>
+<script>
 function myFunction() {
-  var x = document.getElementById("mySelectx").value;
-  var y = document.getElementById("mySelecty").value;
-  
-  var url = "{{ route('admin.updatestatus', [ ':id',':vl']) }}";
-  url = url.replace(':id', y);
-  url = url.replace(':vl', x);
-  
+  var x = document.getElementById("chon").value;
+  var url = "{{ route('admin.orderorderby', ':id') }}";
+  url = url.replace(':id', x);
 	location.href = url;
 
 }
-</script> -->
+</script> 
 @stop

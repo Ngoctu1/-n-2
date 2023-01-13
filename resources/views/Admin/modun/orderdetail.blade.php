@@ -47,7 +47,7 @@
 
                 
             </table>
-            @if($order-> status == 'decline')
+            @if($order-> status == 'cancel')
             
             @elseif($order-> status == 'pending')
             <a class="btn btn-info btn-fw" href="{{ route('admin.updatestatus', [ 'id'=> $order->order_id,'processing']) }}"> Processing </a>

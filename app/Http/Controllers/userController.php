@@ -33,7 +33,25 @@ class userController extends Controller
         return view('users.modun-user.orderdetail',['orders'=>$orders]);
    }
 
+   function ordercancel($id){
     
+    $order = DB::table('orders')
+    ->where('id',$id)
+    ->first();
+
+
+        if ($order->status == 'pending') {
+            $order = DB::table('orders')
+                ->where('id', $id)
+                ->update(['status' => 'cancel']);
+
+        }
+    
+
+    return back();
+}
+   
+   
     
     
     
