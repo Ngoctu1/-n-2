@@ -90,7 +90,7 @@
                                 <p>
                                     Product
                                     <span class="badge badge-success right">
-                                   <?php  $count = DB::table('product')->count(); echo $count; ?>
+                                   <?php  $count = DB::table('products')->count(); echo $count; ?>
                                     </span>
 
                                 </p>

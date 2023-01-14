@@ -17,6 +17,7 @@
     <script type="text/javascript"
         src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=EwAWSSWG_Mf00rU0IisELu-egk13OlOkEG_N9ykHzzv9QL4qOQ_Sl5QJx2f-QCuw"
         charset="UTF-8"></script>
+        @yield('css')
     <style>
 .statusbox{
     
@@ -42,7 +43,7 @@
         @yield('content')
         @yield('content-account')
         @yield('detail')
-        @yield('addprd')
+        @yield('add')
         @yield('order')
         @yield('orderdetail')
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Encore\Admin\Grid\Filter\Where;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -127,27 +128,58 @@ class AdminController extends Controller
 
     //---------------add prd---------------
     function prd_add(Request $request){
-        if($request->prd_image == null){}
-
-        $data = [
+        if($request->newprd == null){
             
-            'prd_name' => $request->prd_name,
-            'cat_id' => $request->cat_id,
-            'prd_color' => $request->prd_color,
-            'prd_price' => $request->prd_price,
-            'prd_amount' => $request->prd_amount,
-            'prd_size' => $request->prd_size,
-            'prd_details' => $request->prd_details,
-            'prd_image' => $request->prd_image,
-            'prd_sale' => $request->prd_sale
-        ];
+        }else{
 
+        $prd = [
+                    
+                'prd_name' => $request->newprd,
+                'cat_id' => $request->cat_id,
+                'price' => $request->prd_price, 
+                'prd_details' => $request->prd_details, 
+                'prd_sale' => $request->prd_sale
+                ];
+         
         DB::table('products')
-        ->join('product_details', 'products.prd_id', '=', 'product_details.prd_id')
-        ->insert($data);
+        ->insert($prd);       
+        }   
+            
+        if ($request->newprd == null) {
+            $prddetail = [
+            'prd_id' => $request->prd_id,
+            'prd_color' => $request->prd_color,
+            'prd_amount' => $request->prd_amount,
+            'prd_size' => $request->prd_size
+            ];
+            
+            
+        }else{
+            $temp = DB::table('products')
+                ->max('prd_id');
+            
+           $prddetail = [
+            'prd_id' => $temp,
+            'prd_color' => $request->prd_color,
+            'prd_amount' => $request->prd_amount,
+            'prd_size' => $request->prd_size
+            ];
+                 
+        }
+
+        
+        DB::table('product_details')
+        ->insert($prddetail);
         return redirect()-> route('admin.product');
     }
-    
+
+    function addprdform() {
+        $products = DB::table('products')
+            ->get();
+        return view('Admin/modun/addprd',compact('products'));
+    }
+
+    //--------------End add prd
     function order(){
         $orders = DB::table('orders')
             ->join('order_items', 'orders.id', '=', 'order_items.order_id')
