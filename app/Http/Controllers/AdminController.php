@@ -269,6 +269,37 @@ class AdminController extends Controller
         return view ('Admin.modun.order', compact('orders'));   
     }
 
+//------------------Add img------------------
+function storeimg(Request $request,$id){
+    $this->validate($request, [
+        'images' => 'required',
+        'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+    ]);
+    $input=$request->all();
+    $images=array();
+    if($files=$request->file('images')){
+        foreach($files as $file){
+            $name=$file->getClientOriginalName();
+            $file->move('image',$name);
+            $images[]=$name;
+        }
+    }
+        
+    /*Insert your data*/
+    foreach($images as $image){
+        DB::table('imgprds') 
+        ->insert( [
+        'img'=>  $image,
+        'prd_id' =>$id,
+        
+    ]);
 
+    }
+    
+
+
+    return back();
+
+}
 
 }

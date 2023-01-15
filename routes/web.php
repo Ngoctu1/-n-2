@@ -145,6 +145,9 @@ Route::get('update-status/{id}/{value}', [AdminController::class, 'updateStatus'
 Route::get('/productt/add', [AdminController::class,'addprdform']) -> name('admin.add');
 Route::post('/productt/add',[AdminController::class,'prd_add']) -> name('admin.prd_add');
 
+Route::get('/add/img', function () {return view('Admin/modun/addimgprd');}) -> name('admin.add');
+Route::post('/add/img',[AdminController::class,'storeimg']) -> name('storeimg');
+
 
 });
 
