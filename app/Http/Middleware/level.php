@@ -19,6 +19,6 @@ class level
         if(auth()->user()->level ==1){
             return $next($request);
         }
-        return redirect('home')->with('error', 'not admin');
+        return redirect('/')->with('error', 'not admin');
     }
 }

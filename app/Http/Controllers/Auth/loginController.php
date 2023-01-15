@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -46,7 +46,7 @@ class LoginController extends Controller
         ]);
         if (auth()->attempt(array('email' => $validated['email'], 'password' => $validated['password']))) {
             if (auth()->user()->level == 1) {
-                return redirect()->route('admin.dashbroad');
+                return redirect()->route('admin.dashboard');
 
             } else {
                 return redirect()->route('login')->with('error', 'input proper email or password');
