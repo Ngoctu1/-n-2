@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Stmt\Function_;
 
@@ -28,9 +29,7 @@ use PhpParser\Node\Stmt\Function_;
 
 
 //---------------User----------------
-Route::get('/', function () {
-    return view('users/modun-user/home');
-})-> name('home1');
+
 
 Route::get('/order', [userController::class,'order']) -> name('users.order');
 Route::get('/order/detail/{id}', [userController::class,'orderdetail']) -> name('users.orderdetail');
@@ -98,10 +97,10 @@ Route::post('/checkout/order', [CheckoutController::class,'placeOrder'])->name('
 
 
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin') ->middleware('level')->group(function () {
 Route::get('/', function () {
     return view('Admin/modun/dashboard');
-}) -> name('admin.dashboard');
+}) -> name('admin.dashboard') ;
     //----------------Acount----------------
 Route::prefix('account')->group(function () {
 
@@ -149,6 +148,7 @@ Route::get('/add/img', function () {return view('Admin/modun/addimgprd');}) -> n
 Route::post('/add/img',[AdminController::class,'storeimg']) -> name('storeimg');
 
 
+
 });
 
 
@@ -160,4 +160,10 @@ Route::post('/add/img',[AdminController::class,'storeimg']) -> name('storeimg');
 // php artisan serve 1
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home1', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view('users/modun-user/home');
+})-> name('home1');
+Route::get('/logintest', function () {
+    return view('users/login');
+})-> name('home1');

@@ -1,6 +1,27 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin</title>
+    <link rel='shortcut icon' href="{{ asset('img/pnglogoSneaker.png') }}" />
+    <link href="{{url('css/logincss/style.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{url('css/logincss/materialdesignicons.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{url('css/logincss/vendor.bundle.base.css')}}" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+  <header>
+            <div id="menu-bar" class="fa fa-bars"></div>
+            <a href="{{route('home1')}}" class="logo">
+            <img src="{{ asset('img/pnglogoSneaker.png') }}" height ="77px" width = "auto">
+        </a>
+            
+            <div class="icons">
+            
+                <a href="{{ route('register') }}" class="signup_btn" style="color: black; size:5px "> Sign up </a>
 
-@section('content')
+            </div>
+        </header>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -39,17 +60,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+                        
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
@@ -57,11 +68,6 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
                             </div>
                         </div>
                     </form>
@@ -70,4 +76,5 @@
         </div>
     </div>
 </div>
-@endsection
+</body>
+</html>

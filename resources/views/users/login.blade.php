@@ -12,13 +12,13 @@
   <body>
   <header>
             <div id="menu-bar" class="fa fa-bars"></div>
-            <a href="{{route('users.home')}}" class="logo">
+            <a href="" class="logo">
             <img src="{{ asset('img/pnglogoSneaker.png') }}" height ="77px" width = "auto">
         </a>
             
             <div class="icons">
             
-                <a href="{{route('users.register')}}" class="signup_btn" style="color: black; size:5px "> Sign up </a>
+                <a href="" class="signup_btn" style="color: black; size:5px "> Sign up </a>
 
             </div>
         </header>
@@ -36,14 +36,14 @@
 
                 <h4>LOGIN</h4>
                 <h6 class="font-weight-light">Sign in to continue.</h6>
-                <form method="post" action="{{route('users.login')}}"class="pt-3">
+                <form method="post" action=""class="pt-3">
                   @csrf
       
                   <div class="form-group">
-                    <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                    <input type="email" name="email" class="form-control form-control-lg" id="" placeholder="Username">
                   </div>
                   <div class="form-group">
-                    <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" name="password" class="form-control form-control-lg" id="" placeholder="Password">
                   </div>
                   <div class="mt-3">
                     <button class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" type="submit">SIGN IN</button>
@@ -56,7 +56,7 @@
                     <a href="#" class="auth-link text-black">Forgot password?</a>
                   </div>
                   
-                  <div class="text-center mt-4 font-weight-light"> Don't have an account? <a href="{{route('users.register')}}" class="text-primary">Sign up</a>
+                  <div class="text-center mt-4 font-weight-light"> Don't have an account? <a href="" class="text-primary">Sign up</a>
                   </div>
                 </form>
               </div>
