@@ -7,7 +7,7 @@
             <h4 class="card-title">Product table</h4>
             <p class="card-description"> Add class
             </p>
-            <a class="badge badge-success" style="    font-size: 20px" href="#">Them</a>
+            <a class="badge badge-success" style=" font-size: 20px" href="{{route('admin.add')}}">Them</a>
             
             <select id="chon" onchange="myFunction()" class="form-select" aria-label="Default select example">
                 <option  >Order By</option>
