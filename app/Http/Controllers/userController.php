@@ -11,50 +11,42 @@ use Illuminate\Http\Request;
 
 class userController extends Controller
 {
-   function order(){
+    function order()
+    {
         $orders = DB::table('orders')
             ->join('order_items', 'orders.id', '=', 'order_items.order_id')
-            ->where('orders.user_id',Auth::user()->id)
+            ->where('orders.user_id', Auth::user()->id)
             ->groupBy('orders.id')
             ->get();
 
-        return view('users.modun-user.order',['orders'=>$orders]);
-   }
-   
-   function orderdetail($id){
+        return view('users.modun-user.order', ['orders' => $orders]);
+    }
+
+    function orderdetail($id)
+    {
         $orders = DB::table('orders')
             ->join('order_items', 'orders.id', '=', 'order_items.order_id')
-            ->join('product_details','order_items.product_id','=','product_details.prd_detail_id')
-            ->join('products','products.prd_id','=','product_details.prd_id')
-            ->where('orders.user_id',Auth::user()->id)
-            ->where('orders.id',$id)
+            ->join('product_details', 'order_items.product_id', '=', 'product_details.prd_detail_id')
+            ->join('products', 'products.prd_id', '=', 'product_details.prd_id')
+            ->where('orders.user_id', Auth::user()->id)
+            ->where('orders.id', $id)
             ->get();
 
-        return view('users.modun-user.orderdetail',['orders'=>$orders]);
-   }
+        return view('users.modun-user.orderdetail', ['orders' => $orders]);
+    }
 
-   function ordercancel($id){
-    
-    $order = DB::table('orders')
-    ->where('id',$id)
-    ->first();
+    function ordercancel($id)
+    {
 
+        $order = DB::table('orders')
+            ->where('id', $id)
+            ->first();
 
         if ($order->status == 'pending') {
             $order = DB::table('orders')
                 ->where('id', $id)
                 ->update(['status' => 'cancel']);
-
         }
-    
-
-    return back();
-}
-   
-   
-    
-    
-    
-    
-
+        return back();
+    }
 }
