@@ -10,9 +10,22 @@ use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Stmt\Function_;
 
 
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
 //--------------login-------------------
 //Route::get('/login', [loginController::class,'getlogin']) -> name('users.login');
 //Route::post('/login', [loginController::class,'login']) -> name('users.login');
+
+
 
 
 //---------------User----------------
