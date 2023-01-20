@@ -152,63 +152,7 @@
                 <a href="#" class="btn">add to cart</a>
             </div>
         </div>
-        <div class="row">
-            <div class="image-container">
-                <div class="small-image">
-                    <img src="img/product2/1.jpg" alt="" class="featured-image-2">
-                    <img src="img/product2/2.jpg" alt="" class="featured-image-2">
-                    <img src="img/product2/3.jpg" alt="" class="featured-image-2">
-                    <img src="img/product2/4.jpg" alt="" class="featured-image-2">
-                </div>
-                <div class="big-image">
-                    <img src="img/product2/1.jpg" alt="" class="big-image-2">
-                </div>
-            </div>
-            <div class="content">
-                <h3>new nike airmac shoes</h3>
-                <div class="stars">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugit officiis omnis quo laboriosam velit culpa ex illo, error enim nostrum?
-                </p>
-                <div class="price">$90 <span>$120</span></div>
-                <a href="#" class="btn">add to cart</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="image-container">
-                <div class="small-image">
-                    <img src="img/product3/1.jpg" alt="" class="featured-image-3">
-                    <img src="img/product3/2.jpg" alt="" class="featured-image-3">
-                    <img src="img/product3/3.jpg" alt="" class="featured-image-3">
-                    <img src="img/product3/4.jpg" alt="" class="featured-image-3">
-                </div>
-                <div class="big-image">
-                    <img src="img/product3/1.jpg" alt="" class="big-image-3">
-                </div>
-            </div>
-            <div class="content">
-                <h3>new nike airmac shoes</h3>
-                <div class="stars">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugit officiis omnis quo laboriosam velit culpa ex illo, error enim nostrum?
-                </p>
-                <div class="price">$90 <span>$120</span></div>
-                <a href="#" class="btn">add to cart</a>
-            </div>
+       
         </div>
     </section>
     <!--end featured-->
