@@ -3489,6 +3489,36 @@ input.boxcolor{
   border: 0.2rem solid;
   display: unset;
 }
+<<<<<<< Updated upstream
 .addcart{
 
+=======
+.image-container{
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex: 1 1 50rem;
+}
+.featured .row .image-container .small-image{
+  width: 20%;
+}
+.featured .row .image-container .big-image{
+  width: 80%;
+  padding: 1rem;
+}
+.featured .row .image-container .small-image img{
+  width: 100%;
+  padding: 1rem;
+  border: .1rem solid rgba(0, 0, 0, .1);
+  cursor: pointer;
+}
+.featured .row .image-container .small-image img:hover{
+  background: #ccc;
+}
+.featured .row .image-container .big-image img{
+  width: 100%;
+}
+.featured .row .image-container .big-image img:hover{
+  transform: scale(1.05);
+>>>>>>> Stashed changes
 }
