@@ -69,10 +69,11 @@
                         <p style=";margin-bottom: 0;">Price </p>
                         <p style="color:red;margin-bottom: 0;">{{ number_format($prd->price) }} đ
                         <p>
-                            <br>
+                            
 
                             <a class="btn" type="button" style="margin-top:-14px;"
                                 href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">Detail</a>
+                        </p>
                     </div>
 
 
