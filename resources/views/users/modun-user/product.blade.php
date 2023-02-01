@@ -54,7 +54,7 @@
         <table>
             <tbody>
                 @foreach($prds as $prd)
-                <div class='product' style="    height: 360px; position: relative;">
+                <div class='product' style=" width:25em;   height: 360px; position: relative;">
 
                     <div class='product_inner'>
                     @if($prd->prd_sale !=0)

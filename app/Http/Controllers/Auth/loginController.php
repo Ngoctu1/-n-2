@@ -48,10 +48,12 @@ class LoginController extends Controller
             if (auth()->user()->level == 1) {
                 return redirect()->route('admin.dashboard');
 
-            } else {
-                return redirect()->route('login')->with('error', 'input proper email or password');
-            }
+            }else{
+                return redirect()->route('home1');
+            } 
 
+        }else {
+            return redirect()->route('login')->with('error', 'input proper email or password');
         }
     }
 }
