@@ -1,5 +1,15 @@
 @extends('Admin.master')
 
+
+
+@section('css')
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+@stop
+@section('js')
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+@stop
 @section('content-account')
 
 <div class="main-panel">
@@ -24,53 +34,41 @@
             <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-danger card-img-holder text-white">
                     <div class="card-body">
-                        <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                        <h4 class="font-weight-normal mb-3">Weekly Sales <i
-                                class="mdi mdi-chart-line mdi-24px float-right"></i>
-                        </h4>
-                        <h2 class="mb-5">$ 15,0000</h2>
-                        <h6 class="card-text">Increased by 60%</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 stretch-card grid-margin">
-                <div class="card bg-gradient-info card-img-holder text-white">
-                    <div class="card-body">
-                        <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                        <h4 class="font-weight-normal mb-3">Weekly Orders <i
+                        <h4 class="font-weight-normal mb-3">Sold <i
                                 class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
                         </h4>
-                        <h2 class="mb-5">45,6334</h2>
-                        <h6 class="card-text">Decreased by 10%</h6>
+                        <h2 class="mb-5">{{$sold}}</h2>
+
                     </div>
                 </div>
             </div>
             <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-success card-img-holder text-white">
                     <div class="card-body">
-                        <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                        <h4 class="font-weight-normal mb-3">Visitors Online <i
-                                class="mdi mdi-diamond mdi-24px float-right"></i>
+                        <h4 class="font-weight-normal mb-3">Orders <i class="mdi mdi-diamond mdi-24px float-right"></i>
                         </h4>
-                        <h2 class="mb-5">95,5741</h2>
-                        <h6 class="card-text">Increased by 5%</h6>
+                        <h2 class="mb-5">{{$orders}}</h2>
                     </div>
                 </div>
             </div>
+            <div class="col-md-4 stretch-card grid-margin">
+                <div class="card bg-gradient-info card-img-holder text-white">
+                    <div class="card-body">
+
+                        <h4 class="font-weight-normal mb-3">Revenue <i
+                                class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
+                        </h4>
+                        <h2 class="mb-5">{{number_format($revenue)}} Đ</h2>
+
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="row">
-            <div class="col-md-7 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="clearfix">
-                            <h4 class="card-title float-left">Visit And Sales Statistics</h4>
-                            <div id="visit-sale-chart-legend"
-                                class="rounded-legend legend-horizontal legend-top-right float-right"></div>
-                        </div>
-                        <canvas id="visit-sale-chart" class="mt-4"></canvas>
-                    </div>
-                </div>
-            </div>
+
+            <div id="chart" style="height: 250px;"></div>
+
             <div class="col-md-5 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
@@ -199,90 +197,31 @@
             <div class="col-md-7 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Project Status</h4>
+                        <h4 class="card-title">Top 5 Best Selling</h4>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th> # </th>
-                                        <th> Name </th>
-                                        <th> Due Date </th>
-                                        <th> Progress </th>
+                                        
+                                        <th> name </th>
+                                        <th> Image </th>
+                                        <th> sold </th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($sells as $key => $sell)
                                     <tr>
-                                        <td> 1 </td>
-                                        <td> Herman Beck </td>
-                                        <td> May 15, 2015 </td>
+                                        <td> {{ ++$key }} </td>
+                                        <td> {{$sell->prd_name}} </td>
                                         <td>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-gradient-success" role="progressbar"
-                                                    style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
+                                            <image src="/anh/{{$sell->prd_image}}" width="110px ">
                                         </td>
+                                        <td>{{$sell -> sold}} </td>
+
                                     </tr>
-                                    <tr>
-                                        <td> 2 </td>
-                                        <td> Messsy Adam </td>
-                                        <td> Jul 01, 2015 </td>
-                                        <td>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-gradient-danger" role="progressbar"
-                                                    style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td> 3 </td>
-                                        <td> John Richards </td>
-                                        <td> Apr 12, 2015 </td>
-                                        <td>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-gradient-warning" role="progressbar"
-                                                    style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td> 4 </td>
-                                        <td> Peter Meggik </td>
-                                        <td> May 15, 2015 </td>
-                                        <td>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-gradient-primary" role="progressbar"
-                                                    style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td> 5 </td>
-                                        <td> Edward </td>
-                                        <td> May 03, 2015 </td>
-                                        <td>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-gradient-danger" role="progressbar"
-                                                    style="width: 35%" aria-valuenow="35" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td> 5 </td>
-                                        <td> Ronald </td>
-                                        <td> Jun 05, 2015 </td>
-                                        <td>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-gradient-info" role="progressbar"
-                                                    style="width: 65%" aria-valuenow="65" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    @endforeach
+                                   
                                 </tbody>
                             </table>
                         </div>
@@ -351,4 +290,34 @@
             </div>
         </div>
     </div>
-@endsection
+</div>
+<script>
+Morris.Bar({
+    element: 'chart',
+    data: [{
+            date: '04-02-2014',
+            value: 3
+        },
+        {
+            date: '04-03-2014',
+            value: 10
+        },
+        {
+            date: '04-04-2014',
+            value: 5
+        },
+        {
+            date: '04-05-2014',
+            value: 17
+        },
+        {
+            date: '04-06-2014',
+            value: 6
+        }
+    ],
+    xkey: 'date',
+    ykeys: ['value'],
+    labels: ['Orders']
+});
+</script>
+@stop

@@ -7,9 +7,9 @@
         <nav class="navbar">
             <a href="{{url('')}}">Home</a>
             <a href="{{ route('users.product') }}">Product</a>
-            <a href="#fearured">Fearured</a>
-            <a href="#blog">blog</a>
-            <a href="#news">news</a>
+            <a href="#fearured"></a>
+            <a href="#blog"></a>
+            <a href="#news"></a>
         </nav>
         <div class="icons">
 
@@ -22,8 +22,8 @@
 
 
                 <div class="container">
-                    <div class="row" >
-                        <div class="col-sm" >
+                    <div class="row">
+                        <div class="col-sm">
                             <a style="font-size: 2rem; margin-right:14px; background:none"
                                 href="{{ route('users.cartshop') }}">{{Cart::count()}}<i
                                     class="fa fa-shopping-cart"></i></a>
@@ -48,16 +48,17 @@
 
                                     </form>
 
-                                    <li><a class="dropdown-item" style="margin-left:0" href="{{route('users.order')}}">Order</a></li>
+                                    <li><a class="dropdown-item" style="margin-left:0"
+                                            href="{{route('users.order')}}">Order</a></li>
                                 </ul>
                             </li>
                         </div>
                         @endauth
                         @guest
-                        <div class="col-sm" >
+                        <div class="col-sm">
                             <a href="{{route('login')}}" class="login_btn"> Login </a>
                         </div>
-                        <div class="col-sm" >
+                        <div class="col-sm">
                             <a href="{{route('register')}}" class="signup_btn" style="color: white; "> Signup </a>
                         </div>
                         @endguest

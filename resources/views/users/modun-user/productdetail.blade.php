@@ -44,16 +44,35 @@
                             <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                                 <meta itemprop="priceCurrency" content="USD">
                                 <link itemprop="availability" href="http://schema.org/InStock">
+                                <form method="post" action="{{route('cart.add')}}">
+
+                                    @csrf
                                 <div class="price-shipping">
                                     <div class="price" id="price-preview" quickbeam="price" quickbeam-price="800">
+                                        @if($product->prd_sale !=0)
+                                        <div style="display:flex">
+                                            <div>
+                                                <p style="font-size: 2.9rem;text-decoration: line-through;"> Price
+                                                    {{number_format($product->price)}} đ</p>
+                                            </div>
+                                            <div style="margin-left:10px">
+                                                <p style="font-size: 2.9rem; color: red">
+                                                    {{number_format($product->price / 100 * (100-$product->prd_sale))}}
+                                                    đ</p>
+                                            </div>
+                                            <input type="hidden" name="price" value="{{$product->price / 100 * (100-$product->prd_sale)}}">
+                                        </div>
+
+                                        @else
                                         <p style="font-size: 2.9rem;"> Giá {{number_format($product->price)}} đ</p>
+                                        <input type="hidden" name="price" value="{{$product->price}}">
+
+                                        @endif
                                     </div>
 
                                 </div>
 
-                                <form method="post" action="{{route('cart.add')}}">
-
-                                    @csrf
+                                
                                     <input type="hidden" name="prd_id" value="{{$product->prd_id}}">
 
 
@@ -107,15 +126,7 @@
 
     <!-- Quickbeam cart-->
 
-    <div id="quick-cart" quickbeam="cart">
-        <a id="quick-cart-pay" quickbeam="cart-pay" class="cart-ico">
-            <span>
-                <strong class="quick-cart-text">Pay<br></strong>
-                <span id="quick-cart-price">0</span>
-                <span id="quick-cart-pay-total-count">0</span>
-            </span>
-        </a>
-    </div>
+
 
     <!-- Quickbeam cart end -->
 </section>

@@ -9,7 +9,7 @@
                         Sunt nam adipisci ipsa officiis Amet pariatur eaque soluta
                         sit iure neque voluptate.
                     </p>
-                    <!-- <a href="#" class="btn">add to card</a> -->{{asset('')}}
+                    <!-- <a href="#" class="btn">add to card</a> -->
                 </div>
                 <div class="image">
                     <img src="{{asset('img/slide/1.png')}}" class="shoe">

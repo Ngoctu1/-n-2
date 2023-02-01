@@ -39,7 +39,7 @@
 
 
             <li>
-                <a href="">
+                <a href="{{url('/product/3')}}">
 
                     <strong>PUMA</strong>
 
@@ -57,18 +57,38 @@
                 <div class='product' style="    height: 360px; position: relative;">
 
                     <div class='product_inner'>
-
+                    @if($prd->prd_sale !=0)
+                        <img src="/anh/sale-tag-icon.png" style="width: 33px;position: absolute;right: 30px;">
+                    @endif    
                         <a style="border:none" href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">
                             <img src='/anh/{{$prd->prd_image}}'>
                         </a>
 
                         <p style="">{{$prd->prd_name}}</p>
+                    
                     </div>
                     <div
                         style="text-align: center; position: absolute;bottom: 20px;top:75%; left: 50%;transform: translate(-50%, -50%);">
+
                         <p style=";margin-bottom: 0;">Price </p>
-                        <p style="color:red;margin-bottom: 0;">{{ number_format($prd->price) }} đ
-                        <p>
+                        @if($prd->prd_sale !=0)
+                                        <div style="display:flex">
+                                            <div>
+                                                <p style="color:red;margin-bottom: 0;text-decoration: line-through;">{{ number_format($prd->price) }} đ</p>
+                                            </div>
+                                            <div style="margin-left:10px">
+                                                <p style=" color: red">
+                                                    {{number_format($prd->price / 100 * (100-$prd->prd_sale))}}
+                                                    đ</p>
+                                            </div>
+                                        </div>
+
+                                        @else
+                                        <p style="color:red;margin-bottom: 0;">{{ number_format($prd->price) }} đ</p>
+
+
+                                        @endif
+                        
                             <br>
 
                             <a class="btn" type="button" style="margin-top:-14px;"

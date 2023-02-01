@@ -34,7 +34,7 @@ use PhpParser\Node\Stmt\Function_;
 Route::get('/order', [userController::class,'order']) -> name('users.order');
 Route::get('/order/detail/{id}', [userController::class,'orderdetail']) -> name('users.orderdetail');
 Route::get('/order/cancel/{id}', [userController::class,'ordercancel']) -> name('users.ordercancel');
-
+Route::post('user/update', [userController::class,'updateacc'] ) ->name('users.updateacc');
 
 //
 //------------------------------product----------------------------
@@ -98,9 +98,7 @@ Route::post('/checkout/order', [CheckoutController::class,'placeOrder'])->name('
 
 
 Route::prefix('admin') ->middleware('level')->group(function () {
-Route::get('/', function () {
-    return view('Admin/modun/dashboard');
-}) -> name('admin.dashboard') ;
+Route::get('/', [AdminController::class,'dashboard']) -> name('admin.dashboard') ;
     //----------------Acount----------------
 Route::prefix('account')->group(function () {
 
@@ -161,9 +159,4 @@ Route::post('/add/img',[AdminController::class,'storeimg']) -> name('storeimg');
 Auth::routes();
 
 Route::get('/home1', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/', function () {
-    return view('users/modun-user/home');
-})-> name('home1');
-Route::get('/logintest', function () {
-    return view('users/login');
-})-> name('home1');
+Route::get('/', [userController::class,'index'])-> name('home1');

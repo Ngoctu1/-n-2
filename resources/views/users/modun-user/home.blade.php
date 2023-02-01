@@ -2,122 +2,19 @@
 @include('users.modun-user.banner')
 @section('home')
     <section class="producth" id="producth">
-        <h1 class="heading">latest <span>Products</span></h1>
+        <h1 class="heading"><span>Best</span>seller</h1>
         <div class="box-container">
+            @foreach($sells as $sell)
             <div class="box">
-                <div class="icons">
-                    <a href="" class="fa fa-heart"></a>
-
-                    <a href="#" class="fa fa-eye"></a>
-                </div>
                 <div class="content">
-                    <a href="{{route('users.productdetail',1)}}"><img src="img/product4/1.jpg" alt=""></a>
-                    <h3>Nike Shoes</h3>
-                    <div class="price">$200 <span>$150</span></div>
-                    <div class="stars">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
+                    <a href="{{route('users.productdetail',1)}}"><img src="anh/{{$sell->prd_image}}" alt=""></a>
+                    <h3>{{$sell->prd_name}}</h3>
+                    <div class="price">{{number_format($sell->price)}} Đ</div>
+                    
                 </div>
             </div>
-            <div class="box">
-                <div class="icons">
-                    <a href="#" class="fa fa-heart"></a>
-
-                    <a href="#" class="fa fa-eye"></a>
-                </div>
-                <div class="content">
-                    <img src="img/product4/2.jpg" alt="">
-                    <h3>Nike Shoes</h3>
-                    <div class="price">$200 <span>$150</span></div>
-                    <div class="stars">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="icons">
-                    <a href="#" class="fa fa-heart"></a>
-
-                    <a href="#" class="fa fa-eye"></a>
-                </div>
-                <div class="content">
-                    <img src="img/product4/3.jpg" alt="">
-                    <h3>Nike Shoes</h3>
-                    <div class="price">$200 <span>$150</span></div>
-                    <div class="stars">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="icons">
-                    <a href="#" class="fa fa-heart"></a>
-
-                    <a href="#" class="fa fa-eye"></a>
-                </div>
-                <div class="content">
-                    <img src="img/product4/5.jpg" alt="">
-                    <h3>Nike Shoes</h3>
-                    <div class="price">$200 <span>$150</span></div>
-                    <div class="stars">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="icons">
-                    <a href="#" class="fa fa-heart"></a>
-
-                    <a href="#" class="fa fa-eye"></a>
-                </div>
-                <div class="content">
-                    <img src="img/product4/7.png" alt="">
-                    <h3>Nike Shoes</h3>
-                    <div class="price">$200 <span>$150</span></div>
-                    <div class="stars">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="icons">
-                    <a href="#" class="fa fa-heart"></a>
-
-                    <a href="#" class="fa fa-eye"></a>
-                </div>
-                <div class="content">
-                    <img src="img/product4/8.png" alt="">
-                    <h3>Nike Shoes</h3>
-                    <div class="price">$200 <span>$150</span></div>
-                    <div class="stars">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+            
         </div>
     </section>
     <!--end product-->

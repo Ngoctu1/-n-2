@@ -33,7 +33,7 @@
                     </div>
                 </td>
                 <td>{{ number_format($item->price) }} đ</td>
-                <td> <a href="{{route('cart.minus',['id'=> $item->rowId])}}" class="btnplusminus"> <i class="fa-solid fa-circle-minus"></i> </a> 
+                <td> <a href="{{route('cart.minus',['id'=> $item->rowId])}}" class="btnplusminus"><i class="fa-solid fa-circle-minus"></i></a> 
                
                 {{ $item->qty }} 
 
@@ -68,8 +68,13 @@
                 
                 <tr>
                 <td></td>
-                <td >                        
+                <td > 
+                    @auth                       
                     <a class="btn" style="background-color: #56e856" href="{{ route('users.payment') }}"> Thanh toán </a>
+                    @endauth
+                    @guest                       
+                    <a class="btn" style="background-color: #56e856" href="{{ route('login') }}"> Thanh toán </a>
+                    @endguest
 </td>
              </tr>
             </table>

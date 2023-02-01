@@ -16,9 +16,10 @@ class level
      */
     public function handle(Request $request, Closure $next)
     {
+        if(auth()->user() != null){
         if(auth()->user()->level ==1){
             return $next($request);
-        }
+        }}
         return redirect('/')->with('error', 'not admin');
     }
 }
