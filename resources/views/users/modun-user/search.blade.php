@@ -1,10 +1,10 @@
 @extends('users.masterUser')
 
 @include('users.modun-user.banner')
-@section('product')
+@section('search')
 
 <section style="margin-top: -5%; font-size: 1.5rem">
-    <h1 style="    text-align: center"> Sneakers</h1>
+    <h1 style="    text-align: center"> Search Result</h1>
     <div class='rowsb'>
         <ul class="mcd-menu">
             <li class="float">
@@ -56,7 +56,7 @@
     <div class='rowprd'>
         <table>
             <tbody>
-                @foreach($prds as $prd)
+                @foreach($searchproducts as $prd)
                 <div class='product' style=" width:25em;   height: 360px; position: relative;">
 
                     <div class='product_inner'>
@@ -114,7 +114,7 @@
     </div>
     <section>
         <div class='rowprd'>
-            {{ $prds->links() }}
+            {{ $searchproducts->links() }}
 
         </div>
     </section>

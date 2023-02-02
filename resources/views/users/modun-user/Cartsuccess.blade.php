@@ -1,7 +1,6 @@
-<html>
-  <head>
+@extends('users.masterUser')
+@section('css')
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
-  </head>
     <style>
       body {
         text-align: center;
@@ -36,13 +35,16 @@
         margin: 0 auto;
       }
     </style>
-    <body>
+@stop
+@section('success')
+    
+    
       <div class="card">
       <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
         <i class="checkmark">✓</i>
       </div>
         <h1>Success</h1> 
         <p>Thank you for visiting our store;<br/> Good bye and see you again!!!</p>
+        <a class="btn" href="http://127.0.0.1:8000/">Back to Home Page</a>
       </div>
-    </body>
-</html>
+@stop

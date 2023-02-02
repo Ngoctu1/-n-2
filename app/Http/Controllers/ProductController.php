@@ -29,7 +29,7 @@ class ProductController extends Controller
         ->groupBy('product_details.prd_image')
         ->get();
 
-        return view ('users.modun-user.productdetail',compact('products','prdsize','prdimg'));
+        return view ('users.modun-user.productdetail',compact('products','prdsize'));
     }
 
     function product(){

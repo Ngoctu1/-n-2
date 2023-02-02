@@ -160,3 +160,4 @@ Auth::routes();
 
 Route::get('/home1', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [userController::class,'index'])-> name('home1');
+Route::get('search', [userController::class,'searchproduct'])-> name('search');

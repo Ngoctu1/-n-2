@@ -1,12 +1,13 @@
 @extends('users.masterUser')
 
 @section('orderdetail')
-<section>
+<section style="margin-bottom:200px">
 <div class="container-fluid pt-5">
     @if (session('message'))
     <h1 class="text-primary">{{ session('message') }}</h1>
     @endif
-
+    <h1 style="text-align: center;
+    font-weight: bold;">Order detail </h1>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -41,7 +42,7 @@
                 <td>{{ $item->prd_color }}</td>
                 <td>{{ $item->prd_size }}</td>
                 <td>{{ $item->quantity }}</td>
-                <td>{{ $item->price }}</td>
+                <td>{{ number_format($item->price) }} đ</td>
 
                 
             </tr>

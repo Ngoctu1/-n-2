@@ -24,6 +24,8 @@
 @yield('home')
 @yield('productdetail')
 @yield('product')
+@yield('search')
+@yield('success')
 @yield('product1')
 @yield('order')
 @yield('orderdetail')

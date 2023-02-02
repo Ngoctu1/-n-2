@@ -9,6 +9,8 @@ use Illuminate\Database\Query\JoinClause;
 use Illuminate\Support\Facades\Hash;
 use Cart;
 use Illuminate\Http\Request;
+use App\Models\Product;
+use Symfony\Component\Mime\Message;
 
 class userController extends Controller
 {
@@ -81,7 +83,17 @@ class userController extends Controller
 
    }
     
-    
+    function searchproduct(Request $request){
+        if($request -> search){
+            $searchproducts = Product::where('prd_name','LIKE','%'.$request -> search.'%')
+            ->join('product_details', 'products.prd_id', '=', 'product_details.prd_id')
+            ->groupByRaw('products.prd_id')
+            ->paginate(9);
+            return view('users.modun-user.search',compact('searchproducts'));
+        }else{
+            return redirect()->back()->with('message','Empty Search');
+        }
+    }
     
     
 
