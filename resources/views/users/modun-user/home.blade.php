@@ -6,11 +6,115 @@
         <div class="box-container">
             @foreach($sells as $sell)
             <div class="box">
+
+                <div>
+
+                </div>
                 <div class="content">
-                    <a href="{{route('users.productdetail',1)}}"><img src="anh/{{$sell->prd_image}}" alt=""></a>
-                    <h3>{{$sell->prd_name}}</h3>
-                    <div class="price">{{number_format($sell->price)}} Đ</div>
-                    
+                    <a href="{{ route('users.productdetail', 10) }}"><img src="img/product4/nikeairmax90se.png"
+                            alt=""></a>
+                    <h3>Nike Air Max SE 90</h3>
+                    <div class="price">200.000VND <span>350.000VND</span></div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div>
+
+                </div>
+                <div class="content">
+                    <a href="{{ route('users.productdetail', 11) }}"><img src="img/product4/Air Jordan 1 Zoom Comfort 2.png"
+                            alt=""></a>
+                    <h3>Air Jordan 1 Zoom Comfort 2</h3>
+                    <div class="price">430.000VND <span>500.000VND</span></div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div>
+
+                </div>
+                <div class="content">
+                    <a href="{{ route('users.productdetail', 12) }}"><img src="img/product4/Air Jordan 1 Mid.png"
+                            alt=""></a>
+                    <h3>Air Jordan 1 Mid</h3>
+                    <div class="price">3.669.000VND <span>4.000.000VND</span></div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div>
+
+                </div>
+                <div class="content">
+                    <a href="{{ route('users.productdetail', 13) }}"><img src="img/product4/Air Jordan 1 Mid SE.png"
+                            alt=""></a>
+                    <h3>Air Jordan 1 Mid SE</h3>
+                    <div class="price">3.829.000VND <span>4.200.000VND</span></div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div>
+
+                </div>
+                <div class="content">
+                    <a href="{{ route('users.productdetail', 14) }}"><img
+                            src="img/product4/Suede-Classic-XXI-Men's-Sneakers.png" alt=""></a>
+                    <h3>Nike Shoes</h3>
+                    <div class="price">$200 <span>$150</span></div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div>
+                    <a></a>
+
+                    <a></a>
+                </div>
+                <div class="content">
+                    <a href="{{ route('users.productdetail', 15) }}"> <img src="img/product4/nikeairmax90LTR.png"
+                            alt=""></a>
+                    <h3>Nike Shoes</h3>
+                    <div class="price">$200 <span>$150</span></div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+
                 </div>
             </div>
             @endforeach
@@ -23,17 +127,17 @@
         <div class="row">
             <div class="image-container">
                 <div class="small-image">
-                    <img src="img/product1/1.jpg" alt="" class="featured-image-1">
-                    <img src="img/product1/2.jpg" alt="" class="featured-image-1">
-                    <img src="img/product1/3.jpg" alt="" class="featured-image-1">
-                    <img src="img/product1/4.jpg" alt="" class="featured-image-1">
+                    <img src="img/product1/Nike Alphafly 2 1.png" alt="" class="featured-image-1">
+                    <img src="img/product1/Nike Alphafly 2 2.png" alt="" class="featured-image-1">
+                    <img src="img/product1/Nike Alphafly 3.png" alt="" class="featured-image-1">
+                    <img src="img/product1/Nike Alphafly 2 4.png" alt="" class="featured-image-1">
                 </div>
                 <div class="big-image">
-                    <img src="img/product1/1.jpg" alt="" class="big-image-1">
+                    <img src="img/product1/Nike Alphafly 2.png" alt="" class="big-image-1">
                 </div>
             </div>
             <div class="content">
-                <h3>new nike airmac shoes</h3>
+                <h3>New Nike Alphafly 2</h3>
                 <div class="stars">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -42,70 +146,17 @@
                     <i class="fa fa-star"></i>
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugit officiis omnis quo laboriosam velit culpa ex illo, error enim nostrum?
+                    Once you take a few strides in the Nike Alphafly 2, you'll never look at your favourite pair of old
+                    racing shoes in the same way. These rocket ships are made to help shave precious time off your personal
+                    records without surrendering the foundation you need to go the full distance. A thick, lightweight
+                    support system brings comfort and speed together so you can enjoy our greatest energy return while you
+                    chase your personal bests.
                 </p>
-                <div class="price">$90 <span>$120</span></div>
-                <a href="#" class="btn">add to cart</a>
+                <div class="price">8.369.000VND <span></span></div>
+                <a href="{{route('users.productdetail',['id'=> 16])}}" class="btn">add to cart</a>
             </div>
         </div>
-        <div class="row">
-            <div class="image-container">
-                <div class="small-image">
-                    <img src="img/product2/1.jpg" alt="" class="featured-image-2">
-                    <img src="img/product2/2.jpg" alt="" class="featured-image-2">
-                    <img src="img/product2/3.jpg" alt="" class="featured-image-2">
-                    <img src="img/product2/4.jpg" alt="" class="featured-image-2">
-                </div>
-                <div class="big-image">
-                    <img src="img/product2/1.jpg" alt="" class="big-image-2">
-                </div>
-            </div>
-            <div class="content">
-                <h3>new nike airmac shoes</h3>
-                <div class="stars">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugit officiis omnis quo laboriosam velit culpa ex illo, error enim nostrum?
-                </p>
-                <div class="price">$90 <span>$120</span></div>
-                <a href="#" class="btn">add to cart</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="image-container">
-                <div class="small-image">
-                    <img src="img/product3/1.jpg" alt="" class="featured-image-3">
-                    <img src="img/product3/2.jpg" alt="" class="featured-image-3">
-                    <img src="img/product3/3.jpg" alt="" class="featured-image-3">
-                    <img src="img/product3/4.jpg" alt="" class="featured-image-3">
-                </div>
-                <div class="big-image">
-                    <img src="img/product3/1.jpg" alt="" class="big-image-3">
-                </div>
-            </div>
-            <div class="content">
-                <h3>new nike airmac shoes</h3>
-                <div class="stars">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugit officiis omnis quo laboriosam velit culpa ex illo, error enim nostrum?
-                </p>
-                <div class="price">$90 <span>$120</span></div>
-                <a href="#" class="btn">add to cart</a>
-            </div>
+
         </div>
     </section>
     <!--end featured-->
@@ -182,4 +233,4 @@
             <h3>all reserved by codeskill</h3>
         </div>
     </section>
-    @stop
+@stop

@@ -1,11 +1,12 @@
 @extends('users.masterUser')
 @section('css')
 
-<style>
-th {
-    text-align: center;
+    <style>
+        th {
+            text-align: center;
 
-}
+
+        }
 
 td {
     vertical-align: middle;
@@ -86,9 +87,11 @@ td {
 }
 </style>
 
+
 @stop
 
 @section('order')
+
 <div style="margin-bottom: 180px;">
     <div class="container-fluid pt-5">
         <div class="container">
@@ -250,3 +253,4 @@ td {
     </div>
 </div>
 @endsection
+

@@ -77,7 +77,7 @@
                                     </article>
                                 </div>
                             </div>
-            <button type="submit"  class="submit-btn"> thanh toan</button>
+            <button type="submit"  class="submit-btn"> PAY</button>
     
         </form>
     

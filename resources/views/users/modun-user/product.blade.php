@@ -71,6 +71,7 @@
                         style="text-align: center; position: absolute;bottom: 20px;top:75%; left: 50%;transform: translate(-50%, -50%);">
 
                         <p style=";margin-bottom: 0;">Price </p>
+
                         @if($prd->prd_sale !=0)
                                         <div style="display:flex">
                                             <div>
@@ -91,8 +92,10 @@
                         
                             <br>
 
+
                             <a class="btn" type="button" style="margin-top:-14px;"
                                 href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">Detail</a>
+                        </p>
                     </div>
 
 
