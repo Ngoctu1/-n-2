@@ -19,10 +19,9 @@ class AdminController extends Controller
         ->sum('quantity');
         
         $revenue = DB::table('orders')
-        ->join('order_items', 'orders.id', '=', 'order_items.order_id')
-        ->whereIn('status',['pending','completed','processing'])
-        ->groupBy('orders.id')
-        ->sum('price');
+        
+        ->where('status','completed')
+        ->sum('grand_total');
 
         $orders = DB::table('orders')
         ->whereIn('status',['pending','completed','processing'])

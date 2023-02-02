@@ -54,8 +54,19 @@
         </ul>
     </div>
     <div class='rowprd'>
+        @if( count($searchproducts) == 0)
+        <div style="
+    width: 680px;
+    height: 300px;
+    text-align: center;
+    padding-top: 100px;
+">
+                <h3> Không thể tìm sản phẩm tương ứng</h3>
+</div>
+        @else
         <table>
             <tbody>
+                
                 @foreach($searchproducts as $prd)
                 <div class='product' style=" width:25em;   height: 360px; position: relative;">
 
@@ -65,7 +76,7 @@
                         <img src="/anh/sale-tag-icon.png" style="width: 33px;position: absolute;right: 30px;">
                         
                         <p style="position: absolute;right: 55px;color:red;padding-top:15px;">-{{$prd->prd_sale}}%</p>
-</div>
+                </div>
                     @endif    
                         <a style="border:none" href="{{route('users.productdetail',['id'=> $prd->prd_id])}}">
                             <img src='/anh/{{$prd->prd_image}}'>
@@ -110,7 +121,7 @@
                 @endforeach
             </tbody>
         </table>
-
+    @endif
     </div>
     <section>
         <div class='rowprd'>

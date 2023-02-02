@@ -89,7 +89,9 @@ class userController extends Controller
             ->join('product_details', 'products.prd_id', '=', 'product_details.prd_id')
             ->groupByRaw('products.prd_id')
             ->paginate(9);
+            
             return view('users.modun-user.search',compact('searchproducts'));
+            
         }else{
             return redirect()->back()->with('message','Empty Search');
         }
