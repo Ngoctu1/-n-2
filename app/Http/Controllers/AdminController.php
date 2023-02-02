@@ -11,6 +11,42 @@ use PhpParser\Node\Stmt\Function_;
 
 class AdminController extends Controller
 {
+    //dashboard
+    function dashboard(){
+        $sold = DB::table('orders')
+        ->join('order_items', 'orders.id', '=', 'order_items.order_id')
+        ->whereIn('status',['pending','completed','processing'])
+        ->sum('quantity');
+        
+        $revenue = DB::table('orders')
+        ->join('order_items', 'orders.id', '=', 'order_items.order_id')
+        ->whereIn('status',['pending','completed','processing'])
+        ->groupBy('orders.id')
+        ->sum('price');
+
+        $orders = DB::table('orders')
+        ->whereIn('status',['pending','completed','processing'])
+        ->count();
+
+        $sells = DB::table('products')
+            ->join('product_details', 'products.prd_id', '=', 'product_details.prd_id')
+            ->select('product_details.sold','product_details.prd_image','products.prd_name')
+
+            ->orderBy('sold','desc')
+            
+            ->paginate(5);
+        
+        return view('Admin/modun/dashboard',['sold'=>$sold,'revenue'=>$revenue,'orders'=>$orders,'sells'=>$sells]);
+    }
+
+
+
+
+
+
+
+    //---End Dashboard
+
     //---cac trang---
     function account(){
         $users = DB::table('users')->get();

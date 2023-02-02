@@ -2,9 +2,11 @@
 @include('users.modun-user.banner')
 @section('home')
     <section class="producth" id="producth">
-        <h1 class="heading">latest <span>Products</span></h1>
+        <h1 class="heading"><span>Best</span>seller</h1>
         <div class="box-container">
+            @foreach($sells as $sell)
             <div class="box">
+
                 <div>
 
                 </div>
@@ -112,8 +114,11 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                     </div>
+
                 </div>
             </div>
+            @endforeach
+            
         </div>
     </section>
     <!--end product-->

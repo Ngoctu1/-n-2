@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Admin</title>
@@ -8,73 +9,70 @@
     <link href="{{url('css/logincss/style.css')}}" rel="stylesheet" type="text/css">
     <link href="{{url('css/logincss/materialdesignicons.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{url('css/logincss/vendor.bundle.base.css')}}" rel="stylesheet" type="text/css">
-  </head>
-  <body>
-  <header>
-            <div id="menu-bar" class="fa fa-bars"></div>
-            <a href="{{route('home1')}}" class="logo">
-            <img src="{{ asset('img/pnglogoSneaker.png') }}" height ="77px" width = "auto">
+</head>
+
+<body>
+    <header>
+        <div id="menu-bar" class="fa fa-bars"></div>
+        <a href="{{route('home1')}}" class="logo">
+            <img src="{{ asset('img/pnglogoSneaker.png') }}" height="77px" width="auto">
         </a>
-            
-            <div class="icons">
-            
-                <a href="{{ route('register') }}" class="signup_btn" style="color: black; size:5px "> Sign up </a>
+    </header>
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-center auth">
+            <div class="row flex-grow">
+                <div class="col-lg-4 mx-auto">
+                    <div class="auth-form-light text-left p-5">
+                        <h3 style="margin-left:38%">Login</h3>
+                        <div class="card-body">
+                            <form method="POST" action="{{ route('login') }}">
+                                @csrf
+                                <div class="form-group">
+                                    <input id="email" type="email"
+                                        class="form-control @error('email') is-invalid @enderror" name="email"
+                                        value="{{ old('email') }}" required autocomplete="email" placeholder="Email"
+                                        autofocus>
 
-            </div>
-        </header>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
+                                    @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
-                            </div>
-                        </div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                                    <input id="password" type="password"
+                                        class="form-control @error('password') is-invalid @enderror" name="password"
+                                        placeholder="Password" required autocomplete="current-password">
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
+                                    @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
-                            </div>
+                                    @enderror
+
+                                </div>
+
+
+
+                                <div class="mt-3">
+
+                                    <button type="submit"
+                                        class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">
+                                        {{ __('Login') }}
+                                    </button>
+                                    <div class="text-center mt-4 font-weight-light"> Don't have an account? <a href="{{ route('register') }}" class="text-primary">Create</a>
+
+                                </div>
+                            </form>
                         </div>
-
-                        
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+
 </body>
+
 </html>

@@ -61,7 +61,7 @@
     <script src="http://127.0.0.1:8000/vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     
 <script src="https://kit.fontawesome.com/041cb6b55e.js" crossorigin="anonymous"></script>
-
+@yield('js')
     <script src="http://127.0.0.1:8000/vendor/adminlte/dist/js/adminlte.min.js"></script>
 </body>
 

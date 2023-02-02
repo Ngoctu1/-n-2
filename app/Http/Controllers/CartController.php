@@ -12,7 +12,7 @@ class CartController extends Controller
 {
     function addcart(Request $request)
     {
-
+       
     
         $product = DB::table('products')
             ->join('product_details', 'products.prd_id', '=', 'product_details.prd_id')
@@ -20,6 +20,7 @@ class CartController extends Controller
             ->where('product_details.prd_size', $request->prd_size)
             ->where('product_details.prd_color', $request->prd_color)
             ->first();
+        
         if ($product->prd_amount == 0) {
         }else{
         $data = Cart::content()
@@ -28,15 +29,14 @@ class CartController extends Controller
         
         if($data != null){
             if ($product->prd_amount > $data->qty){
-                Cart::add($product->prd_detail_id, $product->prd_name, '1', $product->price, '0', ['size' => $product->prd_size, 'color' => $product->prd_color, 'img' => $product->prd_image]);
+                Cart::add($product->prd_detail_id, $product->prd_name, '1', $request->price, '0', ['size' => $product->prd_size, 'color' => $product->prd_color, 'img' => $product->prd_image]);
 
             }else{
 
             }
         }else{
-        Cart::add($product->prd_detail_id, $product->prd_name, '1', $product->price, '0', ['size' => $product->prd_size, 'color' => $product->prd_color, 'img' => $product->prd_image]);
-        $d = Cart::content();
-}
+        Cart::add($product->prd_detail_id, $product->prd_name, '1', $request->price, '0', ['size' => $product->prd_size, 'color' => $product->prd_color, 'img' => $product->prd_image]);   
+        }
         
 }
         return redirect()->route('users.cartshop');
