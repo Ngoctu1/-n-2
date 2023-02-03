@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Cart;
@@ -72,11 +73,17 @@ class CartController extends Controller
 
     function pay()
     {
+        if(Auth::user()==null ){
+            return redirect()->route('login');
+        }
 
         return view('users.modun-user.payment');
     }
     function cartsuccess()
     {
+        if(Auth::user()==null ){
+            return redirect()->route('login');
+        }
 
         foreach(Cart::Content() as $item) {
         $product = DB::table('product_details')

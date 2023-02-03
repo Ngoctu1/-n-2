@@ -99,6 +99,8 @@ Route::post('/checkout/order', [CheckoutController::class,'placeOrder'])->name('
 
 Route::prefix('admin') ->middleware('level')->group(function () {
 Route::get('/', [AdminController::class,'dashboard']) -> name('admin.dashboard') ;
+Route::get('/chart', [AdminController::class,'chart']) -> name('chart') ;
+
     //----------------Acount----------------
 Route::prefix('account')->group(function () {
 

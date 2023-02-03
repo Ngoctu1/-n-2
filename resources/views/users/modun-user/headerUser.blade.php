@@ -41,15 +41,16 @@
                                 <ul class="dropdown-menu dropdown-menu-white">
 
 
+                                    <li><a class="dropdown-item" style="margin-left:0"
+                                            href="{{route('users.order')}}">Order</a></li>
+
+                                    
+
+                                    
                                     <form method="post" action="{{route('logout')}}">
                                         @csrf
                                         <button type="submit"> <a class="dropdown-item" style="margin-left:0">Logout</a>
-                                        </button>
-
-                                    </form>
-
-                                    <li><a class="dropdown-item" style="margin-left:0"
-                                            href="{{route('users.order')}}">Order</a></li>
+                                        </button>  </form>      
                                 </ul>
                             </li>
                         </div>

@@ -63,7 +63,7 @@
                 
                 <tr>
                     <td>Total</td>
-                    <td>{{  Cart::total() }} đ</td>
+                    <td>{{ number_format(Cart::total())  }} đ</td>
                 </tr>
                 
                 <tr>

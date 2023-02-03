@@ -28,11 +28,11 @@ class OrderRepository extends BaseRepository implements OrderContract
             'item_count'        =>  Cart::count(),
             'name'              =>  $params['name'],
             'address'           =>  $params['address'],
+            'email'           =>  $params['email'],
             'city'              =>  $params['city'],
-            'phone_number'      =>  $params['phone'],
-            'notes'             =>  $params['note']
+            'phone_number'      =>  $params['phone']
         ]);
-    
+        
         if ($order) {
     
             

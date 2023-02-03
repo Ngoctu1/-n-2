@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use Encore\Admin\Grid\Filter\Where;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -22,6 +23,7 @@ class AdminController extends Controller
         
         ->where('status','completed')
         ->sum('grand_total');
+        
 
         $orders = DB::table('orders')
         ->whereIn('status',['pending','completed','processing'])
@@ -36,6 +38,63 @@ class AdminController extends Controller
             ->paginate(5);
         
         return view('Admin/modun/dashboard',['sold'=>$sold,'revenue'=>$revenue,'orders'=>$orders,'sells'=>$sells]);
+    }
+
+
+
+    function chart(Request $request) {
+        $entries = Order::select([
+            DB::raw('MONTH(created_at) as month'),
+//            DB::raw('YEAR(created_at) as year'),
+            DB::raw('SUM(grand_total) as grand_total'),
+           
+        ])
+        
+        ->whereYear('created_at', 2023)
+        ->where('status','completed')
+        ->groupBy([
+            'month'
+        ])
+        ->orderBy('month')
+        ->get();
+
+        
+        $labels = [
+            1 => 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+        ];
+
+//        $dataset = [];
+        $grand_total = [];
+
+        foreach ($entries as $entry){
+//            if ($entry->status == 'Gửi Thành Công') {
+                $grand_total[$entry->month] = $entry->grand_total;
+                
+//            }
+        }
+
+        foreach ($labels as $month => $name){
+            if (!array_key_exists($month, $grand_total)) {
+                $grand_total[$month] = 0;
+            }
+            
+        }
+
+        ksort($grand_total);
+        
+
+        return [
+            'labels' => array_values($labels),
+            'datasets' => [
+                [
+                    'label' => 'Revenue(vnd)',
+                    'borderWidth' => 1,
+                    'data' => array_values($grand_total),
+                    
+                ],
+                
+            ]
+        ];
     }
 
 
@@ -73,7 +132,14 @@ class AdminController extends Controller
                 ->join('category', 'products.cat_id', '=', 'category.id')
                 ->orderBy('product_details.prd_detail_id', 'asc')
                 ->paginate(8);
-        }else{
+        }elseif($id == 0){
+            $products = DB::table('products')
+                ->join('product_details', 'products.prd_id', '=', 'product_details.prd_id')
+                ->join('category', 'products.cat_id', '=', 'category.id')
+                ->where('product_details.prd_amount',0)
+                ->paginate(8);
+        }
+        else{
         $products = DB::table('products')
         ->join('product_details', 'products.prd_id', '=', 'product_details.prd_id')
         ->join('category', 'products.cat_id', '=', 'category.id')

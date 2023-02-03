@@ -25,7 +25,7 @@
                     </div>
                     <div class="inputBox">
                         <span>city :</span>
-                        <input name="city" type="text" placeholder="">
+                        <input name="city" type="text" value="" placeholder="">
                     </div>
                     
                 </div>
@@ -47,10 +47,7 @@
                         <input name="phone" type="text" value="{{Auth::user()->phone}}" placeholder="">
                     </div>
 
-                    <div class="inputBox">
-                        <span>Note :</span>
-                        <input name="note" type="text" placeholder="">
-                    </div>
+                    
     
                     <!-- <div class="flex">
                         <div class="inputBox">
@@ -72,7 +69,7 @@
                                     <article class="card-body">
                                         <dl class="dlist-align">
                                             <dt style="font-size: 12px; font-weight: bold">Total cost: </dt>
-                                            <dd class="text-right h4 b"> {{ config('settings.currency_symbol') }}{{ \Cart::total() }} </dd>
+                                            <dd class="text-right h4 b"> {{ config('settings.currency_symbol') }}{{ Cart::total() }} </dd>
                                         </dl>
                                     </article>
                                 </div>

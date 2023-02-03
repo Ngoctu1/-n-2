@@ -86,17 +86,21 @@
                                             @endforeach
                                         </div>
                                     </div>
-                                    <div class="btn-and-quantity-wrap">
-                                        <div class="btn-and-quantity">
-
-                                            <div quickbeam="add-to-cart">
-
-                                                <button id="AddToCart" type="submit" href="">Add to Cart</button>
-
-                                                <span></span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <div class="btn-and-quantity-wrap" style="display: inline-block;
+                            margin-top: 1rem;
+                            border-radius: .5rem;
+                            border: .2rem solid #000;
+                            font-weight: bolder;
+                            font-size: 1.7rem;
+                            color: #000;
+                            cursor: pointer;
+                            background: #fff;
+                            padding: .8rem 3rem;">
+                                <div class="btn-and-quantity">
+        
+                                    <div quickbeam="add-to-cart">
+        
+                                        <button id="AddToCart" type="submit" href="">ADD TO CART</button>
                                 </form>
 
                             </div>

@@ -5,11 +5,7 @@
 @section('css')
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
 @stop
-@section('js')
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-@stop
+
 @section('content-account')
 
 <div class="main-panel">
@@ -58,7 +54,7 @@
                         <h4 class="font-weight-normal mb-3">Revenue <i
                                 class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
                         </h4>
-                        <h2 class="mb-5">{{($revenue)}} Đ</h2>
+                        <h2 class="mb-5">{{number_format($revenue)}} Đ</h2>
 
                     </div>
                 </div>
@@ -69,18 +65,23 @@
 
             <div id="chart" style="height: 250px;"></div>
 
-            <div class="col-md-5 grid-margin stretch-card">
+            <div class="col-md-8 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Traffic Sources</h4>
-                        <canvas id="traffic-chart"></canvas>
+                        <h4 class="card-title">Monthly Revenue</h4>
+
+                        <div>
+                            <canvas id="myChart"></canvas>
+                        </div>
+
+
                         <div id="traffic-chart-legend" class="rounded-legend legend-vertical legend-bottom-left pt-4">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-md-7 grid-margin stretch-card">
                 <div class="card">
@@ -91,7 +92,7 @@
                                 <thead>
                                     <tr>
                                         <th> # </th>
-                                        
+
                                         <th> name </th>
                                         <th> Image </th>
                                         <th> sold </th>
@@ -109,45 +110,45 @@
 
                                     </tr>
                                     @endforeach
-                                   
+
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            
+
+
         </div>
     </div>
 </div>
+@stop
+@section('js')
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
-Morris.Bar({
-    element: 'chart',
-    data: [{
-            date: '04-02-2014',
-            value: 3
-        },
-        {
-            date: '04-03-2014',
-            value: 10
-        },
-        {
-            date: '04-04-2014',
-            value: 5
-        },
-        {
-            date: '04-05-2014',
-            value: 17
-        },
-        {
-            date: '04-06-2014',
-            value: 6
-        }
-    ],
-    xkey: 'date',
-    ykeys: ['value'],
-    labels: ['Orders']
-});
+const ctx = document.getElementById('myChart');
+fetch("{{route('chart')}}")
+    .then(response => response.json())
+    .then(json => {
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: json.labels,
+                datasets: json.datasets
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    })
 </script>
 @stop

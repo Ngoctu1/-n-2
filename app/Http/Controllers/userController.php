@@ -15,6 +15,19 @@ use Symfony\Component\Mime\Message;
 class userController extends Controller
 {
     function updateacc(Request $data){
+        
+        if($data['password'] == null){
+            $dt = [
+                'name' => $data['name'],
+                'email' => $data['email'],
+    
+                'address' => $data['address'],
+                'phone' => $data['phone'],
+    
+               
+    
+            ];
+        }else{
         $dt = [
             'name' => $data['name'],
             'email' => $data['email'],
@@ -25,7 +38,7 @@ class userController extends Controller
             'password' => Hash::make($data['password']),
 
         ];
-        
+        }
         $user = DB::table('users')
             ->where('id', Auth::user()->id)
             ->update($dt);

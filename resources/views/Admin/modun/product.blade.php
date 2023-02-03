@@ -14,6 +14,7 @@
                 <option  >id</option>
                 <option  value="amount">Amount</option>
                 <option  value="sold">Sold</option>
+                <option  value="0">sold out</option>
                 
             </select>
             <table class="table table-bordered">
