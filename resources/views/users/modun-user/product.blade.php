@@ -82,12 +82,11 @@
                         @if($prd->prd_sale !=0)
                                         <div style="display:flex">
                                             <div>
-                                                <p style="color:red;margin-bottom: 0;text-decoration: line-through;">{{ number_format($prd->price) }} đ</p>
+                                                <p style="color:red;margin-bottom: 0;text-decoration: line-through;">{{ number_format($prd->price) }}đ</p>
                                             </div>
                                             <div style="margin-left:10px">
                                                 <p style=" color: red">
-                                                    {{number_format($prd->price / 100 * (100-$prd->prd_sale))}}
-                                                    đ</p>
+                                                    {{number_format($prd->price / 100 * (100-$prd->prd_sale))}}đ</p>
                                             </div>
                                         </div>
 

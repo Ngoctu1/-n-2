@@ -41,291 +41,98 @@
                 </li> -->
                 <li class="nav-item">
 
-                            <a class="nav-link  " href="{{route('admin.dashboard')}}">
+                    <a class="nav-link  " href="{{route('admin.dashboard')}}">
 
-                            <i class="fa-solid fa-ballot-check"></i>
+                        <i class="fa-solid fa-ballot-check"></i>
 
-                                
 
-                                <p>
-                                    DASHBOARD
 
-                                </p>
+                        <p>
+                            DASHBOARD
 
-                            </a>
+                        </p>
 
-                        </li>
+                    </a>
+
+                </li>
                 <li class="nav-item">
 
                     <a class="nav-link  " href="{{route('admin.account')}}">
-                    
 
-                    <i class="fas fa-fw fa-user "></i>
 
-                                <p>
-                                    Users
-                                    <span class="badge badge-success right">
-                                   <?php  $count = DB::table('users')->where('status',0)->count(); echo $count; ?>
-                                    </span>
-                                </p>
+                        <i class="fas fa-fw fa-user "></i>
 
-                            </a>
+                        <p>
+                            Users
+                            <span class="badge badge-success right">
+                                <?php  $count = DB::table('users')->where('status',0)->count(); echo $count; ?>
+                            </span>
+                        </p>
 
-                        </li>
+                    </a>
 
-                        <li class="nav-header ">
+                </li>
 
-                            Manager
+                <li class="nav-header ">
 
-                        </li>
+                    Manager
 
-                        <li class="nav-item">
+                </li>
 
-                            <a class="nav-link  " href="{{route('admin.product')}}">
+                <li class="nav-item">
 
-                            <i class="fas fa-fw fa-lock "></i>
+                    <a class="nav-link  " href="{{route('admin.product')}}">
 
-                                
+                        <i class="fas fa-fw fa-lock "></i>
 
-                                <p>
-                                    Product
-                                    <span class="badge badge-success right">
-                                   <?php  $count = DB::table('products')->count(); echo $count; ?>
-                                    </span>
 
-                                </p>
 
-                            </a>
+                        <p>
+                            Product
+                            <span class="badge badge-success right">
+                                <?php  $count = DB::table('products')->count(); echo $count; ?>
+                            </span>
 
-                        </li>
+                        </p>
 
-                        <li class="nav-item">
+                    </a>
 
-                            <a class="nav-link  " href="{{route('admin.order')}}">
+                </li>
 
-                            <i class="fa-solid fa-ballot-check"></i>
+                <li class="nav-item">
 
-                                
+                    <a class="nav-link  " href="{{route('admin.order')}}">
 
-                                <p>
-                                    Check Order
+                        <i class="fa-solid fa-ballot-check"></i>
 
-                                </p>
 
-                            </a>
 
-                        </li>
+                        <p>
+                            Check Order
 
-                        <li class="nav-item has-treeview ">
+                        </p>
 
+                    </a>
 
-                            <a class="nav-link  " href="">
+                </li>
 
-                                <i class="fas fa-fw fa-share "></i>
 
-                                <p>
-                                    Multi Level
-                                    <i class="fas fa-angle-left right"></i>
 
-                                </p>
+            </ul>
+        </nav>
+    </div>
 
-                            </a>
+</aside>
 
 
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
+<div class="content-wrapper ">
 
-                                    <a class="nav-link  " href="#">
 
-                                        <i class="far fa-fw fa-circle "></i>
 
-                                        <p>
-                                            Level 1
 
-                                        </p>
-
-                                    </a>
-
-                                </li>
-
-                                <li class="nav-item has-treeview ">
-
-
-                                    <a class="nav-link  " href="">
-
-                                        <i class="far fa-fw fa-circle "></i>
-
-                                        <p>
-                                            Level 1
-                                            <i class="fas fa-angle-left right"></i>
-
-                                        </p>
-
-                                    </a>
-
-
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-
-                                            <a class="nav-link  " href="#">
-
-                                                <i class="far fa-fw fa-circle "></i>
-
-                                                <p>
-                                                    Level 2
-
-                                                </p>
-
-                                            </a>
-
-                                        </li>
-
-                                        <li class="nav-item has-treeview ">
-
-
-                                            <a class="nav-link  " href="">
-
-                                                <i class="far fa-fw fa-circle "></i>
-
-                                                <p>
-                                                    Level 2
-                                                    <i class="fas fa-angle-left right"></i>
-
-                                                </p>
-
-                                            </a>
-
-
-                                            <ul class="nav nav-treeview">
-                                                <li class="nav-item">
-
-                                                    <a class="nav-link  " href="#">
-
-                                                        <i class="far fa-fw fa-circle "></i>
-
-                                                        <p>
-                                                            Level 3
-
-                                                        </p>
-
-                                                    </a>
-
-                                                </li>
-
-                                                <li class="nav-item">
-
-                                                    <a class="nav-link  " href="#">
-
-                                                        <i class="far fa-fw fa-circle "></i>
-
-                                                        <p>
-                                                            Level 3
-
-                                                        </p>
-
-                                                    </a>
-
-                                                </li>
-
-                                            </ul>
-
-                                        </li>
-
-                                    </ul>
-
-                                </li>
-
-                                <li class="nav-item">
-
-                                    <a class="nav-link  " href="#">
-
-                                        <i class="far fa-fw fa-circle "></i>
-
-                                        <p>
-                                            Level 1
-
-                                        </p>
-
-                                    </a>
-
-                                </li>
-
-                            </ul>
-
-                        </li>
-
-                        <li class="nav-header ">
-
-                            LABELS
-
-                        </li>
-
-                        <li class="nav-item">
-
-                            <a class="nav-link  " href="#">
-
-                                <i class="far fa-fw fa-circle text-red"></i>
-
-                                <p>
-                                    Important
-
-                                </p>
-
-                            </a>
-
-                        </li>
-
-                        <li class="nav-item">
-
-                            <a class="nav-link  " href="#">
-
-                                <i class="far fa-fw fa-circle text-yellow"></i>
-
-                                <p>
-                                    Warning
-
-                                </p>
-
-                            </a>
-
-                        </li>
-
-                        <li class="nav-item">
-
-                            <a class="nav-link  " href="#">
-
-                                <i class="far fa-fw fa-circle text-cyan"></i>
-
-                                <p>
-                                    Information
-
-                                </p>
-
-                            </a>
-
-                        </li>
-
-                    </ul>
-                </nav>
-            </div>
-
-        </aside>
-
-
-        <div class="content-wrapper ">
-
-
-
-
-            <div class="content">
-                <div class="container-fluid">
-                </div>
-            </div>
-
+    <div class="content">
+        <div class="container-fluid">
         </div>
+    </div>
 
-
-
-
-
-    
+</div>

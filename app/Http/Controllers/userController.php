@@ -91,9 +91,8 @@ class userController extends Controller
             ->orderBy('sold','desc')
             
             ->paginate(5);
-            return view('users.modun-user.home',['sells'=>$sells]);
-
-
+        
+    return view('users.modun-user.home',['sells'=>$sells]);
    }
     
     function searchproduct(Request $request){
