@@ -7,9 +7,10 @@
         <nav class="navbar">
             <a href="{{url('')}}">Home</a>
             <a href="{{ route('users.product') }}">Product</a>
-            <a href="#fearured"></a>
+            <a href="#news"> News</a>
+            <a href="#fearured"> </a>
             <a href="#blog"></a>
-            <a href="#news"></a>
+            
         </nav>
         <div class="icons">
 
@@ -27,6 +28,7 @@
                             <a style="font-size: 2rem; margin-right:14px; background:none"
                                 href="{{ route('users.cartshop') }}">{{Cart::count()}}<i
                                     class="fa fa-shopping-cart"></i></a>
+                                    
                         </div>
                         @auth
                         <div class="col-sm" style="">
